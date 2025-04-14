@@ -9,6 +9,7 @@ const MainLayout = () => {
       <main >
         <Outlet /> {/* Les pages s’affichent ici */}
       </main>
+      
       <FooterComponent />
     </>
   );
