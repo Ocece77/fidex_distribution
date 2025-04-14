@@ -34,7 +34,7 @@ const Hero = () => {
         
        {/*Partie Droite/Haut(mobile) : Logo */}
         <div className="flex flex-col col-span-1 h-full items-center justify-center md:order-2 order-1">
-           <img src={logo} alt="logo fidex" className='object-cover lg:h-1/3 md:max-w-full max-w-1/2 ' />
+           <img src={logo} alt="logo fidex" className='object-cover xl:h-2/5 md:max-w-full max-w-1/2 md:p-5 xl:p-0' />
         </div> 
 
     </div>
