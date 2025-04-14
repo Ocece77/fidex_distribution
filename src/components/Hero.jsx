@@ -6,10 +6,10 @@ import logo from '../assets/logo.png'
 const Hero = () => {
   return (
     <section className="flex items-center justify-center bg-transparent relative h-screen  ">
-    <div className="flex flex-col md:grid max-w-full gap-0 lg:gap-8 xl:gap-0 md:grid-cols-2  ">
+    <div className="flex flex-col md:grid max-w-full xl:grid-cols-2 md:grid-cols-3  ">
        {/*Partie Gauche/Bas(mobile) : Texte - description - boutons CTA */}
-        <div className="md:h-screen flex flex-col col-span-1 items-center justify-center md:order-1 order-2 md:px-10">
-          <div className='md:max-w-2xl '>
+        <div className="md:h-screen flex flex-col xl:col-span-1 md:col-span-2 items-center justify-center md:order-1 order-2 md:px-10">
+          <div className=' md:max-w-2xl '>
 
                 {/*Titre & description*/}
                 <div className='flex flex-col justify-center md:text-start text-center'>
@@ -31,10 +31,10 @@ const Hero = () => {
 
           </div>
         </div> 
+        
        {/*Partie Droite/Haut(mobile) : Logo */}
-
-        <div className="flex flex-col col-span-1  items-center justify-center md:order-2 order-1">
-           <img src={logo} alt="logo fidex" className='object-cover max-w-1/2' />
+        <div className="flex flex-col col-span-1 h-full items-center justify-center md:order-2 order-1">
+           <img src={logo} alt="logo fidex" className='object-cover lg:h-1/3 md:max-w-full max-w-1/2 ' />
         </div> 
 
     </div>

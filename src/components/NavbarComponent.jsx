@@ -5,12 +5,13 @@ import { Button, Navbar, NavbarBrand, NavbarCollapse, Dropdown, DropdownItem, Na
 import AppNavLink from "./AppNavLink";
 import { faAngleDown, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { useWindowWidth } from "../utils/useWindowWidth";
+import logo from '../assets/logo.png'
 
 const pageLinks = {
   'accueil' : "/",
   'à propos' : "/about",
   'véhicules' : "/vehicules",
-  'Achat Concession' : "/exploitationMiniere",
+  'Exploitation Minière' : "/exploitationMiniere",
   'livraison' : "/livraison",
 };
 
@@ -28,10 +29,10 @@ const NavbarComponent = () => {
   const currScreenWidth = useWindowWidth() // Obtenir la valeur actuelle de l'écran
   
   return (
-    <div className="fixed inset-x-0">
+    <div className="fixed inset-x-0 z-9999">
       {/*Bar d'information supplémentaire */}
-      <div className="flex text-white justify-between bg-primary md:px-4 px-2 py-1 ">
-        {/*Information - email -  adresse */}
+      <div className="flex text-white justify-between bg-primary md:px-4 px-2 py-1.5 ">
+        {/*Information - email - adresse */}
           <div className="flex flex-col md:flex-row md:gap-2 ">
             {/*adresse email */}
             {Object.entries(information).map(([key,val] , i)=>{
@@ -55,13 +56,12 @@ const NavbarComponent = () => {
         </div>
 
        {/*Bar de navigation */}
-        <Navbar fluid className="bg-white">
+        <Navbar fluid className="bg-white py-0">
           
           {/*Logo de l'entreprise */}
-            <NavbarBrand href="https://flowbite-react.com">
-            {/*  <img src="" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />*/}
-              <span className="self-center whitespace-nowrap text-xl font-semibold">FidexLogo</span>
-            </NavbarBrand>
+            <NavbarBrand href="/" >
+             <img src={logo} className="mr-3 h-20 object-cover" alt="Fidex Logo"  />
+           </NavbarBrand>
           
           <div className="md:flex md:gap-4 items-center">
 
