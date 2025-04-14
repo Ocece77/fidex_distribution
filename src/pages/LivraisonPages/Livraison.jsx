@@ -1,8 +1,15 @@
 import React from 'react'
+import photo1 from '../../assets/photos/livraison/livraison1.png'
+import HeaderComponent from '../../components/HeaderComponent'
 
-function Livraison() {
+const Livraison = () => {
   return (
-    <div>Livraison</div>
+   <HeaderComponent
+      titre={"Achat et Livraison"} 
+      backgroundImage={photo1} 
+      desc={"Simplifiez vos achats et vos livraisons avec nos solutions sur mesure"} 
+      btns={{"Estimez votre envoi":"/estimationLivraison" , "Déposer votre colis en agence":"/contacts"}}
+    />
   )
 }
 
