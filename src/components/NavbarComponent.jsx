@@ -30,13 +30,13 @@ const NavbarComponent = () => {
   return (
     <div className="fixed inset-x-0">
       {/*Bar d'information supplémentaire */}
-      <div className="flex text-white justify-between bg-primary md:px-10 px-2 py-1 ">
+      <div className="flex text-white justify-between bg-primary md:px-4 px-2 py-1 ">
         {/*Information - email -  adresse */}
           <div className="flex flex-col md:flex-row md:gap-2 ">
             {/*adresse email */}
             {Object.entries(information).map(([key,val] , i)=>{
               return (
-                <div key={i} className="flex gap-1.5 text-[10px] md:text-sm pr-4 " style={{borderRight : `${i == 0 && currScreenWidth > 768 ? styles.borderRight :"none"}`}}>
+                <div key={i} className="flex gap-1.5 text-[10px] md:text-sm pr-4" style={{borderRight : `${i == 0 && currScreenWidth > 768 ? styles.borderRight :"none"}`}}>
                   <FontAwesomeIcon color="#8A0008" icon={val} size="lg" />
                   <p>{key}</p>
                  </div>
@@ -75,8 +75,8 @@ const NavbarComponent = () => {
                     <NavbarToggle />
                   </div>
 
-
-                  <div className="hidden md:flex list-none lg:gap-10 gap-4 lg:text-[16px] text-[12px] ">
+                 {/*Tablet/Pc uniquement - Lien vers les autres pages*/}
+                  <div className="hidden md:flex list-none lg:gap-6 gap-4 lg:text-[14px] text-[12px] ">
                     {
                       Object.entries(pageLinks).map(([key, val]) =>{
                         return (
@@ -88,7 +88,7 @@ const NavbarComponent = () => {
                   </div>
 
                 </div>
-
+              {/*Mobile uniquement - Lien vers les autres pages*/}
                 <NavbarCollapse className="md:hidden">
                     {
                       Object.entries(pageLinks).map(([key, val]) =>{
