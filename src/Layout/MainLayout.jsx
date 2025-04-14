@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import NavbarComponent from "../components/NavbarComponent";
 
 const MainLayout = () => {
   return (
     <>
-      <Navbar />
+      <NavbarComponent />
       <main style={{ padding: "20px" }}>
         <Outlet /> {/* Les pages s’affichent ici */}
       </main>

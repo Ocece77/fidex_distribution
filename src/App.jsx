@@ -16,10 +16,14 @@ import LivraisonSuivie from "./pages/LivraisonPages/LivraisonSuivie";
 // Véhicules
 import Vehicules from "./pages/VehiculePages/Vehicules";
 import VehiculeDetails from "./pages/VehiculePages/VehiculeDetails";
+import { ThemeConfig } from 'flowbite-react';
+import ExploitationMiniere from './pages/ExploitationMiniere';
 
 function App() {
   return (
-    <Router>
+    <>
+      <ThemeConfig dark={false} />
+      <Router>
       <Routes>
         {/* Layout principal avec Header/Footer */}
         <Route path="/" element={<MainLayout />}>
@@ -29,15 +33,20 @@ function App() {
 
           {/* Livraison */}
           <Route path="livraison" element={<Livraison />} />
-          <Route path="livraison/estimation" element={<LivraisonEstimation />} />
-          <Route path="livraison/suivie" element={<LivraisonSuivie />} />
+          <Route path="estimation" element={<LivraisonEstimation />} />
+          <Route path="suivie" element={<LivraisonSuivie />} />
 
           {/* Véhicules */}
           <Route path="vehicules" element={<Vehicules />} />
           <Route path="vehicules/:id" element={<VehiculeDetails />} />
+
+          {/* Véhicules */}
+          <Route path="exploitationMiniere" element={<ExploitationMiniere />} />
         </Route>
       </Routes>
     </Router>
+    </>
+  
   );
 }
 
