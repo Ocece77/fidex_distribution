@@ -6,7 +6,7 @@ const MainLayout = () => {
   return (
     <>
       <NavbarComponent />
-      <main style={{ padding: "20px" }}>
+      <main >
         <Outlet /> {/* Les pages s’affichent ici */}
       </main>
       <Footer />
