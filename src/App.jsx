@@ -18,6 +18,7 @@ import Vehicules from "./pages/VehiculePages/Vehicules";
 import VehiculeDetails from "./pages/VehiculePages/VehiculeDetails";
 import { ThemeConfig } from 'flowbite-react';
 import ExploitationMiniere from './pages/ExploitationMiniere';
+import ErrorPage from './pages/ErrorPage';
 
 function App() {
   return (
@@ -42,6 +43,10 @@ function App() {
 
           {/* Véhicules */}
           <Route path="exploitationMiniere" element={<ExploitationMiniere />} />
+
+         {/* Not Found */}
+         <Route path="#" element={<ErrorPage />} />
+
         </Route>
       </Routes>
     </Router>

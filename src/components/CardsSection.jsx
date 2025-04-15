@@ -2,6 +2,7 @@ import { faEarth } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
 import React from 'react'
+import Reveal from '../animation/Reveal'
 const cardsList = [
     {
       id: 1,
@@ -33,13 +34,15 @@ const CardsSection = ({titre="titre", desc="description" , cards}) => {
   return (
 <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-
+        <Reveal>
         {/*Titre*/}
         <div className="flex flex-col gap-4 w-full text-center">  
             <h1 className="lg:text-6xl text-4xl font-bold text-primary">{titre}</h1>
             <p className="text-base font-light">{desc}</p>
           </div>
-
+        </Reveal>
+        
+        <Reveal>
         {/*carte */}
         <div className="mx-auto mt-10 grid  grid-cols-1 gap-x-8 gap-y-16  sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3 items-center justify-center">
           {cardsList.map((card) => (
@@ -65,6 +68,7 @@ const CardsSection = ({titre="titre", desc="description" , cards}) => {
                 </div>
           ))}
         </div>
+        </Reveal>
       </div>
     </div>
   )

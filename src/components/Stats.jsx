@@ -1,3 +1,5 @@
+import Reveal from "../animation/Reveal";
+
 const stats = [
     { id: 1, name: 'Pays avec nos collaborateurs', value: '22 +' },
     { id: 2, name: 'Clients satisfaits', value: '4 000 +' },
@@ -7,6 +9,7 @@ const stats = [
 const Stats = () => {
     return (
       <div className="bg-primary py-24 sm:py-32 text-white">
+      <Reveal>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <dl className="grid md:grid-cols-3 gap-x-8 gap-y-16 text-center ">
             {stats.map((stat) => (
@@ -19,6 +22,7 @@ const Stats = () => {
             ))}
           </dl>
         </div>
+        </Reveal>
       </div>
     )
   }
