@@ -22,7 +22,7 @@ const Map = ({texte = "Récupérez votre colis dans notre agence" , desc = "Rend
           </div>
 
      {/*container d'information - bas*/}
-        <div className="grid grid-cols-1 lg:grid-cols-2 py-10 md:px-30 px-2.5 h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 py-10 lg:px-30 md:px-10 px-2.5 h-full">
 
             {/*information */}
             <div className="flex flex-col gap-5.5">
@@ -49,7 +49,7 @@ const Map = ({texte = "Récupérez votre colis dans notre agence" , desc = "Rend
                 </div>
                 
             {/* Map + Contact Info */}
-            <div className="w-full h-[25em] bg-blue-100 rounded-lg  items-end justify-start">
+            <div className="w-full xl:h-[35em] h-[27em] bg-blue-100 rounded-lg  items-end justify-start">
                 <iframe
                     width="100%"
                     height="100%"
