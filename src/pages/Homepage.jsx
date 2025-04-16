@@ -6,6 +6,7 @@ import Stats from '../components/Stats'
 import CardsSection from '../components/CardsSection'
 import QuoteSection from '../components/QuoteSection'
 import photo1 from '../assets/photos/exploitationminiere/exploitation1.jpg'
+import photo2 from '../assets/photos/about/aboutgrid.png'
 import InfoSection from '../components/InfoSection'
 
 const sectionTexte1 = "L'innovation n'est pas simplement une nouvelle idée, mais une force qui transforme les défis en opportunités.   C'est l'art de repenser le présent pour créer un avenir meilleur, plus efficace et durable. "
@@ -13,10 +14,16 @@ const sectionTexte2 = "Découvrir notre vision "
 
 const Homepage = () => {
   return (
-    <div className='flex flex-col gap-20'>
+    <div className='flex flex-col md:gap-20 '>
       <Hero/>
 
-      <InfoSection/>
+      <InfoSection img={photo2}
+       titre={"Soutenant + de 4 000 clients à travers 22 pays"}
+       desc={"Nous offrons des solutions rapides et efficaces dans trois domaines : la vente de véhicules neufs, la gestion des colis via nos centres de distribution, et l’accompagnement pour l’achat de concessions minières. Notre mission : simplifier vos projets et optimiser vos opérations."}
+       btn={{"btnTitre" : "En savoir plus",
+        "btnLink" : "/about",
+       }}
+       />
 
       <Stats/>
 
