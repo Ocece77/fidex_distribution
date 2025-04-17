@@ -30,6 +30,7 @@ const NavbarComponent = () => {
   
   return (
     <div className="fixed inset-x-0 z-9999">
+
       {/*Bar d'information supplémentaire */}
       <div className="flex text-white justify-between bg-primary md:px-4 px-2 py-1.5 ">
         {/*Information - email - adresse */}
@@ -89,15 +90,18 @@ const NavbarComponent = () => {
 
                 </div>
               {/*Mobile uniquement - Lien vers les autres pages*/}
-                <NavbarCollapse className="md:hidden">
+                <NavbarCollapse className="relative md:hidden ">
+                  
                     {
                       Object.entries(pageLinks).map(([key, val]) =>{
                         return (
                         <AppNavLink key={key} to={val} texte={key}/>
+                        
                         );
                       })
                     }
-                    
+                    <div className="absolute bg-neutral-600 opacity-50 h-screen w-[110vw] -left-10 -z-10"></div>
+
                   </NavbarCollapse>
 
 

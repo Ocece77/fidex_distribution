@@ -5,3 +5,27 @@
     }
   }
   
+  .slick-arrow {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 80px !important;
+    width: 40px !important;
+    z-index: 90;
+  }
+  
+  .slick-prev {
+    left: 0 !important;
+  }
+  
+  .slick-next {
+    right: 0 !important;
+  }
+  
+  .slick-next::before,
+  .slick-prev::before {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+  

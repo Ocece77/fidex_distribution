@@ -74,7 +74,7 @@ const FooterComponent = () => {
             <div>
               <FooterTitle title="Véhicules neufs" className='text-white'/>
               <FooterLinkGroup col>
-                <FooterLink href="#">Toutes nos voiture</FooterLink>
+                <FooterLink href="#">Toutes nos véhicules</FooterLink>
                 <FooterLink href="#">SUV & 4X4</FooterLink>
                 <FooterLink href="#">Mini Van et bus</FooterLink>
                 <FooterLink href="#">Pick up</FooterLink>
