@@ -13,16 +13,16 @@ const information = {
 
 const Map = ({texte = "Récupérez votre colis dans notre agence" , desc = "Rendez-vous dans notre agence pour bénéficier d’un accompagnement personnalisé et découvrir nos services adaptés à vos besoins."})  =>{
   return (
-  <section id="contact" className="xl:px-20 p-2.5 my-20">
-    
-     {/*Titre de la section - haut*/}
-          <div className="flex flex-col gap-5 text-center">  
+  <section id="contact" className="flex justify-center p-2.5  ">
+    <div className="max-w-9xl md:p-10  ">
+    {/*Titre de la section - haut*/}
+    <div className="flex flex-col gap-5 text-center md:px-10">  
             <h1 className="lg:text-6xl text-4xl font-bold text-primary">{texte}</h1>
             <p className="text-sm font-light">{desc}.</p>
           </div>
 
      {/*container d'information - bas*/}
-        <div className="grid grid-cols-1 lg:grid-cols-2 py-10 lg:px-30 md:px-10 px-2.5 h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 py-10  px-2.5 h-full  ">
 
             {/*information */}
             <div className="flex flex-col gap-5.5">
@@ -64,6 +64,7 @@ const Map = ({texte = "Récupérez votre colis dans notre agence" , desc = "Rend
             </div>
 
         </div>
+    </div>
   </section>
   )
 }

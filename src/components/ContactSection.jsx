@@ -3,17 +3,16 @@ import photo1 from "../assets/photos/about/photoLocalFidex2.jpeg";
 
 const ContactSection = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 xl:p-40 lg:p-10 p-2.5 xl:px-20 ">
+    <section className="flex justify-center items-center p-10 ">
 
-      {/*partie gauche - photo*/}
-      <div>
-         <div className=" h-full overflow-hidden">
+    <div className="grid grid-cols-1 lg:grid-cols-2 max-w-7xl gap-5">
+       {/*partie gauche - photo*/}
+         <div className="h-full overflow-hidden">
            <img src={photo1} alt="photo des locaux" className="h-full object-cover" />
          </div>
-      </div>
 
       {/*partie droite - formulaire */}
-      <form className="flex flex-col gap-4 bg-white p-6 rounded-lg">
+      <form className="flex flex-col gap-4 bg-white lg:p-6 rounded-lg">
 
         {/*Titre*/}
           <div className="flex flex-col gap-4">  
@@ -22,7 +21,7 @@ const ContactSection = () => {
           </div>
 
         {/*Nom et email */}
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid lg:grid-cols-2 gap-5">
             <div>
               <div className="mb-2 block">
                 <Label htmlFor="name">Nom*</Label>
@@ -40,7 +39,7 @@ const ContactSection = () => {
           </div>
 
         {/* email et téléphone */}
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid lg:grid-cols-2 gap-5">
             <div>
                 <div className="mb-2 block">
                   <Label htmlFor="email">Email*</Label>
@@ -81,6 +80,8 @@ const ContactSection = () => {
       </form>
 
     </div>
+     
+    </section>
 
   );
 };
