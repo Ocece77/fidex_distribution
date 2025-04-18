@@ -43,7 +43,7 @@ const Stats = () => {
             {stats.map((stat) => (
               <div key={stat.id} className="mx-auto flex max-w-xs flex-col gap-y-4">
                 <div className="flex justify-center items-center gap-2">
-                  <p className="number order-first text-4xl lg:text-[3em] font-semibold tracking-tight">
+                  <p className="number order-first text-[4.5em] font-extrabold tracking-tight">
                     {stat.value}
                   </p>
                   <p className="text-4xl font-bold">+</p>

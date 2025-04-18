@@ -29,3 +29,13 @@
     align-items: center;
   }
   
+  summary::-webkit-details-marker {
+    display: none;
+    content: "";
+
+  }
+  summary::marker {
+    display: none;
+    content: "";
+  }
+  

@@ -1,4 +1,3 @@
-
 import './App.scss'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainLayout from "./Layout/MainLayout";
@@ -11,22 +10,37 @@ import Contacts from "./pages/Contacts";
 // Livraison
 import Livraison from "./pages/LivraisonPages/Livraison";
 import LivraisonEstimation from "./pages/LivraisonPages/LivraisonEstimation";
-import LivraisonSuivie from "./pages/LivraisonPages/LivraisonSuivie";
+import LivraisonSuivie from "./pages/LivraisonPages/LivraisonSuivi";
 
 // Véhicules
 import Vehicules from "./pages/VehiculePages/Vehicules";
 import VehiculeDetails from "./pages/VehiculePages/VehiculeDetails";
-import { ThemeConfig } from 'flowbite-react';
 import ExploitationMiniere from './pages/ExploitationMiniere';
 import ErrorPage from './pages/ErrorPage';
 
-function App() {
+import Lenis from "lenis";
+import { useEffect } from 'react';
+import { ThemeConfig } from 'flowbite-react';
+
+const App = () => {
+  useEffect(() => {
+    // Initialise Lenis pour le smooth scrolling
+    const lenis = new Lenis();
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Scroll to top on route change
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <ThemeConfig dark={false} />
-      <Router>
+  <ThemeConfig dark={false} />
+    <Router>
       <Routes>
-        {/* Layout principal avec Header/Footer */}
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Homepage />} />
           <Route path="about" element={<About />} />
@@ -34,25 +48,25 @@ function App() {
 
           {/* Livraison */}
           <Route path="livraison" element={<Livraison />} />
-          <Route path="estimation" element={<LivraisonEstimation />} />
-          <Route path="suivie" element={<LivraisonSuivie />} />
+          <Route path="/livraison/estimation" element={<LivraisonEstimation />} />
+          <Route path="/livraison/suivie" element={<LivraisonSuivie />} />
 
           {/* Véhicules */}
           <Route path="vehicules" element={<Vehicules />} />
           <Route path="vehicules/:id" element={<VehiculeDetails />} />
 
-          {/* Véhicules */}
+          {/* Exploitation Minière */}
           <Route path="exploitationMiniere" element={<ExploitationMiniere />} />
+          
 
-         {/* Not Found */}
-         <Route path="#" element={<ErrorPage />} />
-
-        </Route>
+          {/* 404 fallback */}
+          <Route path="*" element={<ErrorPage />} />
+        </Route> 
       </Routes>
     </Router>
-    </>
-  
+</>
+
   );
-}
+};
 
 export default App;

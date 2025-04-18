@@ -43,7 +43,7 @@ const logoCloud = () =>{
 const vehiculesCarousel = (vehicules) =>{
   return(
     vehicules.map((vehicule , i) => (
-      <div key={i} className='h-fit flex items-center justify-center bg-gray-100'>
+      <div key={i} className='h-full flex items-center justify-center bg-gray-100'>
             <div className="w-screen">
               <div key={vehicule.id} className="flex items-center justify-center">
                 <div className="flex flex-col md:flex-row items-center justify-between md:max-w-full max-w-4/5  p-10 md:max-h-1/2 lg:gap-30 gap-5">
@@ -120,19 +120,19 @@ const Carousel = ({titre , desc , items=[] , showLogoCloud=true , showVehicules=
   };
   return (
     <div className="slider-container w-screen flex flex-col justify-center md:px-10 relative gap-5 ">
-        <Reveal>
+  
           {/*Titre*/}
           <div className="flex flex-col w-full text-center justify-center items-center ">  
-            <h1 className="lg:text-6xl text-4xl font-bold text-primary max-w-2xl">{titre}</h1>
+            <h1 className="lg:text-6xl text-5xl font-bold text-primary max-w-2xl">{titre}</h1>
             <p className="text-base font-light max-w-2xl">{desc}</p>
           </div>
-        </Reveal>
+     
 
-        <Reveal>
+           {/*logo de marques*/}
            {showLogoCloud && logoCloud()}
-        </Reveal>
 
-        <Reveal>
+
+          {/*Carousel*/}
           <Slider {...settings} className='bg-gray-100'>
 
                 {showVehicules && vehiculesCarousel(vehiculeData)}
@@ -140,8 +140,8 @@ const Carousel = ({titre , desc , items=[] , showLogoCloud=true , showVehicules=
                 {!showVehicules && items &&  
                   items.map((item , i) =>{
                     return (
-                      <div key={i} className='h-[50vh] flex items-center justify-center'>
-                        <div className="h-[50vh] w-screen bg-gray-200">
+                      <div key={i} className='h-[60vh] flex items-center justify-center'>
+                        <div className="h-[60vh] w-screen bg-gray-200">
                           <p>Contenue</p>
                         </div>
                     </div>
@@ -149,7 +149,7 @@ const Carousel = ({titre , desc , items=[] , showLogoCloud=true , showVehicules=
                   })
                 }
           </Slider>
-        </Reveal>
+
     
     </div>
   );

@@ -62,28 +62,28 @@ const About = () => {
 
       {/*Qui sommes-nous section */}
       <Reveal>
-          <div ref={numberContainerRef} className='grid md:grid-cols-2 h-full gap-10 max-w-7xl mx-auto py-10'>
+          <div ref={numberContainerRef} className='grid md:grid-cols-2 h-full gap-10 max-w-7xl mx-auto p-10'>
                 {/*col de gauche */}
                 <div className="flex flex-col gap-5 justify-center max-w-2xl">
                   
                 
                   {/*titre*/}
-                  <h1 className="lg:text-5xl text-2xl md:text-start text-center font-bold text-primary">
+                  <h1 className="lg:text-7xl text-5xl md:text-start text-center font-bold text-primary">
                   Qui sommes-nous ?
                   </h1>
 
                   {/*description*/}
                   <div className='grid grid-cols-1 gap-5'>
 
-                    <p className="lg:text-base md:text-start text-center">
+                    <p className="text-lg md:text-start text-center">
                     Nous sommes un acteur majeur dans le secteur des ressources, avec des activités couvrant plusieurs régions et des produits distribués à l’échelle mondiale.
                     </p>
 
-                    <p className="lg:text-base md:text-start text-center">
+                    <p className="text-lg md:text-start text-center">
                     Notre stratégie repose sur les tendances clés qui façonnent l’avenir. Nous fournissons les minerais essentiels à l’industrie , tels que le lithium et le coltan.               
                     </p>
 
-                    <p className="lg:text-base md:text-start text-center">
+                    <p className="text-lg md:text-start text-center">
                     Un portefeuille de ressources conçu pour répondre aux besoins d’aujourd’hui et aux défis de demain.
                     </p>
 
@@ -92,24 +92,24 @@ const About = () => {
 
                   {/*btn*/}
                   <div className="w-full flex md:justify-start justify-center">
-                      <Link to="/contacts" className="inline-flex items-center justify-center max-w-fit px-5 py-2 mr-3 text-sm font-medium text-center rounded-lg bg-red-800 text-white transition-all hover:ps-5">
+                      <Link to="/contacts" className="items-center justify-center max-w-fit px-5 py-2 mr-3 text-sm font-medium text-center rounded-lg bg-red-800 text-white transition-all hover:gap-3 gap-2">
                       Nous contacter
-                      <svg className="w-3 h- ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+                      <svg className="w-3 h-3 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                       </Link>
                   </div>
                 </div>
 
                 {/*col de droite */}
                 <div className="flex lg:justify-end lg:pr-10 justify-center">
-                    <div className="bg-white rounded-lg shadow-xl p-8 w-full max-w-sm lg:max-w-md text-center  py-32">
+                    <div className="bg-white rounded-lg shadow-xl p-8 w-full md:max-w-sm lg:max-w-md text-center py-32">
                       <div className="mb-8">
-                        <h2 className="text-5xl font-bold text-primary"><span className='number'>22</span> +</h2>
-                        <p className="text-gray-500 mt-2 text-sm">Pays avec nos collaborateurs dans le monde</p>
+                        <h2 className="text-6xl font-bold text-primary"><span className='number'>22</span> +</h2>
+                        <p className="text-gray-500 mt-2 ">Pays avec nos collaborateurs dans le monde</p>
                       </div>
                       <hr className="my-6 border-gray-200" />
                       <div>
-                        <h2 className="text-4xl font-bold text-primary">+ de <span className='number'>4000</span> </h2>
-                        <p className="text-gray-500 mt-2 text-sm">La satisfaction de nos clients est au cœur de nos priorités.</p>
+                        <h2 className="text-6xl font-bold text-primary">+ de <span className='number'>4000</span> </h2>
+                        <p className="text-gray-500 mt-2 ">La satisfaction de nos clients est au cœur de nos priorités.</p>
                       </div>
                     </div>
                   </div>
@@ -138,11 +138,11 @@ const About = () => {
 
        {/*Grid d'image */}
        <Reveal>
-        <div class="grid grid-cols-1 gap-4 md:px-50 ">
+        <div className="grid grid-cols-1 gap-10 md:px-15 ">
             {/*Titre de la section - haut*/}
-          <div className="flex flex-col gap-5 text-center md:px-10 items-center ">  
+          <div className="flex flex-col gap-5 text-center md:px-5 items-center ">  
               <h1 className="lg:text-6xl text-4xl font-bold text-primary">On vous reçois dans nos locaux</h1>
-              <p className="text-sm font-light max-w-4xl">Chez Fidex Distribution, nous mettons un point d'honneur à offrir à nos collaborateurs un environnement de travail moderne, fonctionnel et agréable. Installés au cœur de Kinshasa, nos locaux sont conçus pour favoriser la collaboration, la concentration et le bien-être au quotidien.</p>
+              <p className=" font-light max-w-6xl">Chez Fidex Distribution, nous mettons un point d'honneur à offrir à nos collaborateurs un environnement de travail moderne, fonctionnel et agréable. Installés au cœur de Kinshasa, nos locaux sont conçus pour favoriser la collaboration, la concentration et le bien-être au quotidien.</p>
             </div>
 
           <div className='grid md:grid-cols-2 gap-4'>

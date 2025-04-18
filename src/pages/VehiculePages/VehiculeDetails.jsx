@@ -6,7 +6,7 @@ function VehiculeDetails() {
   return (
     <div>
       <h1>Détails du véhicule {id}</h1>
-      {/* Tu peux utiliser `id` ici pour fetch les infos via une API par exemple */}
+      {/* Utiliser `id` ici pour fetch les infos via une API par exemple */}
     </div>
   );
 }
