@@ -1,14 +1,13 @@
 import React from 'react'
 import ContactSection from '../../components/ContactSection'
 import Map from '../../components/Map'
-
-const LivraisonEstimation =() => {
+const Garantie = () => {
   return (
     <section>
-      <Map/>
-      <ContactSection/>
+              <Map/>
+              <ContactSection/>
     </section>
   )
 }
 
-export default LivraisonEstimation
+export default Garantie

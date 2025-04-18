@@ -83,11 +83,11 @@ const cardsList2 = [
 
 const Homepage = () => {
   return (
-    <div className='flex flex-col gap-15'>
+    <div className='flex flex-col gap-30 overflow-hidden'>
       <Hero/>
 
       <InfoSection img={photo2}
-       titre={"Soutenant + de 4 000 clients à travers 22 pays"}
+       titre={"Soutenant + de 4000 clients à travers 22 pays"}
        desc={"Nous offrons des solutions rapides et efficaces dans trois domaines : la vente de véhicules neufs, la gestion des colis via nos centres de distribution, et l’accompagnement pour l’achat de concessions minières. Notre mission : simplifier vos projets et optimiser vos opérations."}
        btn={{"btnTitre" : "En savoir plus",
         "btnLink" : "/about",

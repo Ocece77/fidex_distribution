@@ -1,15 +1,13 @@
 import React from 'react'
 import ContactSection from '../../components/ContactSection'
 
-const Vehicules = () => {
+function LivraisonSuivi() {
   return (
     <section>
       <Map/>
-
      <ContactSection/>
-
     </section>
   )
 }
 
-export default Vehicules
+export default LivraisonSuivi
