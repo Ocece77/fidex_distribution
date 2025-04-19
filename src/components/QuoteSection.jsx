@@ -10,8 +10,8 @@ const QuoteSection = ({titre ,texte ="Exemple de contenu à mettre dans la secti
             <div className='grid lg:grid-cols-2 items-center justify-center  mx-auto '>
               
                     {/*partie gauche - texte */}
-                    <div className={`flex col-span-1  h-[50vh] lg:h-[90%]  items-center ${reversed ? "order-2 lg:-ml-60 lg:px-30" : ""}`}>
-                        <div className="flex flex-col justify-center h-full lg:px-20 md:p-10 p-2 bg-white border border-gray-200 lg:rounded-lg shadow-sm relative lg:-mr-28 gap-5 ">
+                    <div className={`flex col-span-1  h-[60vh] lg:h-[90%]  items-center ${reversed ? "order-2 lg:-ml-60 lg:px-30" : ""}`}>
+                        <div className="flex flex-col justify-center h-full lg:px-20 md:p-10 p-5 bg-white border border-gray-200 lg:rounded-lg shadow-sm relative lg:-mr-28 gap-5 ">
                             <h1 className="text-4xl font-bold tracking-tight text-primary ">
                               {titre}
                             </h1>
@@ -19,7 +19,7 @@ const QuoteSection = ({titre ,texte ="Exemple de contenu à mettre dans la secti
                                {texte}
                             </h5>
                              
-                            <Link to={btn.href} className="flex items-center justify-center max-w-fit text-sm font-medium text-center border-b-2 border-red-800 transition-all hover:text-red-800 hover:gap-5 gap-2">
+                            <Link to={btn.href} className="flex items-center justify-center max-w-fit text-md font-medium text-center border-b-2 border-red-800 transition-all hover:text-red-800 hover:gap-5 gap-2">
                               {btn.label}
                               <svg className="w-3 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                               </Link>
@@ -44,7 +44,7 @@ const QuoteSection = ({titre ,texte ="Exemple de contenu à mettre dans la secti
                       <img
                             src={img}
                             alt="image"
-                            className='min-h-150 object-cover w-full lg:rounded-lg'
+                            className='h-170 object-cover w-full lg:rounded-lg'
                         />
                       </div>
                

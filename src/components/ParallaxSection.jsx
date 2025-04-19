@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ParallaxSection = ({titre , desc, btn}) => {
+const ParallaxSection = ({titre , desc, btn , img}) => {
   const containerRef = useRef(null);
   const bgRef = useRef(null);
 
@@ -37,32 +37,28 @@ const ParallaxSection = ({titre , desc, btn}) => {
         ref={bgRef}
         className="absolute inset-0 w-full h-[150%] bg-cover bg-center z-0"
         style={{
-          backgroundImage:
-            "url('https://img.freepik.com/photos-gratuite/personnes-au-bureau-pendant-journee-travail_23-2150690162.jpg?semt=ais_hybrid&w=740')", // Remplace par une image McDo si tu veux
+          backgroundImage:`url(${img})`
         }}
       ></div>
 
      {/*contenue de gauche */}
-      <div
-        className="relative z-10 grid grid-cols-12 w-full h-full p-10">
-        <div className=" h-full col-span-5 bg-white rounded-lg shadow-[0_0px_10px_rgba(150,150,150,0.15)] ">
-                    <div className='grid grid-cols-1 flex-col gap-3 w-full h-full rounded-lg overflow-hidden'>
+      <div className="relative z-10 grid grid-cols-12 w-full h-full md:ml-10 md:py-10 p-5">
+        <div className="h-full lg:col-span-6 md:col-span-7 col-span-full bg-white rounded-lg shadow-[0_0px_10px_rgba(150,150,150,0.15)] ">
+             <div className='grid grid-cols-1 flex-col w-full h-full rounded-lg overflow-hidden p-10 gap-3'>
 
-                        <div className="grid grid-cols-1 gap-3 px-5 ">
-                            <p className='text-primary font-extrablack text-2xl'>titre</p>
-                            <p className="h-25 text-neutral-500 font-light">desc</p>
+                        <div className="grid grid-cols-1 gap-3">
+                            <p className='text-primary font-extrablack xl:text-5xl lg:text-4xl text-2xl'>{titre}</p>
+                            <p className="h text-neutral-500 font-light">{desc}</p>
                         </div>
                    
 
-                       <Link to="" className="flex items-center px-5 py-3 bg-primary text-white transition-all hover:text-white hover:bg-red-800 hover:gap-5 gap-2  ">
-                           En savoir plus
-                           <svg className="w-4 h-4 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-                          </Link>
-                    </div>
-        </div>
-           
+                        <Link to={btn.btnLink} className="flex items-center gap-2 hover:gap-3 justify-center max-w-fit h-fit p-3  text-sm font-medium text-center rounded-lg bg-primary hover:bg-red-800 text-white transition-all ">
+                                  {btn.btnTitre || "En savoir plus"}
+                                  <svg className="w-3 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+                            </Link>
+              </div>
+        </div>      
       </div>
-
     </section>
   );
 }

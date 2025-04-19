@@ -1,6 +1,7 @@
 import { Button, Label, TextInput, Textarea } from "flowbite-react";
 import photo1 from "../assets/photos/about/photoLocalFidex2.jpeg";
 
+
 const ContactSection = () => {
   return (
     <section className="flex justify-center items-center p-10 ">

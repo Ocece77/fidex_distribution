@@ -18,7 +18,7 @@ import livraison1 from '../assets/photos/livraison/livraison1.png'
 import vehicule1 from '../assets/photos/vehicules/vehicule1.jpg'
 
 import exploitation1 from '../assets/photos/exploitationminiere/exploitation1.jpg'
-import exploitation2 from '../assets/photos/exploitationminiere/exploitation2.jpg'
+import exploitation2 from '../assets/photos/exploitationminiere/exploitation3.jpg'
 
 import valeur1 from '../assets/photos/home/valeur1.jpg'
 import valeur2 from '../assets/photos/home/valeur2.jpg'
