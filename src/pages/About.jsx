@@ -9,6 +9,14 @@ import photo1 from '../assets/photos/about/photoLocalFidex2.jpeg'
 import about1 from '../assets/photos/home/about2.jpg'
 import about2 from '../assets/photos/home/about5.jpg'
 import valeur3 from '../assets/photos/home/valeur3.jpg'
+import local1 from '../assets/photos/about/photoLocalFidex.jpeg'
+import local2 from '../assets/photos/about/photoLocalFidex2.jpeg'
+import local3 from '../assets/photos/about/photoLocalFidex3.jpeg'
+import local4 from '../assets/photos/about/photoLocalFidex4.jpeg'
+import local5 from '../assets/photos/about/photoLocalFidex5.jpeg'
+
+
+
 import Reveal from '../animation/Reveal'
 import { Link } from 'react-router-dom'
 import gsap from 'gsap/all'
@@ -62,7 +70,7 @@ const About = () => {
 
       {/*Qui sommes-nous section */}
       <Reveal>
-          <div ref={numberContainerRef} className='grid md:grid-cols-2 h-full gap-10 max-w-7xl mx-auto p-10'>
+          <div ref={numberContainerRef} className='grid md:grid-cols-2 h-full gap-10 max-w-7xl mx-auto  px-20'>
                 {/*col de gauche */}
                 <div className="flex flex-col gap-5 justify-center max-w-2xl">
                   
@@ -92,9 +100,9 @@ const About = () => {
 
                   {/*btn*/}
                   <div className="w-full flex md:justify-start justify-center">
-                      <Link to="/contacts" className="items-center justify-center max-w-fit px-5 py-2 mr-3 text-sm font-medium text-center rounded-lg bg-red-800 text-white transition-all hover:gap-3 gap-2">
+                      <Link to="/contacts" className="flex items-center justify-center max-w-fit px-5 py-2 mr-3 text-sm font-medium text-center rounded-lg hover:bg-primary bg-red-800 text-white transition-all hover:gap-3 gap-2">
                       Nous contacter
-                      <svg className="w-3 h-3 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+                      <svg className="w-3 h-3 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                       </Link>
                   </div>
                 </div>
@@ -104,7 +112,7 @@ const About = () => {
                     <div className="bg-white rounded-lg shadow-xl p-8 w-full md:max-w-sm lg:max-w-md text-center py-32">
                       <div className="mb-8">
                         <h2 className="text-6xl font-bold text-primary"><span className='number'>22</span> +</h2>
-                        <p className="text-gray-500 mt-2 ">Pays avec nos collaborateurs dans le monde</p>
+                        <p className="text-gray-500 mt-2">Pays avec nos collaborateurs dans le monde</p>
                       </div>
                       <hr className="my-6 border-gray-200" />
                       <div>
@@ -113,7 +121,7 @@ const About = () => {
                       </div>
                     </div>
                   </div>
-            </div>
+           </div>
       </Reveal>
 
         <InfoSection 
@@ -138,37 +146,39 @@ const About = () => {
 
        {/*Grid d'image */}
        <Reveal>
-        <div className="grid grid-cols-1 gap-10 md:px-15 ">
-            {/*Titre de la section - haut*/}
-          <div className="flex flex-col gap-5 text-center md:px-5 items-center ">  
-              <h1 className="lg:text-6xl text-4xl font-bold text-primary">On vous reçois dans nos locaux</h1>
-              <p className=" font-light max-w-6xl">Chez Fidex Distribution, nous mettons un point d'honneur à offrir à nos collaborateurs un environnement de travail moderne, fonctionnel et agréable. Installés au cœur de Kinshasa, nos locaux sont conçus pour favoriser la collaboration, la concentration et le bien-être au quotidien.</p>
+        <section className='flex justify-center'>
+          <div className="grid grid-cols-1 gap-10 md:px-15  max-w-7xl">
+              {/*Titre de la section - haut*/}
+            <div className="flex flex-col gap-5 text-center md:px-5 items-center ">  
+                <h1 className="lg:text-6xl text-4xl font-bold text-primary">On vous reçois dans nos locaux</h1>
+                <p className=" font-light max-w-6xl">Chez Fidex Distribution, nous mettons un point d'honneur à offrir à nos collaborateurs un environnement de travail moderne, fonctionnel et agréable. Installés au cœur de Kinshasa, nos locaux sont conçus pour favoriser la collaboration, la concentration et le bien-être au quotidien.</p>
+              </div>
+
+            <div className='grid md:grid-cols-2 gap-4'>
+                <div>
+                    <img className="h-auto max-w-full rounded-lg object-fill" src={local1} alt="image"/>
+                </div>
+
+                <div>
+                    <img className="h-auto max-w-full rounded-lg" src={local2}  alt="image"/>
+                </div>
+
             </div>
 
-          <div className='grid md:grid-cols-2 gap-4'>
-              <div>
-                  <img className="h-auto max-w-full rounded-lg object-fill" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="image"/>
-              </div>
-
-              <div>
-                  <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="image"/>
-              </div>
-
+            <div className='grid md:grid-cols-3 gap-4'>
+                <div>
+                    <img className="h-auto max-w-full rounded-lg" src={local3} alt="image"/>
+                </div>
+                <div>
+                    <img className="h-auto max-w-full rounded-lg" src={local4}  alt="image"/>
+                </div>
+                <div>
+                    <img className="h-auto max-w-full rounded-lg" src={local5} alt="image"/>
+                </div>
+            </div>
+          
           </div>
-
-          <div className='grid md:grid-cols-3 gap-4'>
-              <div>
-                  <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="image"/>
-              </div>
-              <div>
-                  <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="image"/>
-              </div>
-              <div>
-                  <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="image"/>
-              </div>
-          </div>
-        
-        </div>
+        </section>
        </Reveal>
      
       <Map/>

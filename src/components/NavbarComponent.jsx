@@ -23,6 +23,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/logo.png";
 import AppNavLink from "./AppNavLink";
 import { Link } from "react-router-dom";
+import about from "../assets/photos/home/about4.jpg"
 
 const information = {
   "fidexdistribution@gmail.com": faEnvelope,
@@ -37,7 +38,7 @@ const menuItems = [
   {
     title: "à propos",
     description: "Découvrez notre histoire, nos valeurs et l’équipe qui bâtit Fidex chaque jour.",
-    img: "/images/menu/about.jpg",
+    img: about,
     links: [
       { label: "Notre Histoire", href: "/about" },
       { label: "Nous rencontrer", href: "/contact" },
@@ -58,6 +59,7 @@ const menuItems = [
     description: "Suivez vos colis en temps réel ou estimez le coût de votre prochaine livraison.",
     img: "/images/menu/livraison.jpg",
     links: [
+      { label: "Découvrir notre service", href: "/livraison" },
       { label: "Suivi", href: "/livraison/suivi" },
       { label: "Estimation de coût", href: "/livraison/estimation" },
     ],
@@ -216,7 +218,7 @@ const NavbarComponent = () => {
                       </div>
                       
                       
-                        <div className="grid grid-cols-1 gap-6 text-sm text-gray-700 ps-5 border-r border-gray-300">
+                        <div className="grid grid-cols-1 gap-6 text-sm text-gray-700 ps-5  h-fit">
                           {item.links.map((link, idx) => (
                             <Link
                               key={idx}
@@ -230,11 +232,11 @@ const NavbarComponent = () => {
                         </div>
                   
 
-                      <div>
+                      <div className="border-l border-gray-300">
                         <img
                           src={item.img}
-                          class="img-fluid rounded"
-                          alt=""
+                          className="img-fluid rounded w-100 ps-5"
+                          alt={item.title}
                         />
                       </div>
 

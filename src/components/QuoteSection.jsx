@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const QuoteSection = ({texte ="Exemple de contenu à mettre dans la section", btn={"label" : "En savoir plus","href" : "/about"}, img, reversed = false, isQuote = false}) => {
+const QuoteSection = ({titre ,texte ="Exemple de contenu à mettre dans la section", btn={"label" : "En savoir plus","href" : "/about"}, img, reversed = false, isQuote = false}) => {
   return (
     <div className='flex items-center mx-auto bg-gray-100 h-fit py-20'>
         <div className='relative'>
@@ -12,8 +12,10 @@ const QuoteSection = ({texte ="Exemple de contenu à mettre dans la section", bt
                     {/*partie gauche - texte */}
                     <div className={`flex col-span-1  h-[50vh] lg:h-[90%]  items-center ${reversed ? "order-2 lg:-ml-60 lg:px-30" : ""}`}>
                         <div className="flex flex-col justify-center h-full lg:px-20 md:p-10 p-2 bg-white border border-gray-200 lg:rounded-lg shadow-sm relative lg:-mr-28 gap-5 ">
-
-                            <h5 className="text-2xl md:text-4xl lg:text-3xl xl:text-3xl lg:p-0 md:p-5 font-bold tracking-tight text-dark-primary ">
+                            <h1 className="text-4xl font-bold tracking-tight text-primary ">
+                              {titre}
+                            </h1>
+                            <h5 className={`${isQuote && "font-bold"} text-2xl md:text-4xl lg:text-3xl xl:text-3xl lg:p-0 md:p-5  tracking-tight text-dark-primary`}>
                                {texte}
                             </h5>
                              
@@ -54,6 +56,7 @@ const QuoteSection = ({texte ="Exemple de contenu à mettre dans la section", bt
   )
 }
 QuoteSection.propTypes = {
+  titre:PropTypes.string.isRequired,
   texte :PropTypes.string.isRequired,
   btn :PropTypes.shape({
       label: PropTypes.string.isRequired,

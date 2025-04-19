@@ -47,12 +47,12 @@ const App = () => {
           <Route path="contacts" element={<Contacts />} />
 
           {/* Livraison */}
-          <Route path="livraison" element={<Livraison />} />
-          <Route path="/livraison/estimation" element={<LivraisonEstimation />} />
-          <Route path="/livraison/suivie" element={<LivraisonSuivie />} />
+          <Route exact path="livraison" element={<Livraison />} />
+          <Route path="livraison/estimation" element={<LivraisonEstimation />} />
+          <Route path="livraison/suivi" element={<LivraisonSuivie />} />
 
           {/* Véhicules */}
-          <Route path="vehicules" element={<Vehicules />} />
+          <Route exact path="vehicules" element={<Vehicules />} />
           <Route path="vehicules/:id" element={<VehiculeDetails />} />
 
           {/* Exploitation Minière */}
