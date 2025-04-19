@@ -24,6 +24,8 @@ import logo from "../assets/logo.png";
 import AppNavLink from "./AppNavLink";
 import { Link } from "react-router-dom";
 import about from "../assets/photos/home/about4.jpg"
+import livraison from '../assets/photos/livraison/livraison8.jpg'
+import exploitation from '../assets/photos/exploitationminiere/exploitation2.jpg'
 
 const information = {
   "fidexdistribution@gmail.com": faEnvelope,
@@ -41,13 +43,13 @@ const menuItems = [
     img: about,
     links: [
       { label: "Notre Histoire", href: "/about" },
-      { label: "Nous rencontrer", href: "/contact" },
+      { label: "Nous rencontrer", href: "/contacts" },
     ],
   },
   {
     title: "expéditions",
     description: "Explorez nos solutions d’expédition, garanties et pays couverts.",
-    img: "/images/menu/expedition.jpg",
+    img: "exploitation",
     links: [
       { label: "Garantie", href: "/expedition/garantie" },
       { label: "Pays Desservis", href: "/expedition/pays" },
@@ -57,7 +59,7 @@ const menuItems = [
   {
     title: "livraisons",
     description: "Suivez vos colis en temps réel ou estimez le coût de votre prochaine livraison.",
-    img: "/images/menu/livraison.jpg",
+    img: livraison,
     links: [
       { label: "Découvrir notre service", href: "/livraison" },
       { label: "Suivi", href: "/livraison/suivi" },
@@ -67,7 +69,7 @@ const menuItems = [
   {
     title: "Exploitation Minière",
     description: "Achetez des concessions, découvrez nos engagements et les minerais disponibles.",
-    img: "/images/menu/mining.jpg",
+    img: exploitation,
     links: [
       { label: "Achat de concessions", href: "/exploitationMiniere" },
       { label: "Nos engagements", href: "/exploitationMiniere/engagements" },
@@ -132,7 +134,7 @@ const NavbarComponent = () => {
   return (
     <div className="fixed inset-x-0 z-9999">
       {/* Barre info top */}
-      <div className={`flex justify-between md:px-4 px-2 py-1.5 ${barStyle}`}>
+      <div className={`flex justify-between items-center md:px-4 px-2 py-1.5 ${barStyle}`}>
         <div className="flex flex-col md:flex-row md:gap-2">
           {Object.entries(information).map(([key, val], i) => (
             <div
@@ -150,9 +152,12 @@ const NavbarComponent = () => {
           ))}
         </div>
 
-        <div className="flex gap-5">
+        <div className="flex gap-5  items-center justify-center">
           <div>
-            <p className="font-light text-[10px] md:text-sm hover:underline transition-all">Nous contactez</p>
+            <Link 
+            to="/contacts"
+            className="font-light text-[10px] md:text-sm hover:underline transition-all ">
+              Nous contacter</Link>
           </div>
           <Dropdown
             dismissOnClick={false}
@@ -235,7 +240,7 @@ const NavbarComponent = () => {
                       <div className="border-l border-gray-300">
                         <img
                           src={item.img}
-                          className="img-fluid rounded w-100 ps-5"
+                          className="img-fluid rounded w-100 h-50 object-cover ps-5"
                           alt={item.title}
                         />
                       </div>

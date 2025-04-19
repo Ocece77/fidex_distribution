@@ -15,7 +15,7 @@ import LivraisonSuivie from "./pages/LivraisonPages/LivraisonSuivi";
 // Véhicules
 import Vehicules from "./pages/VehiculePages/Vehicules";
 import VehiculeDetails from "./pages/VehiculePages/VehiculeDetails";
-import ExploitationMiniere from './pages/ExploitationMiniere';
+import ExploitationMiniere from './pages/exploitationPages/ExploitationMiniere';
 import ErrorPage from './pages/ErrorPage';
 
 import Lenis from "lenis";
