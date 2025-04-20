@@ -14,6 +14,9 @@ import Carousel from '../components/Carousel'
 import photo1 from '../assets/photos/exploitationminiere/exploitation1.jpg'
 import photo2 from '../assets/photos/about/aboutgrid.png'
 
+import expedition1 from "../assets/photos/expedition/expedition1.jpg"
+
+
 import livraison1 from '../assets/photos/livraison/livraison1.png'
 import vehicule1 from '../assets/photos/vehicules/vehicule1.jpg'
 
@@ -28,30 +31,39 @@ const sectionTexte1 = "L'innovation n'est pas simplement une nouvelle idée, mai
 const sectionTexte2 = "Découvrir notre vision "
 
 const cardsList1 = [
+  {
+    id: 1,
+    cardsTitre: 'Vente de véhicules',
+    cardsLogo:faCar,
+    cardsDesc: 'Explorez notre sélection de véhicules neufs de qualité',
+    cardsImg: vehicule1,
+    cardsLink: 'Achetez maintenant',
+  },
     {
-      id: 1,
+      id: 2,
+      cardsTitre: 'Livraison de colis',
+      cardsLogo:faBoxOpen,
+      cardsDesc: 'Profitez de notre service rapide et fiable pour la livraison et le retrait de vos colis',
+      cardsImg: livraison1,
+      cardsLink: 'Trouver une agence',
+    }, 
+    {
+      id: 3,
+      cardsTitre: 'expeditions',
+      cardsLogo: faHandshake,
+      cardsDesc: 'Nous croyons en l\'intégrité, l\'innovation et le respect, des principes qui guident chaque action que nous entreprenons.',
+      cardsImg: expedition1, 
+      cardsLink: 'Explorer nos valeurs',
+    },
+    {
+      id: 4,
       cardsTitre: 'Acheter une Concession',
       cardsLogo:faCoins,
       cardsDesc: 'Nous trouvons, négocions et gérons les démarches pour vous.',
       cardsImg: exploitation1,
       cardsLink: 'Acquérir des ressources',
     },
-    {
-      id: 2,
-      cardsTitre: 'Vente de Véhicules neufs',
-      cardsLogo:faCar,
-      cardsDesc: 'Explorez notre sélection de véhicules de qualité',
-      cardsImg: vehicule1,
-      cardsLink: 'Achetez maintenant',
-    },
-    {
-      id: 3,
-      cardsTitre: 'Livraison et retrait de colis',
-      cardsLogo:faBoxOpen,
-      cardsDesc: 'Profitez de notre service rapide et fiable pour la livraison et le retrait de vos colis',
-      cardsImg: livraison1,
-      cardsLink: 'Trouver une agence',
-    },
+
 
 ]
 const cardsList2 = [
@@ -60,7 +72,7 @@ const cardsList2 = [
     cardsTitre: 'Notre Engagement',
     cardsLogo: faHeart,
     cardsDesc: 'Nous nous engageons à offrir des solutions de qualité, durables et respectueuses de l’environnement.',
-    cardsImg: valeur1, // remplace par l’image correspondante
+    cardsImg: valeur1, 
     cardsLink: 'En savoir plus',
   },
   {
@@ -68,7 +80,7 @@ const cardsList2 = [
     cardsTitre: 'Notre Histoire',
     cardsLogo: faBook,
     cardsDesc: 'Guidés par l\'innovation, le respect et la collaboration, nous avons construit une entreprise engagée.',
-    cardsImg: valeur2, // remplace par l’image correspondante
+    cardsImg: valeur2, 
     cardsLink: 'Découvrir notre parcours',
   },
   {
@@ -76,9 +88,10 @@ const cardsList2 = [
     cardsTitre: 'Nos Valeurs',
     cardsLogo: faHandshake,
     cardsDesc: 'Nous croyons en l\'intégrité, l\'innovation et le respect, des principes qui guident chaque action que nous entreprenons.',
-    cardsImg: valeur3, // remplace par l’image correspondante
+    cardsImg: valeur3, 
     cardsLink: 'Explorer nos valeurs',
   },
+  
 ];
 
 const Homepage = () => {

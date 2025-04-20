@@ -48,7 +48,7 @@ const LivraisonSuivi = () =>{
         btns={{"Estimez votre envoi":"/estimationLivraison" , "Déposer votre colis en agence":"/contacts"}}
       />
         
-    <SearchBar/>
+      <SearchBar/>
 
       <StepCardsSection
         titre="Faites vous livrer dans notre agence"

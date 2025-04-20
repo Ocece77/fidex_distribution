@@ -1,13 +1,39 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import videoHero from '../assets/video/fidexherovideo.mp4'
 import logo from '../assets/logo.png'
 import fallbackImg from '../assets/photos/about/photoLocalFidex2.jpeg'
 import { Link } from 'react-router-dom'
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const Hero = () => {
+  const containerRef = useRef(null);
+  const bgRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      bgRef.current,
+      {
+        y: "-20%",
+      },
+      {
+        y: "20%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      }
+    );
+  }, []);
+  
   return (
-    <section className="flex items-center justify-center bg-transparent relative h-screen  w-screen ">
-    <div className="flex flex-col md:grid max-w-full xl:grid-cols-2 md:grid-cols-3 pt-10 ">
+    <section 
+    ref={containerRef}
+    className="flex items-center justify-center bg-transparent relative h-screen  w-screen mb-10">
+    <div className="flex flex-col md:grid max-w-full xl:grid-cols-2 md:grid-cols-3 pt-10">
        {/*Partie Gauche/Bas(mobile) : Texte - description - boutons CTA */}
         <div className="md:h-screen flex flex-col xl:col-span-1 md:col-span-2 items-center justify-center md:order-1 order-2 md:px-10">
           <div className='md:max-w-2xl '>
@@ -41,7 +67,7 @@ const Hero = () => {
     </div>
  
     {/*vidéo */}
-    <div className="absolute w-screen inset-0 -z-10 overflow-hidden">         
+    <div ref={bgRef}  className="absolute w-screen inset-0 -z-10 overflow-hidden">         
       <div className='absolute h-full w-full bg-black opacity-40'></div>
         <video autoPlay loop muted preload="auto" className='w-[100vw] pointer-events-none object-cover h-[110%] -mt-10' playsInline={true} >
              <source src={videoHero} type="video/mp4"/>
