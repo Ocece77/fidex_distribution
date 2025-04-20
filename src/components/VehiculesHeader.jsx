@@ -16,7 +16,7 @@ const logoMarques = [
   
 const VehicleOfferHeader = () => {
   return (
-    <section className="pt-30 fixed -top-1 inset-x-0 z-999">
+    <section className="inset-x-0 z-999">
       <div className="w-full mx-auto py-4 ">
         
         <section className="grid grid-cols-3 gap-5 w-full items-center justify-evenly bg-dark-primary md:px-20 py-7">
@@ -76,7 +76,7 @@ const HeroSection = () => {
 
 const VehiculesHeader = () => {
   return (
-    <section className='pt-80'>
+    <section className='pt-27'>
       <VehicleOfferHeader />
       <HeroSection />
     </section>
