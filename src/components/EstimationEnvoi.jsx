@@ -66,7 +66,7 @@ const EstimateShipping = () => {
           type="number"
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
-          className="w-full p-3 border rounded-lg"
+          className="w-full p-3 border-1 border-neutral-200 rounded-lg"
           placeholder="Poids (g)"
           required
         />
@@ -74,7 +74,7 @@ const EstimateShipping = () => {
         <select
           value={continent}
           onChange={(e) => setContinent(e.target.value)}
-          className="w-full p-3 border rounded-lg"
+          className="w-full p-3 border-1 border-neutral-200 rounded-lg"
           required
         >
           <option value="kinshasa">Kinshasa</option>
@@ -94,7 +94,7 @@ const EstimateShipping = () => {
               onChange={(e) =>
                 setDimensions({ ...dimensions, [dim]: e.target.value })
               }
-              className="w-full p-3 border rounded-lg"
+              className="w-full p-3 border-1 border-neutral-200 rounded-lg "
               placeholder={`${dim} (cm)`}
               required
             />

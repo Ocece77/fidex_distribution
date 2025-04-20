@@ -22,10 +22,14 @@ import { useWindowWidth } from "../utils/useWindowWidth";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/logo.png";
 import AppNavLink from "./AppNavLink";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import about from "../assets/photos/home/about4.jpg"
 import livraison from '../assets/photos/livraison/livraison8.jpg'
 import exploitation from '../assets/photos/exploitationminiere/exploitation2.jpg'
+import expedition from '../assets/photos/expedition/expedition1.jpg'
+import vehicule from '../assets/photos/vehicules/vehicule2.jpg'
+
+
 
 const information = {
   "fidexdistribution@gmail.com": faEnvelope,
@@ -47,13 +51,14 @@ const menuItems = [
     ],
   },
   {
-    title: "expéditions",
-    description: "Explorez nos solutions d’expédition, garanties et pays couverts.",
-    img: "exploitation",
+    title: "véhicules",
+    description: "Parcourez notre gamme de véhicules robustes pour l’industrie et l’expédition.",
+    img: vehicule,
     links: [
-      { label: "Garantie", href: "/expedition/garantie" },
-      { label: "Pays Desservis", href: "/expedition/pays" },
-      { label: "Import / Export", href: "/expedition/import-export" },
+      { label: "Tous nos véhicules", href: "/vehicules" },
+      { label: "Pick-up", href: "/vehicules/pickup" },
+      { label: "SUV & Mini Van", href: "/vehicules/suv" },
+      { label: "4x4", href: "/vehicules/4x4" },
     ],
   },
   {
@@ -67,31 +72,44 @@ const menuItems = [
     ],
   },
   {
+    title: "expéditions",
+    description: "Explorez nos solutions d’expédition, garanties et pays couverts.",
+    img: expedition,
+    links: [
+      { label: "Découvrir nos services", href: "/expedition" },
+      { label: "Garantie", href: "/expedition/garantie" },
+    ],
+  },
+  {
     title: "Exploitation Minière",
     description: "Achetez des concessions, découvrez nos engagements et les minerais disponibles.",
     img: exploitation,
     links: [
-      { label: "Achat de concessions", href: "/exploitationMiniere" },
-      { label: "Nos engagements", href: "/exploitationMiniere/engagements" },
-      { label: "Minerais vendus", href: "/exploitationMiniere/minerais" },
+      { label: "Achat de concessions", href: "/exploitation_miniere" },
+      { label: "Nos engagements", href: "/exploitation_miniere/engagements" },
+      { label: "Minerais vendus", href: "/exploitation_miniere/minerais" },
     ],
   },
-  {
-    title: "véhicules",
-    description: "Parcourez notre gamme de véhicules robustes pour l’industrie et l’expédition.",
-    img: "/images/menu/vehicules.jpg",
-    links: [
-      { label: "Pick-up", href: "/vehicules/pickup" },
-      { label: "Mini Van", href: "/vehicules/minivan" },
-      { label: "4x4", href: "/vehicules/4x4" },
-    ],
-  },
+
 ];
 
 const NavbarComponent = () => {
+
+  const {pathname} = useLocation();
   const currScreenWidth = useWindowWidth();
-  const [barStyle, setBarStyle] = useState("bg-transparent text-white border-b-1");
-  const [navStyle, setNavStyle] = useState("bg-transparent text-white");
+  const isVehiculePath = pathname.startsWith("/vehicules");
+
+  // Initialisation propre (évite flash de style)
+  const [barStyle, setBarStyle] = useState(
+    isVehiculePath
+      ? "bg-primary text-white"
+      : "bg-transparent text-white border-b-1"
+  );
+  const [navStyle, setNavStyle] = useState(
+    isVehiculePath
+      ? "bg-white shadow-md"
+      : "bg-transparent text-white"
+  );
   const [activeMenu, setActiveMenu] = useState(null);
   const dropdownRef = useRef(null);
 
@@ -100,7 +118,7 @@ const NavbarComponent = () => {
     setActiveMenu(isOpening ? index : null);
   };
 
-  // Fermer le mega menu si clic à l’extérieur
+  // Fermer menu si clic à l’extérieur
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -111,26 +129,32 @@ const NavbarComponent = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Gestion couleurs dynamiques
+  // Gérer les styles dynamiques selon scroll, menu et page
   useEffect(() => {
     const updateNavStyle = () => {
       const scrolled = window.scrollY > 50;
       const menuOpen = activeMenu !== null;
 
-      if (menuOpen || scrolled) {
+      if (isVehiculePath) {
         setBarStyle("bg-primary text-white");
         setNavStyle("bg-white shadow-md");
       } else {
-        setBarStyle("bg-transparent text-white border-b-1");
-        setNavStyle("bg-transparent text-white");
+        if (scrolled || menuOpen) {
+          setBarStyle("bg-primary text-white");
+          setNavStyle("bg-white shadow-md");
+        } else {
+          setBarStyle("bg-transparent text-white border-b-1");
+          setNavStyle("bg-transparent text-white");
+        }
       }
     };
 
     updateNavStyle();
     window.addEventListener("scroll", updateNavStyle);
     return () => window.removeEventListener("scroll", updateNavStyle);
-  }, [activeMenu]);
+  }, [activeMenu, pathname]);
 
+  
   return (
     <div className="fixed inset-x-0 z-9999">
       {/* Barre info top */}
@@ -228,7 +252,7 @@ const NavbarComponent = () => {
                             <Link
                               key={idx}
                               to={link.href}
-                              className="hover:text-primary flex items-center gap-2 hover:gap-3 transition-all"
+                              className="hover:text-primary text-[16px] flex items-center gap-2 hover:gap-3 transition-all"
                               onClick={() => toggleMenu(index)}>
                               {link.label}
                               <FontAwesomeIcon icon={faChevronRight} size="xs" />

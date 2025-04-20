@@ -9,7 +9,7 @@ const SearchBar = () => {
   };
 
   return (
-    <section className='grid grid-cols-1 gap-10'>
+    <section className='grid grid-cols-1 gap-10 py-30'>
      {/*Titre*/}
        <div className="flex flex-col gap-4 w-full justify-center items-center text-center md:px-10">  
             <h1 className="lg:text-6xl text-4xl font-bold text-primary">Rechercher un colis</h1>

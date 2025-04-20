@@ -8,8 +8,6 @@ export default function AppNavLink({  to, texte }) {
 
   const [scrollStyle , setScrollStyle] = useState(false)
 
-
-
   const listenScrollEvent = () => {
     window.scrollY > 50 ? setScrollStyle(true) : setScrollStyle(false);
   };

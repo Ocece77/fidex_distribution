@@ -9,12 +9,12 @@ const gridCards = `md:grid-cols-${cards.length}`
 
   return (
     <div className={`py-10 ${dark ?"bg-dark-primary": "bg-white"}`}>
-      <div className="grid grid-cols-1 mx-auto max-w-7xl lg:px-8 md:px-20 px-5 text-center gap-5">
+      <div className="grid grid-cols-1 mx-auto max-w-7xl lg:px-8 px-5 text-center gap-5">
         <Reveal>
           {/*Titre*/}
           <div className="flex flex-col gap-4 w-full justify-center items-center text-center md:px-10">  
             <h1 className={`lg:text-6xl text-4xl font-bold ${dark ?"text-white": "text-primary"}`}>{titre}</h1>
-            <p className={`text-lg font-light max-w-2xl ${dark ?"text-white": "text-primary"}`}>{desc}</p>
+            <p className={`text-lg font-light max-w-2xl ${dark ?"text-white": "text-dark-primary"}`}>{desc}</p>
           </div>
         </Reveal>
 
@@ -30,9 +30,9 @@ const gridCards = `md:grid-cols-${cards.length}`
                             <FontAwesomeIcon className="object-cover h-full w-full fa-5x" icon={card.cardsLogo} alt="icon" color={`${dark ?"white": "#002265"}`}  />
                         </div>
 
-                        <div className="grid grid-cols-1 gap-3 px-5 ">
-                            <p className={`text-primary font-extrablack text-2xl ${dark ?"text-white": "text-primary"}`}>{card.cardsTitre}</p>
-                            <p className="h-25 text-neutral-500 font-light">{card.cardsDesc}</p>
+                        <div className="grid grid-cols-1 gap-3 px-5">
+                            <p className={`text-primary font-extrablack lg:text-xl md:text-sm text-2xl ${dark ?"text-white": "text-primary"}`}>{card.cardsTitre}</p>
+                            <p className="h-25 text-neutral-500 font-light lg:text-base md:text-[10px] text-md">{card.cardsDesc}</p>
                         </div>
                    
                     </div>
@@ -44,7 +44,7 @@ const gridCards = `md:grid-cols-${cards.length}`
 
         <Reveal>
          <div className='flex justify-center '>
-             <Link to={btn.btnLink} className="w-fit flex items-center px-5 py-3 rounded-lg bg-primary text-white transition-all hover:text-white hover:bg-red-800 hover:gap-5 gap-2  ">
+             <Link to={btn.btnLink || "/contacts"} className="w-fit flex items-center px-5 py-3 rounded-lg bg-primary text-white transition-all hover:text-white hover:bg-red-800 hover:gap-5 gap-2  ">
                 {btn.btnTitre|| "Se rendre en agence"}
                 <svg className="w-4 h-4 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                 </Link>

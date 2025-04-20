@@ -1,13 +1,20 @@
 import { useParams } from "react-router-dom";
+import VehiculeDetailsSection from "../../components/VehiculeDetailsSection";
+import VehiculesHeader from "../../components/vehiculesHeader";
+import VehiculesSection from "../../components/vehiculesSection";
+import Map from "../../components/Map";
+import ContactSection from "../../components/ContactSection";
 
 function VehiculeDetails() {
   const { id } = useParams();
 
   return (
-    <div>
-      <h1>Détails du véhicule {id}</h1>
-      {/* Utiliser `id` ici pour fetch les infos via une API par exemple */}
-    </div>
+    <section>
+      <VehiculesHeader/>
+      <VehiculeDetailsSection id={id}/>
+      <Map/>
+     <ContactSection/>
+    </section>
   );
 }
 
