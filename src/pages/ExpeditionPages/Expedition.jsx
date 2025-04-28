@@ -5,7 +5,7 @@ import HeaderComponent from '../../components/HeaderComponent'
 import StepCardsSection from '../../components/StepCardsSection'
 import { faPlane, faShip, faTruckFast } from '@fortawesome/free-solid-svg-icons'
 
-import expedition1 from "../../assets/photos/expedition/expedition1.jpg"
+import expedition1 from "../../assets/photos/expedition/expedition1.jpeg"
 import expedition2 from "../../assets/photos/expedition/expedition2.jpg"
 
 import garantie from "../../assets/photos/expedition/garantie3.jpg"

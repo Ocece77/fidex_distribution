@@ -11,21 +11,20 @@ import CardsSection from '../components/CardsSection'
 import QuoteSection from '../components/QuoteSection'
 import Carousel from '../components/Carousel'
 
-import photo1 from '../assets/photos/exploitationminiere/exploitation1.jpg'
 import photo2 from '../assets/photos/about/aboutgrid.png'
 
-import expedition1 from "../assets/photos/expedition/expedition1.jpg"
+import expedition1 from "../assets/photos/expedition/expedition1.jpeg"
 
 
-import livraison1 from '../assets/photos/livraison/livraison1.png'
-import vehicule1 from '../assets/photos/vehicules/vehicule1.jpg'
+import livraison1 from '../assets/photos/livraison/livraison1.jpeg'
+import vehicule1 from '../assets/photos/vehicules/vehicule1.jpeg'
 
-import exploitation1 from '../assets/photos/exploitationminiere/exploitation1.jpg'
+import exploitation1 from '../assets/photos/exploitationminiere/exploitation1.jpeg'
 import exploitation2 from '../assets/photos/exploitationminiere/exploitation3.jpg'
 
 import valeur1 from '../assets/photos/home/valeur1.jpg'
 import valeur2 from '../assets/photos/home/valeur2.jpg'
-import valeur3 from '../assets/photos/home/valeur3.jpg'
+import valeur3 from '../assets/photos/home/valeur3.jpeg'
 
 const sectionTexte1 = "L'innovation n'est pas simplement une nouvelle idée, mais une force qui transforme les défis en opportunités.   C'est l'art de repenser le présent pour créer un avenir meilleur, plus efficace et durable. "
 const sectionTexte2 = "Découvrir notre vision "
@@ -37,7 +36,7 @@ const cardsList1 = [
     cardsLogo:faCar,
     cardsDesc: 'Explorez notre sélection de véhicules neufs de qualité',
     cardsImg: vehicule1,
-    cardsLink: 'Achetez maintenant',
+    cardsLink: '/vehicules',
   },
     {
       id: 2,
@@ -45,7 +44,7 @@ const cardsList1 = [
       cardsLogo:faBoxOpen,
       cardsDesc: 'Profitez de notre service rapide et fiable pour la livraison et le retrait de vos colis',
       cardsImg: livraison1,
-      cardsLink: 'Trouver une agence',
+      cardsLink: '/livraison',
     }, 
     {
       id: 3,
@@ -53,7 +52,7 @@ const cardsList1 = [
       cardsLogo: faHandshake,
       cardsDesc: 'Nous croyons en l\'intégrité, l\'innovation et le respect, des principes qui guident chaque action que nous entreprenons.',
       cardsImg: expedition1, 
-      cardsLink: 'Explorer nos valeurs',
+      cardsLink: '/expedition',
     },
     {
       id: 4,
@@ -61,7 +60,7 @@ const cardsList1 = [
       cardsLogo:faCoins,
       cardsDesc: 'Nous trouvons, négocions et gérons les démarches pour vous.',
       cardsImg: exploitation1,
-      cardsLink: 'Acquérir des ressources',
+      cardsLink: '/exploitation_miniere',
     },
 
 
@@ -73,7 +72,7 @@ const cardsList2 = [
     cardsLogo: faHeart,
     cardsDesc: 'Nous nous engageons à offrir des solutions de qualité, durables et respectueuses de l’environnement.',
     cardsImg: valeur1, 
-    cardsLink: 'En savoir plus',
+    cardsLink: '/about',
   },
   {
     id: 2,
@@ -81,7 +80,7 @@ const cardsList2 = [
     cardsLogo: faBook,
     cardsDesc: 'Guidés par l\'innovation, le respect et la collaboration, nous avons construit une entreprise engagée.',
     cardsImg: valeur2, 
-    cardsLink: 'Découvrir notre parcours',
+    cardsLink: '/about',
   },
   {
     id: 3,
@@ -89,7 +88,7 @@ const cardsList2 = [
     cardsLogo: faHandshake,
     cardsDesc: 'Nous croyons en l\'intégrité, l\'innovation et le respect, des principes qui guident chaque action que nous entreprenons.',
     cardsImg: valeur3, 
-    cardsLink: 'Explorer nos valeurs',
+    cardsLink: '/about',
   },
   
 ];
@@ -114,7 +113,7 @@ const Homepage = () => {
                     cards = {cardsList1}
                     />
 
-      <QuoteSection texte={sectionTexte1} img={photo1} isQuote={true}/>
+      <QuoteSection texte={sectionTexte1} img={exploitation1} isQuote={true}/>
 
       <Carousel titre="Explorez notre gammes de véhicules neufs"
                 desc="Découvrez une sélection variée de véhicules alliant performance, confort et fiabilité, adaptés à vos besoins et à vos attentes."
