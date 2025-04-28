@@ -1,89 +1,116 @@
 import { Button, Label, TextInput, Textarea } from "flowbite-react";
 import photo1 from "../assets/photos/about/photoLocalFidex2.jpeg";
-
+import DOMPurify from "dompurify"; // Import de DOMPurify
 
 const ContactSection = () => {
+
+  // Fonction de gestion de l'envoi du formulaire
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Empêcher l'envoi par défaut du formulaire
+
+    // Récupération des valeurs du formulaire
+    const name = event.target.name.value;
+    const firstName = event.target.firstName.value;
+    const email = event.target.email.value;
+    const phone = event.target.phone.value;
+    const subject = event.target.subject.value;
+    const message = event.target.message.value;
+
+    // Assainir les données -> DOMPurify
+    const sanitizedMessage = DOMPurify.sanitize(message);
+
+    // données assainies pour le serveur
+    console.log("Nom:", name);
+    console.log("Prénom:", firstName);
+    console.log("Email:", email);
+    console.log("Téléphone:", phone);
+    console.log("Sujet:", subject);
+    console.log("Message assaini:", sanitizedMessage);
+
+  
+    // eslint-disable-next-line no-unused-vars
+    const formData = {
+      name,
+      firstName,
+      email,
+      phone,
+      subject,
+      message: sanitizedMessage,
+    };
+  };
+
   return (
-    <section className="flex justify-center items-center p-10 ">
+    <section className="flex justify-center items-center p-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 max-w-7xl gap-5">
+        {/* Partie gauche - photo */}
+        <div className="h-full overflow-hidden">
+          <img src={photo1} alt="photo des locaux" className="h-full object-cover" />
+        </div>
 
-    <div className="grid grid-cols-1 lg:grid-cols-2 max-w-7xl gap-5">
-       {/*partie gauche - photo*/}
-         <div className="h-full overflow-hidden">
-           <img src={photo1} alt="photo des locaux" className="h-full object-cover" />
-         </div>
-
-      {/*partie droite - formulaire */}
-      <form className="flex flex-col gap-4 bg-white lg:p-6 rounded-lg">
-
-        {/*Titre*/}
-          <div className="flex flex-col gap-4">  
+        {/* Partie droite - formulaire */}
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4 bg-white lg:p-6 rounded-lg">
+          {/* Titre */}
+          <div className="flex flex-col gap-4">
             <h1 className="lg:text-6xl text-4xl font-bold text-primary">Contactez-nous dès aujourd'hui !</h1>
             <p className="text-sm font-light">N’hésitez pas à nous contacter, notre équipe est prête à vous aider et à vous accompagner dans vos projets.</p>
           </div>
 
-        {/*Nom et email */}
+          {/* Nom et prénom */}
           <div className="grid lg:grid-cols-2 gap-5">
             <div>
               <div className="mb-2 block">
                 <Label htmlFor="name">Nom*</Label>
               </div>
-              <TextInput id="name" type="text" placeholder="Dupont" required shadow />
+              <TextInput id="name" name="name" type="text" placeholder="Dupont" required shadow />
             </div>
             <div>
               <div className="mb-2 block">
-                <Label htmlFor="name">Prénom*</Label>
+                <Label htmlFor="firstName">Prénom*</Label>
               </div>
-              <TextInput id="name" type="text" placeholder="Jean" required shadow />
+              <TextInput id="firstName" name="firstName" type="text" placeholder="Jean" required shadow />
             </div>
-
-      
           </div>
 
-        {/* email et téléphone */}
+          {/* Email et téléphone */}
           <div className="grid lg:grid-cols-2 gap-5">
             <div>
-                <div className="mb-2 block">
-                  <Label htmlFor="email">Email*</Label>
-                </div>
-                <TextInput id="email" type="email" placeholder="jean@exemple.com" required shadow />
+              <div className="mb-2 block">
+                <Label htmlFor="email">Email*</Label>
               </div>
-              
-              <div>
-                <div className="mb-2 block">
-                  <Label htmlFor="phone">Téléphone</Label>
-                </div>
-                <TextInput id="phone" type="tel" placeholder="+243 123 456 789" shadow />
+              <TextInput id="email" name="email" type="email" placeholder="jean@exemple.com" required shadow />
+            </div>
+
+            <div>
+              <div className="mb-2 block">
+                <Label htmlFor="phone">Téléphone</Label>
               </div>
-      
+              <TextInput id="phone" name="phone" type="tel" placeholder="+243 123 456 789" shadow />
+            </div>
           </div>
 
-        {/* objet*/}
+          {/* Sujet */}
           <div>
             <div className="mb-2 block">
               <Label htmlFor="subject">Sujet</Label>
             </div>
-            <TextInput id="subject" type="text" placeholder="Sujet de votre message" shadow />
+            <TextInput id="subject" name="subject" type="text" placeholder="Sujet de votre message" shadow />
           </div>
 
-        {/* contenue du message */}
+          {/* Contenu du message */}
           <div>
             <div className="mb-2 block">
               <Label htmlFor="message">Message</Label>
             </div>
-            <Textarea id="message" rows={4} placeholder="Votre message ici..." required />
+            <Textarea id="message" name="message" rows={4} placeholder="Votre message ici..." required />
           </div>
 
-        {/* bouton pour envoyer */}
+          {/* Bouton pour envoyer */}
           <Button type="submit" className="bg-primary">
             Envoyer le message
           </Button>
-          
-      </form>
-
-    </div>
-     
+        </form>
+      </div>
     </section>
-
   );
 };
 
