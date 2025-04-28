@@ -17,8 +17,7 @@ const logoMarques = [
 const VehicleOfferHeader = () => {
   return (
     <section className="inset-x-0 z-999">
-      <div className="w-full mx-auto py-4 ">
-        
+      <div className="w-full mx-auto ">
         <section className="grid grid-cols-3 gap-5 w-full items-center justify-evenly bg-dark-primary md:px-20 py-7">
           <Link to="/vehicules/suv" className="flex flex-col items-center text-white hover:text-red-900 transition-all ">
             <FontAwesomeIcon icon={faCar} className='fa-3x'/>
@@ -52,7 +51,7 @@ const HeroSection = () => {
   return (
     <section className='relative h-100 overflow-hidden flex items-center justify-center'>
     <div
-    className="absolute top-0 inset-x-0 w-full h-full bg-cover  bg-center z-0 brightness-70"
+    className="absolute top-0 inset-x-0 w-full h-full bg-cover bg-center z-0 brightness-70"
     style={{
          backgroundImage: `url(${vehicule})` 
     }}
@@ -76,7 +75,7 @@ const HeroSection = () => {
 
 const VehiculesHeader = () => {
   return (
-    <section className='pt-27'>
+    <section className='pt-30 bg-dark-primary'>
       <VehicleOfferHeader />
       <HeroSection />
     </section>

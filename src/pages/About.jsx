@@ -8,7 +8,7 @@ import InfoSection from '../components/InfoSection'
 import photo1 from '../assets/photos/about/photoLocalFidex2.jpeg'
 import about1 from '../assets/photos/home/about2.jpg'
 import about2 from '../assets/photos/home/about5.jpg'
-import valeur3 from '../assets/photos/home/valeur3.jpg'
+import valeur3 from '../assets/photos/home/valeur3.jpeg'
 import local1 from '../assets/photos/about/photoLocalFidex.jpeg'
 import local2 from '../assets/photos/about/photoLocalFidex2.jpeg'
 import local3 from '../assets/photos/about/photoLocalFidex3.jpeg'
@@ -60,7 +60,7 @@ const About = () => {
 
 
   return (
-    <div className='grid grid-cols-1 gap-30'>
+    <div className='grid grid-cols-1 gap-30 '>
       <HeaderComponent
        titre="À propos de nous"
        backgroundImage={photo1} 
@@ -70,7 +70,7 @@ const About = () => {
 
       {/*Qui sommes-nous section */}
       <Reveal>
-          <div ref={numberContainerRef} className='grid lg:grid-cols-2 h-full gap-10 max-w-7xl mx-auto px-20'>
+          <div ref={numberContainerRef} className='grid lg:grid-cols-2 h-full gap-10 max-w-7xl mx-auto lg:px-20 px-2'>
                 {/*col de gauche */}
                 <div className="flex flex-col gap-5 justify-center items-center lg:text-start text-center  mx-auto max-w-2xl">
                   

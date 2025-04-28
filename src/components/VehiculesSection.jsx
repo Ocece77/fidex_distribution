@@ -20,7 +20,7 @@ const VehiculesSection = ({cat="all"}) => {
 
 
   return (
-    <div className="p-4 space-y-8">
+    <div className="p-4 space-y-8 h-fit">
       {/* Filtres */}
       <div className="flex flex-wrap gap-4 justify-center bg-white p-4 rounded shadow">
         <FilterButton

@@ -42,12 +42,12 @@ const ParallaxSection = ({titre , desc, btn={} , img}) => {
       ></div>
 
      {/*contenue de gauche */}
-      <div className="relative z-10 grid grid-cols-12 w-full h-full md:ml-10 md:py-10 p-5">
+      <div className="relative z-10 grid grid-cols-12 w-full h-full md:ml-10 md:py-15 p-5">
         <div className="h-full lg:col-span-6 md:col-span-7 col-span-full bg-white rounded-lg shadow-[0_0px_10px_rgba(150,150,150,0.15)] ">
              <div className='grid grid-cols-1 flex-col w-full h-full rounded-lg overflow-hidden p-10 gap-3'>
 
                         <div className="grid grid-cols-1 gap-3">
-                            <p className='text-primary font-extrablack xl:text-5xl lg:text-4xl text-2xl'>{titre}</p>
+                            <p className='text-primary font-extrablack xl:text-5xl lg:text-4xl text-xl'>{titre}</p>
                             <p className="h text-neutral-500 font-light">{desc}</p>
                         </div>
                    

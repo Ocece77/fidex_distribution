@@ -10,7 +10,7 @@ const InfoSection = ({img , subtitre , titre , desc , btn , reversed=false , dar
       <div className='grid md:grid-cols-2 h-full gap-10 max-w-7xl mx-auto'>
             {/*col de gauche */}
               <div className={`flex lg:justify-end lg:pr-10 justify-center ${reversed ? "order-2" : ""}`} >
-                <img src={img} alt={`image section - ${titre}`} className="w-full md:h-[60vh] max-w-lg object-cover"/>
+                <img src={img} alt={`image section - ${titre}`} className="w-full md:h-[40vh] max-w-lg object-cover"/>
               </div>
 
           {/*col de droite */}

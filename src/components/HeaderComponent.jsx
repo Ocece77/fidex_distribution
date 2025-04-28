@@ -1,31 +1,41 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import PropTypes from 'prop-types';
 import React, { useRef } from 'react'
 import { Link } from 'react-router-dom';
+import { useWindowWidth } from '../utils/useWindowWidth';
 
 const HeaderComponent = ({titre, backgroundImage, desc, btns}) => {
+  
   const containerRef = useRef(null);
   const bgRef = useRef(null);
+  const currWidth = useWindowWidth();
 
   useGSAP(() => {
-    gsap.fromTo(
-      bgRef.current,
-      {
-        y: "-13.8%",
-      },
-      {
-        y: "20%",
-        ease: "none",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top bottom",
-          end: "2000",
-          scrub: true,
-        },
-      }
-    );
-  }, []);
+    gsap.registerPlugin(ScrollTrigger);
+
+    if (currWidth < 768) return;
+  
+      gsap.fromTo(
+        bgRef.current,
+        { y: "-20%" }, // Position initiale avant le défilement
+        {
+          y: "20%", // Position après le défilement
+          ease: "none", // Pas d'accélération/décélération
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top bottom", // Quand le haut de l'élément touche le bas de la fenêtre
+            end: "bottom top", // Quand le bas de l'élément touche le haut de la fenêtre
+            scrub: true, // Animation synchronisée avec le défilement
+          },
+        }
+      );
+  
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, [currWidth]);
   
 
   return (

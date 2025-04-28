@@ -1,6 +1,6 @@
 import React from 'react'
 
-import photo1 from '../../assets/photos/livraison/livraison1.png'
+import photo1 from '../../assets/photos/livraison/livraison1.jpeg'
 import photo2 from '../../assets/photos/livraison/livraison2.jpg'
 import photo4 from '../../assets/photos/livraison/livraison4.jpg'
 import photo5 from '../../assets/photos/livraison/livraison5.jpg'

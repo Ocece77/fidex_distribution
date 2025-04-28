@@ -11,7 +11,7 @@ const CardsSection = ({titre="titre", desc="description" , cards=[]}) => {
         <Reveal>
           {/*Titre*/}
           <div className="flex flex-col gap-4 w-full justify-center items-center text-center md:px-10">  
-            <h1 className="lg:text-6xl text-4xl font-bold text-primary">{titre}</h1>
+            <h1 className="lg:text-6xl md:text-4xl text-2xl font-bold text-primary">{titre}</h1>
             <p className="text-lg font-light max-w-2xl">{desc}</p>
           </div>
         </Reveal>
@@ -28,8 +28,8 @@ const CardsSection = ({titre="titre", desc="description" , cards=[]}) => {
                          <img className="object-cover w-full h-full" src={card.cardsImg} alt={card.cardsTitre}/>
                        </div>
 
-                        <div className="grid grid-cols-1 px-5 md:gap-2 gap-3">
-                            <p className='text-primary font-extrablack text-3xl md:text-xl lg:text-3xl h-10 md:h-18 capitalize'>{card.cardsTitre}</p>
+                        <div className="grid grid-cols-1 lg:px-5 px-2 md:gap-2 gap-5">
+                            <p className='text-primary font-extrablack text-2xl md:text-xl lg:text-3xl h-10 md:h-18 capitalize leading-6.5'>{card.cardsTitre}</p>
                            {card.cardsDesc &&  <p className="md:h-25 text-neutral-500 font-light lg:text-[14px] text-sm">{card.cardsDesc}</p>}
                         </div>
                    

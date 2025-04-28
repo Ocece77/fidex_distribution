@@ -7,15 +7,15 @@ const QuoteSection = ({titre ,texte ="Exemple de contenu à mettre dans la secti
     <div className='flex items-center mx-auto bg-gray-100 h-fit py-20'>
         <div className='relative'>
 
-            <div className='grid lg:grid-cols-2 items-center justify-center  mx-auto '>
+            <div className='grid lg:grid-cols-2 items-center justify-center mx-auto'>
               
                     {/*partie gauche - texte */}
                     <div className={`flex col-span-1  h-[60vh] lg:h-[90%]  items-center ${reversed ? "order-2 lg:-ml-60 lg:px-30" : ""}`}>
                         <div className="flex flex-col justify-center h-full lg:px-20 md:p-10 p-5 bg-white border border-gray-200 lg:rounded-lg shadow-sm relative lg:-mr-28 gap-5 ">
-                            <h1 className="text-4xl font-bold tracking-tight text-primary ">
+                            <h1 className="lg:text-4xl md:text-3xl text-2xl font-bold tracking-tight text-primary ">
                               {titre}
                             </h1>
-                            <h5 className={`${isQuote && "font-bold"} text-2xl md:text-4xl lg:text-3xl xl:text-3xl lg:p-0 md:p-5  tracking-tight text-dark-primary`}>
+                            <h5 className={`${isQuote && "font-bold"} text-xl md:text-2xl lg:text-3xl xl:text-3xl lg:p-0 md:p-5  tracking-tight text-dark-primary`}>
                                {texte}
                             </h5>
                              
@@ -44,7 +44,7 @@ const QuoteSection = ({titre ,texte ="Exemple de contenu à mettre dans la secti
                       <img
                             src={img}
                             alt="image"
-                            className='h-170 object-cover w-full lg:rounded-lg'
+                            className='max-h-70 lg:max-h-170 object-cover w-full lg:rounded-lg '
                         />
                       </div>
                

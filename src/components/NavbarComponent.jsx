@@ -26,7 +26,7 @@ import { Link, useLocation } from "react-router-dom";
 import about from "../assets/photos/home/about4.jpg"
 import livraison from '../assets/photos/livraison/livraison8.jpg'
 import exploitation from '../assets/photos/exploitationminiere/exploitation2.jpg'
-import expedition from '../assets/photos/expedition/expedition1.jpg'
+import expedition from '../assets/photos/expedition/expedition1.jpeg'
 import vehicule from '../assets/photos/vehicules/vehicule2.jpg'
 
 
@@ -96,27 +96,39 @@ const menuItems = [
 const NavbarComponent = () => {
 
   const {pathname} = useLocation();
-  const currScreenWidth = useWindowWidth();
+  const currScreenWidth = useWindowWidth(); 
   const isVehiculePath = pathname.startsWith("/vehicules");
+  const [navLinkColor , setNavLinkColor] = useState(null);
+  const [activeMenu, setActiveMenu] = useState(null);
+
+  const dropdownRef = useRef(null);
+  const NavbarCollapseRef = useRef(null);
 
   // Initialisation propre (évite flash de style)
   const [barStyle, setBarStyle] = useState(
-    isVehiculePath
+    isVehiculePath || currScreenWidth < 768
       ? "bg-primary text-white"
       : "bg-transparent text-white border-b-1"
   );
   const [navStyle, setNavStyle] = useState(
-    isVehiculePath
+    isVehiculePath || currScreenWidth < 768
       ? "bg-white shadow-md"
       : "bg-transparent text-white"
   );
-  const [activeMenu, setActiveMenu] = useState(null);
-  const dropdownRef = useRef(null);
 
+  //ouvrir le sous-menu
   const toggleMenu = (index) => {
     const isOpening = activeMenu !== index;
     setActiveMenu(isOpening ? index : null);
+    console.log(activeMenu)
   };
+
+  //fermer la navbar sur tablette et mobile lors d'un click sur un lien
+  const toggleNav = () =>{
+    NavbarCollapseRef.current.classList.add("hidden")
+  }
+
+
 
   // Fermer menu si clic à l’extérieur
   useEffect(() => {
@@ -125,6 +137,7 @@ const NavbarComponent = () => {
         setActiveMenu(null);
       }
     };
+    
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
@@ -134,26 +147,31 @@ const NavbarComponent = () => {
     const updateNavStyle = () => {
       const scrolled = window.scrollY > 50;
       const menuOpen = activeMenu !== null;
-
-      if (isVehiculePath) {
+      const isMobile = currScreenWidth < 768;
+  
+      if (isVehiculePath || isMobile) {
+        // toujours un style fixe sur mobile ou la page véhicules
         setBarStyle("bg-primary text-white");
         setNavStyle("bg-white shadow-md");
+        setNavLinkColor('text-white');
+      } else if (scrolled || menuOpen) {
+        // si on scrolle ou ouvre un menu sur desktop non-vehicule
+        setBarStyle("bg-primary text-white");
+        setNavStyle("bg-white shadow-md");
+        setNavLinkColor('text-neutral-900');
       } else {
-        if (scrolled || menuOpen) {
-          setBarStyle("bg-primary text-white");
-          setNavStyle("bg-white shadow-md");
-        } else {
-          setBarStyle("bg-transparent text-white border-b-1");
-          setNavStyle("bg-transparent text-white");
-        }
+        // état initial transparent
+        setBarStyle("bg-transparent text-white border-b-1");
+        setNavStyle("bg-transparent text-white");
+        setNavLinkColor('text-white');
       }
     };
-
-    updateNavStyle();
+  
+    updateNavStyle(); // appeler directement au montage
     window.addEventListener("scroll", updateNavStyle);
     return () => window.removeEventListener("scroll", updateNavStyle);
-  }, [activeMenu, pathname]);
-
+  }, [activeMenu, pathname, currScreenWidth, isVehiculePath]);
+  
   
   return (
     <div className="fixed inset-x-0 z-9999">
@@ -177,12 +195,7 @@ const NavbarComponent = () => {
         </div>
 
         <div className="flex gap-5  items-center justify-center">
-          <div>
-            <Link 
-            to="/contacts"
-            className="font-light text-[10px] md:text-sm hover:underline transition-all ">
-              Nous contacter</Link>
-          </div>
+
           <Dropdown
             dismissOnClick={false}
             renderTrigger={() => (
@@ -198,9 +211,9 @@ const NavbarComponent = () => {
       </div>
 
       {/* Barre principale */}
-      <Navbar fluid className={`${navStyle} py-2`}>
+      <Navbar fluid className={`${navStyle} py-1`}>
         <NavbarBrand href="/">
-          <img src={logo} className="h-20 object-cover" alt="Fidex Logo" />
+          <img src={logo} className="lg:h-20 h-12 object-cover" alt="Fidex Logo" />
         </NavbarBrand>
 
         <div className="md:flex md:gap-3 items-center">
@@ -219,7 +232,8 @@ const NavbarComponent = () => {
             className="hidden md:flex list-none lg:gap-6 gap-2 lg:text-[14px] text-[12px] "
             ref={dropdownRef}
           >
-            <AppNavLink to="/" texte="Accueil" />
+            <AppNavLink to="/" texte="Accueil" className={navLinkColor}/>
+     
             {menuItems.map((item, index) => (
               <div key={index} className="flex flex-col items-start ">
                 <button
@@ -278,7 +292,14 @@ const NavbarComponent = () => {
         </div>
 
         {/* Mobile menu */}
-        <NavbarCollapse className="relative md:hidden">
+        <NavbarCollapse ref={NavbarCollapseRef} className="relative md:hidden">
+          
+        <div className="flex mb-4 items-center capitalize font-medium cursor-pointer gap-2 hover:gap-3 text-red-700 hover:text-red-800 transition-all ">
+            <Link 
+            to="/">Accueil
+              </Link>
+          </div>
+
           {menuItems.map((item, i) => (
             <div key={i} className="mb-2">
               <details className="group flex flex-col gap-3">
@@ -290,7 +311,8 @@ const NavbarComponent = () => {
                   {item.links.map((link, j) => (
                     <li key={j}>
                       <Link to={link.href} 
-                      className="hover:text-red-800 transition-all"            
+                      className="hover:text-red-800 transition-all"    
+                      onClick={()=>{toggleNav()}}        
                       >
                         {link.label}
                       </Link>
@@ -301,6 +323,16 @@ const NavbarComponent = () => {
               </details>
           </div>
           ))}
+
+          <div  className="flex items-center capitalize font-medium cursor-pointer gap-2 hover:gap-3 hover:text-red-800 transition-all ">
+            <Link 
+            to="/contacts">
+              Nous contacter
+              </Link>
+              <FontAwesomeIcon icon={faChevronRight} size="sm" />
+          </div>
+
+          
           <div className="absolute bg-neutral-600 opacity-50 h-screen w-[110vw] -left-10 -z-10" />
         </NavbarCollapse>
       </Navbar>

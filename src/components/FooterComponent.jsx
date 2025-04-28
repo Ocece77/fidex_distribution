@@ -67,25 +67,27 @@ const FooterComponent = () => {
             <div>
               <FooterTitle title="Fidex" className='text-white'/>
               <FooterLinkGroup col>
-                <FooterLink href="#">À propos</FooterLink>
-                <FooterLink href="#">Contactez-nous</FooterLink>
+                <FooterLink href="/about">À propos</FooterLink>
+                <FooterLink href="/contacts">Contactez-nous</FooterLink>
               </FooterLinkGroup>
             </div>
             <div>
               <FooterTitle title="Véhicules neufs" className='text-white'/>
               <FooterLinkGroup col>
-                <FooterLink href="#">Toutes nos véhicules</FooterLink>
-                <FooterLink href="#">SUV & 4X4</FooterLink>
-                <FooterLink href="#">Mini Van et bus</FooterLink>
-                <FooterLink href="#">Pick up</FooterLink>
+                <FooterLink href="/vehicules">Toutes nos véhicules</FooterLink>
+                <FooterLink href="/vehicules/suv">SUV & 4X4</FooterLink>
+                <FooterLink href="/vehicules/minibus">Mini Van et bus</FooterLink>
+                <FooterLink href="/vehicules/pickup">Pick up</FooterLink>
               </FooterLinkGroup>
             </div>
 
             <div>
               <FooterTitle title="Exploitation Minière" className='text-white'/>
               <FooterLinkGroup col>
-                <FooterLink href="#">Solutions pétrolière</FooterLink>
+                <FooterLink href="/exploitation_miniere">Solutions pétrolière</FooterLink>
                 <FooterLink href="#">Achat concession minière</FooterLink>
+                <FooterLink href="#">Nos engagements</FooterLink>
+                <FooterLink href="/exploitation_miniere/minerais">Minerais vendues</FooterLink>
               </FooterLinkGroup>
             </div>
 

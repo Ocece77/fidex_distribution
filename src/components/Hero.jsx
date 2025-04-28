@@ -5,17 +5,21 @@ import fallbackImg from '../assets/photos/about/photoLocalFidex2.jpeg'
 import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { useWindowWidth } from '../utils/useWindowWidth'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const containerRef = useRef(null);
   const bgRef = useRef(null);
+  const currWidth = useWindowWidth();
 
   useGSAP(() => {
+    if (currWidth < 768) return;
+  
     gsap.fromTo(
       bgRef.current,
-      {
-        y: "-20%",
-      },
+      { y: "-20%" },
       {
         y: "20%",
         ease: "none",
@@ -27,7 +31,12 @@ const Hero = () => {
         },
       }
     );
-  }, []);
+  
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, [currWidth]);
+  
   
   return (
     <section 
