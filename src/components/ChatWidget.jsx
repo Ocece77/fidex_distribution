@@ -54,7 +54,7 @@ const ChatWidget = () => {
       path: "process_options"
     },
     end: {
-      message: "Merci, au revoir !",
+      message: "J'espère que j'ai répondu à toutes vos questions, au revoir !",
       chatDisabled: true
     }
   }
