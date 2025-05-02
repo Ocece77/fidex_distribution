@@ -47,8 +47,8 @@ const ParallaxSection = ({titre , desc, btn={} , img}) => {
              <div className='grid grid-cols-1 flex-col w-full h-full rounded-lg overflow-hidden p-10 gap-3'>
 
                         <div className="grid grid-cols-1 gap-3">
-                            <p className='text-primary font-extrablack xl:text-5xl lg:text-4xl text-xl'>{titre}</p>
-                            <p className="h text-neutral-500 font-light">{desc}</p>
+                            <p className='text-primary font-extrablack xl:text-5xl lg:text-4xl text-3xl'>{titre}</p>
+                            <p className="lg:text-base text-lg text-neutral-500 font-light">{desc}</p>
                         </div>
                    
 

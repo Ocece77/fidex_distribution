@@ -3,19 +3,32 @@ import { lazy, Suspense, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import { AnimatePresence, motion } from "framer-motion";
 import MainLayout from "./Layout/MainLayout";
+import PrivacyPolicy from "./components/legal/PrivacyPolicy";
+import LegalMentions from "./components/legal/LegalMentions";
+import TermsAndConditions from "./components/legal/TermsAndConditions";
 
 // Lazy loading pages
 const Homepage = lazy(() => import("./pages/Homepage"));
 const About = lazy(() => import("./pages/About"));
 const Contacts = lazy(() => import("./pages/Contacts"));
 const Livraison = lazy(() => import("./pages/LivraisonPages/Livraison"));
-const LivraisonEstimation = lazy(() => import("./pages/LivraisonPages/LivraisonEstimation"));
-const LivraisonSuivie = lazy(() => import("./pages/LivraisonPages/LivraisonSuivi"));
+const LivraisonEstimation = lazy(() =>
+  import("./pages/LivraisonPages/LivraisonEstimation")
+);
+const LivraisonSuivie = lazy(() =>
+  import("./pages/LivraisonPages/LivraisonSuivi")
+);
 const Vehicules = lazy(() => import("./pages/VehiculePages/Vehicules"));
-const VehiculeDetails = lazy(() => import("./pages/VehiculePages/VehiculeDetails"));
-const ExploitationMiniere = lazy(() => import("./pages/exploitationPages/ExploitationMiniere"));
+const VehiculeDetails = lazy(() =>
+  import("./pages/VehiculePages/VehiculeDetails")
+);
+const ExploitationMiniere = lazy(() =>
+  import("./pages/exploitationPages/ExploitationMiniere")
+);
 const Engagements = lazy(() => import("./pages/exploitationPages/Engagements"));
-const MineraisVendus = lazy(() => import("./pages/exploitationPages/MineraisVendus"));
+const MineraisVendus = lazy(() =>
+  import("./pages/exploitationPages/MineraisVendus")
+);
 const Expedition = lazy(() => import("./pages/ExpeditionPages/Expedition"));
 const Garantie = lazy(() => import("./pages/ExpeditionPages/Garantie"));
 const ErrorPage = lazy(() => import("./pages/ErrorPage"));
@@ -26,168 +39,166 @@ const ScrollToTop = () => {
   return null;
 };
 
-  
-  
 const motionDivTransition = () => {
-    return (  
-      <>
-     <ScrollToTop /> {/* scoll en haut de la page à chaque changement*/}
-
-       <motion.div
-            className="slide-in"
-            initial={{ scaleY: 0 }}
-            animate={{ scaleY: 0 }}
-            exit={{ scaleY: 1 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        />  
-
-          <motion.div
-            className="slide-out"
-            initial={{ scaleY: 1 }}
-            animate={{ scaleY: 0 }}
-            exit={{ scaleY: 0 }}
-            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-            />
-        </> 
-        )}
-
-const AppRoutes = () => {
-  const location = useLocation();
-
   return (
     <>
-        <AnimatePresence mode="wait">
-            <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<MainLayout />}>
-                    <Route
-                    index
-                    element={
-                        <>
-                        {motionDivTransition()}
-                        <Homepage />
-                        </>
-                    }
-                    />
-                    <Route
-                    path="about"
-                    element={
-                        <>
-                        {motionDivTransition()}
-                        <About />
-                        </>
-                    }
-                    />
-                    <Route
-                    path="contacts"
-                    element={
-                        <>
-                        {motionDivTransition()}
-                        <Contacts />
-                        </>
-                    }
-                    />
-                    <Route
-                    path="livraison"
-                    element={
-                        <>
-                        {motionDivTransition()}
-                        <Livraison />
-                        </>
-                    }
-                    />
-                    <Route
-                    path="livraison/estimation"
-                    element={
-                        <>
-                        {motionDivTransition()}
-                        <LivraisonEstimation />
-                        </>
-                    }
-                    />
-                    <Route
-                    path="livraison/suivi"
-                    element={
-                        <>
-                        {motionDivTransition()}
-                        <LivraisonSuivie />
-                        </>
-                    }
-                    />
-                    <Route
-                    path="expedition"
-                    element={
-                        <>
-                        {motionDivTransition()}
-                        <Expedition />
-                        </>
-                    }
-                    />
-                    <Route
-                    path="expedition/garantie"
-                    element={
-                        <>
-                        {motionDivTransition()}
-                        <Garantie />
-                        </>
-                    }
-                    />
-                    <Route
-                    path="vehicules/:cat?"
-                    element={
-                        <>
-                        {motionDivTransition()}
-                        <Vehicules />
-                        </>
-                    }
-                    />
-                    <Route
-                    path="vehicules/model/:id"
-                    element={
-                        <>
-                        {motionDivTransition()}
-                        <VehiculeDetails />
-                        </>
-                    }
-                    />
-                    <Route
-                    path="exploitation_miniere"
-                    element={
-                        <>
-                        {motionDivTransition()}
-                        <ExploitationMiniere />
-                        </>
-                    }
-                    />
-                    <Route
-                    path="exploitation_miniere/engagements"
-                    element={
-                        <>
-                        {motionDivTransition()}
-                        <Engagements />
-                        </>
-                    }
-                    />
-                    <Route
-                    path="exploitation_miniere/minerais"
-                    element={
-                        <>
-                        {motionDivTransition()}
-                        <MineraisVendus />
-                        </>
-                    }
-                    />
-                    <Route
-                    path="*"
-                    element={
-                        <>
-                        {motionDivTransition()}
-                        <ErrorPage />
-                        </>
-                    }
-                    />
-                </Route>
-            </Routes>
-        </AnimatePresence>
+      <motion.div
+        className="slide-out"
+        initial={{ scaleY: 1 }}
+        animate={{ scaleY: 0 }}
+        exit={{ scaleY: 0 }}
+        transition={{ duration: 3, ease: [0.22, 1, 0.36, 1] }}
+      />
+    </>
+  );
+};
+
+const AppRoutes = () => {
+  return (
+    <>
+      <ScrollToTop /> {/* scoll en haut de la page à chaque changement*/}
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<MainLayout />}>
+            <Route
+              index
+              element={
+                <>
+                  {motionDivTransition()}
+                  <Homepage />
+                </>
+              }
+            />
+            <Route
+              path="about"
+              element={
+                <>
+                  <About />
+                </>
+              }
+            />
+            <Route
+              path="contacts"
+              element={
+                <>
+                  <Contacts />
+                </>
+              }
+            />
+            <Route
+              path="livraison"
+              element={
+                <>
+                  <Livraison />
+                </>
+              }
+            />
+            <Route
+              path="livraison/estimation"
+              element={
+                <>
+                  <LivraisonEstimation />
+                </>
+              }
+            />
+            <Route
+              path="livraison/suivi"
+              element={
+                <>
+                  <LivraisonSuivie />
+                </>
+              }
+            />
+            <Route
+              path="expedition"
+              element={
+                <>
+                  <Expedition />
+                </>
+              }
+            />
+            <Route
+              path="expedition/garanties"
+              element={
+                <>
+                  <Garantie />
+                </>
+              }
+            />
+            <Route
+              path="vehicules/type/all"
+              element={
+                <>
+                  <Vehicules />
+                </>
+              }
+            />
+            <Route
+              path="vehicules/type/:cat?"
+              element={
+                <>
+                  <Vehicules />
+                </>
+              }
+            />
+            <Route
+              path="vehicules/marques/:brand?"
+              element={
+                <>
+                  <Vehicules />
+                </>
+              }
+            />
+
+            <Route
+              path="vehicules/model/:id"
+              element={
+                <>
+                  <VehiculeDetails />
+                </>
+              }
+            />
+            <Route
+              path="exploitation_miniere"
+              element={
+                <>
+                  <ExploitationMiniere />
+                </>
+              }
+            />
+            <Route
+              path="exploitation_miniere/engagements"
+              element={
+                <>
+                  <Engagements />
+                </>
+              }
+            />
+            <Route
+              path="exploitation_miniere/minerais"
+              element={
+                <>
+                  <MineraisVendus />
+                </>
+              }
+            />
+            <Route
+              path="*"
+              element={
+                <>
+                  <ErrorPage />
+                </>
+              }
+            />
+            <Route
+              path="/terms-and-conditions"
+              component={TermsAndConditions}
+            />
+            <Route path="/legal-mentions" component={LegalMentions} />
+            <Route path="/privacy-policy" component={PrivacyPolicy} />
+          </Route>
+        </Routes>
+      </AnimatePresence>
     </>
   );
 };

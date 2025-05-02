@@ -11,7 +11,7 @@ const CardsSection = ({titre="titre", desc="description" , cards=[]}) => {
         <Reveal>
           {/*Titre*/}
           <div className="flex flex-col gap-4 w-full justify-center items-center text-center md:px-10">  
-            <h1 className="lg:text-6xl md:text-4xl text-2xl font-bold text-primary">{titre}</h1>
+            <h1 className="lg:text-6xl md:text-4xl text-3xl font-bold text-primary">{titre}</h1>
             <p className="text-lg font-light max-w-2xl">{desc}</p>
           </div>
         </Reveal>

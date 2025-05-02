@@ -25,115 +25,121 @@ import exploitation2 from '../assets/photos/exploitationminiere/exploitation3.jp
 import valeur1 from '../assets/photos/home/valeur1.jpg'
 import valeur2 from '../assets/photos/home/valeur2.jpg'
 import valeur3 from '../assets/photos/home/valeur3.jpeg'
+import { useTranslation } from 'react-i18next'
 
-const sectionTexte1 = "L'innovation n'est pas simplement une nouvelle idée, mais une force qui transforme les défis en opportunités.   C'est l'art de repenser le présent pour créer un avenir meilleur, plus efficace et durable. "
-const sectionTexte2 = "Découvrir notre vision "
 
-const cardsList1 = [
-  {
-    id: 1,
-    cardsTitre: 'Vente de véhicules',
-    cardsLogo:faCar,
-    cardsDesc: 'Explorez notre sélection de véhicules neufs de qualité',
-    cardsImg: vehicule1,
-    cardsLink: '/vehicules',
-  },
+
+const Homepage = () => {
+  const { t } = useTranslation();
+
+
+  const cardsList1 = [
+    {
+      id: 1,
+      cardsTitre: t("homepage.card1.title"),
+      cardsLogo: faCar,
+      cardsDesc: t("homepage.card1.desc"),
+      cardsImg: vehicule1,
+      cardsLink: "/vehicules",
+    },
     {
       id: 2,
-      cardsTitre: 'Livraison de colis',
-      cardsLogo:faBoxOpen,
-      cardsDesc: 'Profitez de notre service rapide et fiable pour la livraison et le retrait de vos colis',
+      cardsTitre: t("homepage.card2.title"),
+      cardsLogo: faBoxOpen,
+      cardsDesc: t("homepage.card2.desc"),
       cardsImg: livraison1,
-      cardsLink: '/livraison',
-    }, 
+      cardsLink: "/livraison",
+    },
     {
       id: 3,
-      cardsTitre: 'expeditions',
+      cardsTitre: t("homepage.card3.title"),
       cardsLogo: faHandshake,
-      cardsDesc: 'Nous croyons en l\'intégrité, l\'innovation et le respect, des principes qui guident chaque action que nous entreprenons.',
-      cardsImg: expedition1, 
-      cardsLink: '/expedition',
+      cardsDesc: t("homepage.card3.desc"),
+      cardsImg: expedition1,
+      cardsLink: "/expedition",
     },
     {
       id: 4,
-      cardsTitre: 'Acheter une Concession',
-      cardsLogo:faCoins,
-      cardsDesc: 'Nous trouvons, négocions et gérons les démarches pour vous.',
+      cardsTitre: t("homepage.card4.title"),
+      cardsLogo: faCoins,
+      cardsDesc: t("homepage.card4.desc"),
       cardsImg: exploitation1,
-      cardsLink: '/exploitation_miniere',
+      cardsLink: "/exploitation_miniere",
+    }
+  ];
+
+  const cardsList2 = [
+    {
+      id: 1,
+      cardsTitre: t("homepage.card5.title"),
+      cardsLogo: faHeart,
+      cardsDesc: t("homepage.card5.desc"),
+      cardsImg: valeur1,
+      cardsLink: "/about",
     },
+    {
+      id: 2,
+      cardsTitre: t("homepage.card6.title"),
+      cardsLogo: faBook,
+      cardsDesc: t("homepage.card6.desc"),
+      cardsImg: valeur2,
+      cardsLink: "/about",
+    },
+    {
+      id: 3,
+      cardsTitre: t("homepage.card7.title"),
+      cardsLogo: faHandshake,
+      cardsDesc: t("homepage.card7.desc"),
+      cardsImg: valeur3,
+      cardsLink: "/about",
+    }
+  ];
 
-
-]
-const cardsList2 = [
-  {
-    id: 1,
-    cardsTitre: 'Notre Engagement',
-    cardsLogo: faHeart,
-    cardsDesc: 'Nous nous engageons à offrir des solutions de qualité, durables et respectueuses de l’environnement.',
-    cardsImg: valeur1, 
-    cardsLink: '/about',
-  },
-  {
-    id: 2,
-    cardsTitre: 'Notre Histoire',
-    cardsLogo: faBook,
-    cardsDesc: 'Guidés par l\'innovation, le respect et la collaboration, nous avons construit une entreprise engagée.',
-    cardsImg: valeur2, 
-    cardsLink: '/about',
-  },
-  {
-    id: 3,
-    cardsTitre: 'Nos Valeurs',
-    cardsLogo: faHandshake,
-    cardsDesc: 'Nous croyons en l\'intégrité, l\'innovation et le respect, des principes qui guident chaque action que nous entreprenons.',
-    cardsImg: valeur3, 
-    cardsLink: '/about',
-  },
-  
-];
-
-const Homepage = () => {
   return (
     <div className='flex flex-col gap-30 overflow-hidden'>
       <Hero/>
 
-      <InfoSection img={photo2}
-       titre={"Soutenant + de 4000 clients à travers 22 pays"}
-       desc={"Nous offrons des solutions rapides et efficaces dans trois domaines : la vente de véhicules neufs, la gestion des colis via nos centres de distribution, et l’accompagnement pour l’achat de concessions minières. Notre mission : simplifier vos projets et optimiser vos opérations."}
-       btn={{"btnTitre" : "En savoir plus",
-        "btnLink" : "/about",
-       }}
-       />
-
-      <Stats/>
-
-      <CardsSection titre='Achetez, investissez, ou faites-vous livrer en toute confiance avec nous.'
-                    desc="Que ce soit pour l'achat d'une voiture, d'une concession minière ou la réception de colis, nous sommes là pour vous accompagner à chaque étape."
-                    cards = {cardsList1}
-                    />
-
-      <QuoteSection texte={sectionTexte1} img={exploitation1} isQuote={true}/>
-
-      <Carousel titre="Explorez notre gammes de véhicules neufs"
-                desc="Découvrez une sélection variée de véhicules alliant performance, confort et fiabilité, adaptés à vos besoins et à vos attentes."
+      <InfoSection 
+        img={photo2}
+        titre={t("homepage.infoSection.title")}
+        desc={t("homepage.infoSection.description")}
+        btn={{ "btnTitre": t("homepage.infoSection.btnTitle"), "btnLink": "/about" }}
       />
 
 
+      <Stats/>
 
-      <InfoSection img={exploitation2}
-       titre={"Achetez une concession minière"}
-       desc={"Nous offrons des solutions rapides et efficaces dans trois domaines : la vente de véhicules neufs, la gestion des colis via nos centres de distribution, et l’accompagnement pour l’achat de concessions minières. Notre mission : simplifier vos projets et optimiser vos opérations."}
-       btn={{"btnTitre" : "Acheter une Concession",
-        "btnLink" : "/exploitationminiere",
-       }}
-       reversed={true}
-       darkBg={true}
-       />
+      <CardsSection 
+        titre={t("homepage.cardsSection1.title")}
+        desc={t("homepage.cardsSection1.description")}
+        cards={cardsList1}
+      />
 
-      <CardsSection titre={sectionTexte2} 
-                    desc='Plongez dans notre vision, où innovation, engagement et durabilité façonnent chaque aspect de nos activités.'
-                    cards={cardsList2}/>
+      <QuoteSection 
+        texte={t("homepage.quoteSection.sectionText1")} 
+        img={exploitation1} 
+        isQuote={true} 
+      />
+
+      <Carousel 
+        titre={t("homepage.carousel.title")}
+        desc={t("homepage.carousel.description")}
+      />
+
+      <InfoSection 
+        img={exploitation2}
+        titre={t("homepage.infoSectionExploitation.title")}
+        desc={t("homepage.infoSectionExploitation.description")}
+        btn={{ "btnTitre": t("homepage.infoSectionExploitation.btnTitle"), "btnLink": "/exploitationminiere" }}
+        reversed={true}
+        darkBg={true}
+      />
+
+      <CardsSection 
+        titre={t("homepage.cardsSection2.title")}
+        desc={t("homepage.cardsSection2.description")}
+        cards={cardsList2}
+      />
 
       <Map/>
 

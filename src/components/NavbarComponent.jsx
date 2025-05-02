@@ -5,6 +5,7 @@ import {
 import {
   faChevronRight,
   faLocationDot,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -18,6 +19,8 @@ import {
 } from "flowbite-react";
 import { useEffect, useRef, useState } from "react";
 import { useWindowWidth } from "../utils/useWindowWidth";
+import { useTranslation } from "react-i18next";
+
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/logo.png";
@@ -28,6 +31,7 @@ import livraison from '../assets/photos/livraison/livraison8.jpg'
 import exploitation from '../assets/photos/exploitationminiere/exploitation2.jpg'
 import expedition from '../assets/photos/expedition/expedition1.jpeg'
 import vehicule from '../assets/photos/vehicules/vehicule2.jpg'
+import { useDispatch, useSelector } from "react-redux";
 
 
 
@@ -40,60 +44,85 @@ const styles = {
   borderRight: "1px solid rgba(255, 255, 255 , 0.7)",
 };
 
-const menuItems = [
-  {
-    title: "à propos",
-    description: "Découvrez notre histoire, nos valeurs et l’équipe qui bâtit Fidex chaque jour.",
-    img: about,
-    links: [
-      { label: "Notre Histoire", href: "/about" },
-      { label: "Nous rencontrer", href: "/contacts" },
-    ],
-  },
-  {
-    title: "véhicules",
-    description: "Parcourez notre gamme de véhicules robustes pour l’industrie et l’expédition.",
-    img: vehicule,
-    links: [
-      { label: "Tous nos véhicules", href: "/vehicules" },
-      { label: "Pick-up", href: "/vehicules/pickup" },
-      { label: "SUV & Mini Van", href: "/vehicules/suv" },
-      { label: "4x4", href: "/vehicules/4x4" },
-    ],
-  },
-  {
-    title: "livraisons",
-    description: "Suivez vos colis en temps réel ou estimez le coût de votre prochaine livraison.",
-    img: livraison,
-    links: [
-      { label: "Découvrir notre service", href: "/livraison" },
-      { label: "Suivi", href: "/livraison/suivi" },
-      { label: "Estimation de coût", href: "/livraison/estimation" },
-    ],
-  },
-  {
-    title: "expéditions",
-    description: "Explorez nos solutions d’expédition, garanties et pays couverts.",
-    img: expedition,
-    links: [
-      { label: "Découvrir nos services", href: "/expedition" },
-      { label: "Garantie", href: "/expedition/garantie" },
-    ],
-  },
-  {
-    title: "Exploitation Minière",
-    description: "Achetez des concessions, découvrez nos engagements et les minerais disponibles.",
-    img: exploitation,
-    links: [
-      { label: "Achat de concessions", href: "/exploitation_miniere" },
-      { label: "Nos engagements", href: "/exploitation_miniere/engagements" },
-      { label: "Minerais vendus", href: "/exploitation_miniere/minerais" },
-    ],
-  },
 
-];
 
 const NavbarComponent = () => {
+  const { t, i18n } = useTranslation();
+  const dispatch = useDispatch();
+  // eslint-disable-next-line no-unused-vars
+  const language = useSelector(state => state.language.language);  // Récupère la langue depuis le store Redux
+
+  // Fonction pour changer de langue
+  const changeLanguage = (lng) => {
+    
+    // Mémoriser la langue dans le store Redux et dans localStorage
+    dispatch({ type: 'SET_LANGUAGE', payload: lng });
+    localStorage.setItem('language', lng);
+
+    // Changer la langue dans i18next
+    i18n.changeLanguage(lng);
+  };
+
+  // Lors du rechargement de la page, appliquer la langue mémorisée
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('language');
+    if (savedLanguage) {
+      dispatch({ type: 'SET_LANGUAGE', payload: savedLanguage });
+      i18n.changeLanguage(savedLanguage);
+    }
+  }, [dispatch, i18n]);
+
+  const menuItems = [
+    {
+      title: t('menu.about.title'),
+      description: t('menu.about.description'),
+      img: about, // Remplace par ton image
+      links: [
+        { label: t('menu.about.links.history'), href: "/about" },
+        { label: t('menu.about.links.contact'), href: "/contacts" },
+      ],
+    },
+    {
+      title: t('menu.vehicles.title'),
+      description: t('menu.vehicles.description'),
+      img: vehicule, // Remplace par ton image
+      links: [
+        { label: t('menu.vehicles.links.all'), href: "vehicules/type/all" },
+        { label: t('menu.vehicles.links.pickup'), href: "/vehicules/type/pickup" },
+        { label: t('menu.vehicles.links.suv'), href: "/vehicules/type/suv" },
+        { label: t('menu.vehicles.links.4x4'), href: "/vehicules/type/4x4" },
+      ],
+    },
+    {
+      title: t('menu.delivery.title'),
+      description: t('menu.delivery.description'),
+      img: livraison, // Remplace par ton image
+      links: [
+        { label: t('menu.delivery.links.service'), href: "/livraison" },
+        { label: t('menu.delivery.links.tracking'), href: "/livraison/suivi" },
+        { label: t('menu.delivery.links.estimate'), href: "/livraison/estimation" },
+      ],
+    },
+    {
+      title: t('menu.shipping.title'),
+      description: t('menu.shipping.description'),
+      img: expedition, // Remplace par ton image
+      links: [
+        { label: t('menu.shipping.links.services'), href: "/expedition" },
+        { label: t('menu.shipping.links.warranty'), href: "/expedition/garanties" },
+      ],
+    },
+    {
+      title: t('menu.mining.title'),
+      description: t('menu.mining.description'),
+      img: exploitation, // Remplace par ton image
+      links: [
+        { label: t('menu.mining.links.buy'), href: "/exploitation_miniere" },
+        { label: t('menu.mining.links.commitments'), href: "/exploitation_miniere/engagements" },
+        { label: t('menu.mining.links.minerals'), href: "/exploitation_miniere/minerais" },
+      ],
+    }
+  ];
 
   const {pathname} = useLocation();
   const currScreenWidth = useWindowWidth(); 
@@ -123,12 +152,23 @@ const NavbarComponent = () => {
     console.log(activeMenu)
   };
 
-  //fermer la navbar sur tablette et mobile lors d'un click sur un lien
-  const toggleNav = () =>{
-    NavbarCollapseRef.current.classList.add("hidden")
-  }
 
+  // État d'ouverture du menu mobile
+const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+// Fonction de fermeture
+const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
+// Fermer en cliquant en dehors
+useEffect(() => {
+  const handleOutsideClick = (e) => {
+    if (!e.target.closest("#mobileMenu") && isMobileMenuOpen) {
+      closeMobileMenu();
+    }
+  };
+  document.addEventListener("mousedown", handleOutsideClick);
+  return () => document.removeEventListener("mousedown", handleOutsideClick);
+}, [isMobileMenuOpen]);
 
   // Fermer menu si clic à l’extérieur
   useEffect(() => {
@@ -153,7 +193,7 @@ const NavbarComponent = () => {
         // toujours un style fixe sur mobile ou la page véhicules
         setBarStyle("bg-primary text-white");
         setNavStyle("bg-white shadow-md");
-        setNavLinkColor('text-white');
+        setNavLinkColor('text-neutral-900');
       } else if (scrolled || menuOpen) {
         // si on scrolle ou ouvre un menu sur desktop non-vehicule
         setBarStyle("bg-primary text-white");
@@ -199,13 +239,17 @@ const NavbarComponent = () => {
           <Dropdown
             dismissOnClick={false}
             renderTrigger={() => (
-              <span className="font-light text-[10px] md:text-sm">
-                Français <FontAwesomeIcon icon={faChevronRight} size="sm" className="rotate-90" />
+              <span className="font-light text-[10px] md:text-sm capitalize flex gap-2 items-center">
+                    {
+               i18n.language == 'fr' ? "français" : "english"
+             } <FontAwesomeIcon icon={faChevronRight} size="sm" className="rotate-90" />
               </span>
             )}
+            className="flex-row-reverse"
           >
-            <DropdownItem className="text-[10px] md:text-sm">English</DropdownItem>
-            <DropdownItem className="text-[10px] md:text-sm">Français</DropdownItem>
+        
+            <DropdownItem  onClick={() => changeLanguage("en")} className="text-[10px] md:text-sm ">English 🇬🇧</DropdownItem>
+            <DropdownItem onClick={() => changeLanguage("fr")} className="text-[10px] md:text-sm">Français 🇫🇷</DropdownItem>
           </Dropdown>
         </div>
       </div>
@@ -216,23 +260,30 @@ const NavbarComponent = () => {
           <img src={logo} className="lg:h-20 h-12 object-cover" alt="Fidex Logo" />
         </NavbarBrand>
 
-        <div className="md:flex md:gap-3 items-center">
+     <div className="md:flex md:gap-3 items-center">
           <div className="flex md:order-2">
-            <Button className="hidden md:flex hover:bg-red-900 bg-red-800 font-bold gap-3 py-6 transition-all ">
-              <FontAwesomeIcon icon={faCommentAlt} size="lg" />
-              <p>
-                Parler à un expert <br /> +233 1 23 45 67
-              </p>
-            </Button>
-            <NavbarToggle />
+            <span itemProp="telephone">
+              <a
+                href="tel:+2331234567"
+                className="hidden md:flex items-center text-white rounded-2xl hover:bg-red-900 bg-red-800 font-bold gap-3 py-2 px-3 text-sm transition-all"
+              >
+                <FontAwesomeIcon icon={faCommentAlt} size="lg" />
+                <p>
+                  {t("menu.contact.phone")} <br />
+                  {t("menu.contact.phone_number")}
+                </p>
+              </a>
+            </span>
+            <NavbarToggle onClick={() => setIsMobileMenuOpen(true)} />
           </div>
+
 
           {/* Desktop menu */}
           <div
             className="hidden md:flex list-none lg:gap-6 gap-2 lg:text-[14px] text-[12px] "
             ref={dropdownRef}
           >
-            <AppNavLink to="/" texte="Accueil" className={navLinkColor}/>
+            <AppNavLink to="/" texte={t("menu.home")} className={navLinkColor}/>
      
             {menuItems.map((item, index) => (
               <div key={index} className="flex flex-col items-start ">
@@ -292,49 +343,71 @@ const NavbarComponent = () => {
         </div>
 
         {/* Mobile menu */}
-        <NavbarCollapse ref={NavbarCollapseRef} className="relative md:hidden">
-          
-        <div className="flex mb-4 items-center capitalize font-medium cursor-pointer gap-2 hover:gap-3 text-red-700 hover:text-red-800 transition-all ">
-            <Link 
-            to="/">Accueil
+        <AnimatePresence>
+        {isMobileMenuOpen && (
+          <>
+            {/* Overlay */}
+            <motion.div
+              className="fixed inset-0 bg-black bg-opacity-50 z-40"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeMobileMenu}
+            />
+
+            {/* Menu coulissant */}
+            <motion.div
+              id="mobileMenu"
+              className="fixed top-0 left-0 bottom-0 w-4/5 max-w-sm bg-white z-50 shadow-lg p-6 flex flex-col gap-5 overflow-y-auto"
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
+            >
+              {/* Fermer bouton */}
+              <button
+                onClick={closeMobileMenu}
+                className="text-red-800 self-end font-bold"
+              >
+                <FontAwesomeIcon icon={faXmark}/>
+              </button>
+
+              {/* Liens */}
+              <Link to="/" onClick={closeMobileMenu} className="font-medium text-red-800 hover:ps-2 transition-all text-2xl">
+                {t("menu.home")}
               </Link>
-          </div>
 
-          {menuItems.map((item, i) => (
-            <div key={i} className="mb-2">
-              <details className="group flex flex-col gap-3">
-                <summary className="flex items-center capitalize font-medium cursor-pointer gap-2 hover:gap-3 hover:text-red-800 transition-all ">
-                  {item.title}
-                  <FontAwesomeIcon icon={faChevronRight} size="sm" />
-                </summary>
-                <ul className="flex flex-col gap-2 pl-4 space-y-1 text-sm">
-                  {item.links.map((link, j) => (
-                    <li key={j}>
-                      <Link to={link.href} 
-                      className="hover:text-red-800 transition-all"    
-                      onClick={()=>{toggleNav()}}        
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-      
-              </details>
-          </div>
-          ))}
+              {menuItems.map((item, i) => (
+                <div key={i} className="border-r-6 border-neutral-200  ">
+                  <p className="font-bold capitalize mb-2 text-2xl">{item.title}</p>
+                  <ul className="pl-4 space-y-1 text-lg">
+                    {item.links.map((link, j) => (
+                      <li key={j}>
+                        <Link
+                          to={link.href}
+                          onClick={closeMobileMenu}
+                          className="hover:text-red-800  ps-0 hover:ps-2 transition-all"
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
 
-          <div  className="flex items-center capitalize font-medium cursor-pointer gap-2 hover:gap-3 hover:text-red-800 transition-all ">
-            <Link 
-            to="/contacts">
-              Nous contacter
+              <Link
+                to="/contacts"
+                onClick={closeMobileMenu}
+                className="flex items-center gap-2 text-2xl text-red-800  ps-0 hover:ps-2 transition-all"
+              >
+                {t("menu.about.links.contact")} <FontAwesomeIcon icon={faChevronRight} size="sm" />
               </Link>
-              <FontAwesomeIcon icon={faChevronRight} size="sm" />
-          </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
 
-          
-          <div className="absolute bg-neutral-600 opacity-50 h-screen w-[110vw] -left-10 -z-10" />
-        </NavbarCollapse>
       </Navbar>
     </div>
   );

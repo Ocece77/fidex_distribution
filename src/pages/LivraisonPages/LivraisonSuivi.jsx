@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import ContactSection from '../../components/ContactSection'
 import Map from '../../components/Map'
 import HeaderComponent from '../../components/HeaderComponent'
@@ -9,64 +10,65 @@ import SearchBar from '../../components/SearchBar'
 import photo1 from '../../assets/photos/livraison/livraison7.jpg'
 import photo2 from '../../assets/photos/livraison/livraison2.jpg'
 
-const stepList =  [
-  {
-    id: 1,
-    cardsTitre: 'Envoyer un colis',
-    cardsDesc: 'Simplifiez l’expédition de vos colis en les déposant dans notre agence. ',
-    cardsLogo:faCalculator,
-    cardsLink: '/contacts',
-    cardsLinkLabel:"Acheter"
-  },
-  {
-    id: 2,
-    cardsTitre: 'Estimez votre envoie',
-    cardsDesc: 'Obtenez une estimation rapide et gratuite des frais d’expédition',
-    cardsLogo:faBoxesPacking,
-    cardsLink: '/contacts',
-    cardsLinkLabel:"Acheter"
-  },
-  {
-    id: 3,
-    cardsTitre: 'Se rendre en agence',
-    cardsDesc: "Déposer votre colis en agence. Nous nous chargeons de nous occuper du processus d’envoie",
-    cardsLogo:faHouse,
-    cardsLink: '/contacts',
-    cardsLinkLabel:"Acheter"
-  },
+const LivraisonSuivi = () => {
+  const { t } = useTranslation()
 
-]
+  const stepList = [
+    {
+      id: 1,
+      cardsTitre: t('delivery.deliveryTracking.stepsList.0.title'),
+      cardsDesc: t('delivery.deliveryTracking.stepsList.0.description'),
+      cardsLogo: faCalculator,
+      cardsLink: t('delivery.deliveryTracking.stepsList.0.link'),
+      cardsLinkLabel: t('delivery.deliveryTracking.stepsList.0.linkLabel'),
+    },
+    {
+      id: 2,
+      cardsTitre: t('delivery.deliveryTracking.stepsList.1.title'),
+      cardsDesc: t('delivery.deliveryTracking.stepsList.1.description'),
+      cardsLogo: faBoxesPacking,
+      cardsLink: t('delivery.deliveryTracking.stepsList.1.link'),
+      cardsLinkLabel: t('delivery.deliveryTracking.stepsList.1.linkLabel'),
+    },
+    {
+      id: 3,
+      cardsTitre: t('delivery.deliveryTracking.stepsList.2.title'),
+      cardsDesc: t('delivery.deliveryTracking.stepsList.2.description'),
+      cardsLogo: faHouse,
+      cardsLink: t('delivery.deliveryTracking.stepsList.2.link'),
+      cardsLinkLabel: t('delivery.deliveryTracking.stepsList.2.linkLabel'),
+    },
+  ]
 
-const LivraisonSuivi = () =>{
   return (
-    <section className='grid grid-cols-1 gap-20'> 
-
-     <HeaderComponent
-        titre={"Suivi de colis"} 
-        backgroundImage={photo1} 
-        desc={"Simplifiez vos achats et vos livraisons avec nos solutions sur mesure"} 
-        btns={{"Estimez votre envoi":"/estimationLivraison" , "Déposer votre colis en agence":"/contacts"}}
+    <section className='grid grid-cols-1 gap-20'>
+      <HeaderComponent
+        titre={t('delivery.deliveryTracking.header.title')}
+        backgroundImage={photo1}
+        desc={t('delivery.deliveryTracking.header.description')}
+        btns={{
+          [t('delivery.deliveryTracking.header.buttons.estimate')]: '/estimationLivraison',
+          [t('delivery.deliveryTracking.header.buttons.dropOff')]: '/contacts',
+        }}
       />
-        
-      <SearchBar/>
+
+      <SearchBar />
 
       <StepCardsSection
-        titre="Faites vous livrer dans notre agence"
-        desc="Profitez de la commodité de la livraison en agence pour récupérer vos colis rapidement et facilement, directement à l'endroit qui vous convient."
+        titre={t('delivery.deliveryTracking.stepsSection.title')}
+        desc={t('delivery.deliveryTracking.stepsSection.description')}
         cards={stepList}
       />
 
-
       <ParallaxSection
-      titre="Estimez le coût d’envoie de votre colis"
-      desc="Estimez facilement le coût d'envoi de votre colis en renseignant simplement ses dimensions, son poids et les destinations d'expédition et de livraison"
-      btn={{"Estimer votre envoi":"/livraison/estimation"}}
-      img={photo2}
+        titre={t('delivery.deliveryTracking.parallax.title')}
+        desc={t('delivery.deliveryTracking.parallax.description')}
+        btn={{ [t('delivery.deliveryTracking.parallax.button')]: '/livraison/estimation' }}
+        img={photo2}
       />
 
-
-      <Map/>
-     <ContactSection/>
+      <Map />
+      <ContactSection />
     </section>
   )
 }

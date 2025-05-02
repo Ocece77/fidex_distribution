@@ -1,8 +1,10 @@
 import { Button, Label, TextInput, Textarea } from "flowbite-react";
 import photo1 from "../assets/photos/about/photoLocalFidex2.jpeg";
 import DOMPurify from "dompurify"; // Import de DOMPurify
+import { useTranslation } from "react-i18next"; // Importation du hook i18next
 
 const ContactSection = () => {
+  const { t } = useTranslation(); // Initialisation de i18next
 
   // Fonction de gestion de l'envoi du formulaire
   const handleSubmit = (event) => {
@@ -27,7 +29,6 @@ const ContactSection = () => {
     console.log("Sujet:", subject);
     console.log("Message assaini:", sanitizedMessage);
 
-  
     // eslint-disable-next-line no-unused-vars
     const formData = {
       name,
@@ -51,23 +52,37 @@ const ContactSection = () => {
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 bg-white lg:p-6 rounded-lg">
           {/* Titre */}
           <div className="flex flex-col gap-4">
-            <h1 className="lg:text-6xl text-4xl font-bold text-primary">Contactez-nous dès aujourd'hui !</h1>
-            <p className="text-sm font-light">N’hésitez pas à nous contacter, notre équipe est prête à vous aider et à vous accompagner dans vos projets.</p>
+            <h1 className="lg:text-6xl text-4xl font-bold text-primary">
+              {t("contact.title")}
+            </h1>
+            <p className="text-sm font-light">{t("contact.description")}</p>
           </div>
 
           {/* Nom et prénom */}
           <div className="grid lg:grid-cols-2 gap-5">
             <div>
               <div className="mb-2 block">
-                <Label htmlFor="name">Nom*</Label>
+                <Label htmlFor="name">{t("contact.name")}</Label>
               </div>
-              <TextInput id="name" name="name" type="text" placeholder="Dupont" required shadow />
+              <TextInput 
+                id="name" 
+                name="name" 
+                type="text" 
+                placeholder={t("contact.namePlaceholder")} 
+                required shadow 
+              />
             </div>
             <div>
               <div className="mb-2 block">
-                <Label htmlFor="firstName">Prénom*</Label>
+                <Label htmlFor="firstName">{t("contact.firstName")}</Label>
               </div>
-              <TextInput id="firstName" name="firstName" type="text" placeholder="Jean" required shadow />
+              <TextInput 
+                id="firstName" 
+                name="firstName" 
+                type="text" 
+                placeholder={t("contact.firstNamePlaceholder")} 
+                required shadow 
+              />
             </div>
           </div>
 
@@ -75,38 +90,62 @@ const ContactSection = () => {
           <div className="grid lg:grid-cols-2 gap-5">
             <div>
               <div className="mb-2 block">
-                <Label htmlFor="email">Email*</Label>
+                <Label htmlFor="email">{t("contact.email")}</Label>
               </div>
-              <TextInput id="email" name="email" type="email" placeholder="jean@exemple.com" required shadow />
+              <TextInput 
+                id="email" 
+                name="email" 
+                type="email" 
+                placeholder={t("contact.emailPlaceholder")} 
+                required shadow 
+              />
             </div>
 
             <div>
               <div className="mb-2 block">
-                <Label htmlFor="phone">Téléphone</Label>
+                <Label htmlFor="phone">{t("contact.phone")}</Label>
               </div>
-              <TextInput id="phone" name="phone" type="tel" placeholder="+243 123 456 789" shadow />
+              <TextInput 
+                id="phone" 
+                name="phone" 
+                type="tel" 
+                placeholder={t("contact.phonePlaceholder")} 
+                shadow 
+              />
             </div>
           </div>
 
           {/* Sujet */}
           <div>
             <div className="mb-2 block">
-              <Label htmlFor="subject">Sujet</Label>
+              <Label htmlFor="subject">{t("contact.subject")}</Label>
             </div>
-            <TextInput id="subject" name="subject" type="text" placeholder="Sujet de votre message" shadow />
+            <TextInput 
+              id="subject" 
+              name="subject" 
+              type="text" 
+              placeholder={t("contact.subjectPlaceholder")} 
+              shadow 
+            />
           </div>
 
           {/* Contenu du message */}
           <div>
             <div className="mb-2 block">
-              <Label htmlFor="message">Message</Label>
+              <Label htmlFor="message">{t("contact.message")}</Label>
             </div>
-            <Textarea id="message" name="message" rows={4} placeholder="Votre message ici..." required />
+            <Textarea 
+              id="message" 
+              name="message" 
+              rows={4} 
+              placeholder={t("contact.messagePlaceholder")} 
+              required 
+            />
           </div>
 
           {/* Bouton pour envoyer */}
           <Button type="submit" className="bg-primary">
-            Envoyer le message
+            {t("contact.send")}
           </Button>
         </form>
       </div>
