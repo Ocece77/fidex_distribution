@@ -34,10 +34,12 @@ const Garantie = lazy(() => import("./pages/ExpeditionPages/Garantie"));
 const ErrorPage = lazy(() => import("./pages/ErrorPage"));
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
-  useEffect(() => window.scrollTo(0, 0), [pathname]);
+  const location = useLocation();
+  useEffect(() => window.scrollTo(0, 0), [location.pathname]);
   return null;
 };
+
+
 
 const motionDivTransition = () => {
   return (
@@ -47,18 +49,21 @@ const motionDivTransition = () => {
         initial={{ scaleY: 1 }}
         animate={{ scaleY: 0 }}
         exit={{ scaleY: 0 }}
-        transition={{ duration: 3, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
       />
     </>
   );
 };
 
 const AppRoutes = () => {
+
+
+  
   return (
     <>
-      <ScrollToTop /> {/* scoll en haut de la page à chaque changement*/}
+      <ScrollToTop />
       <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
+        <Routes location={useLocation()} key={useLocation().pathname}>
           <Route path="/" element={<MainLayout />}>
             <Route
               index
@@ -69,133 +74,43 @@ const AppRoutes = () => {
                 </>
               }
             />
-            <Route
-              path="about"
-              element={
-                <>
-                  <About />
-                </>
-              }
-            />
-            <Route
-              path="contacts"
-              element={
-                <>
-                  <Contacts />
-                </>
-              }
-            />
-            <Route
-              path="livraison"
-              element={
-                <>
-                  <Livraison />
-                </>
-              }
-            />
+            <Route path="about" element={<About />} />
+            <Route path="contacts" element={<Contacts />} />
+            <Route path="livraison" element={<Livraison />} />
             <Route
               path="livraison/estimation"
-              element={
-                <>
-                  <LivraisonEstimation />
-                </>
-              }
+              element={<LivraisonEstimation />}
             />
+            <Route path="livraison/suivi" element={<LivraisonSuivie />} />
+            <Route path="expedition" element={<Expedition />} />
+            <Route path="expedition/garanties" element={<Garantie />} />
+            {/* Route dynamique pour les véhicules avec filtre par type et marque */}
+            <Route path="vehicules/type/:cat" element={<Vehicules />} />
+            <Route path="vehicules/marques/:brand" element={<Vehicules />} />
             <Route
-              path="livraison/suivi"
-              element={
-                <>
-                  <LivraisonSuivie />
-                </>
-              }
-            />
-            <Route
-              path="expedition"
-              element={
-                <>
-                  <Expedition />
-                </>
-              }
-            />
-            <Route
-              path="expedition/garanties"
-              element={
-                <>
-                  <Garantie />
-                </>
-              }
-            />
-            <Route
-              path="vehicules/type/all"
-              element={
-                <>
-                  <Vehicules />
-                </>
-              }
-            />
-            <Route
-              path="vehicules/type/:cat?"
-              element={
-                <>
-                  <Vehicules />
-                </>
-              }
-            />
-            <Route
-              path="vehicules/marques/:brand?"
-              element={
-                <>
-                  <Vehicules />
-                </>
-              }
+              path="vehicules/type/:cat/marques/:brand"
+              element={<Vehicules />}
             />
 
-            <Route
-              path="vehicules/model/:id"
-              element={
-                <>
-                  <VehiculeDetails />
-                </>
-              }
-            />
+            <Route path="vehicules/model/:id" element={<VehiculeDetails />} />
             <Route
               path="exploitation_miniere"
-              element={
-                <>
-                  <ExploitationMiniere />
-                </>
-              }
+              element={<ExploitationMiniere />}
             />
             <Route
               path="exploitation_miniere/engagements"
-              element={
-                <>
-                  <Engagements />
-                </>
-              }
+              element={<Engagements />}
             />
             <Route
               path="exploitation_miniere/minerais"
-              element={
-                <>
-                  <MineraisVendus />
-                </>
-              }
+              element={<MineraisVendus />}
             />
-            <Route
-              path="*"
-              element={
-                <>
-                  <ErrorPage />
-                </>
-              }
-            />
-            <Route
-              path="/terms-and-conditions"
-              component={TermsAndConditions}
-            />
-            <Route path="/legal-mentions" component={LegalMentions} />
-            <Route path="/privacy-policy" component={PrivacyPolicy} />
+            <Route path="*" element={<ErrorPage />} />
+   
+            <Route path="legal/legal-mentions" element={<LegalMentions />} />
+            <Route path="legal/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="legal/terms-and-conditions" element={<TermsAndConditions />} />
+
           </Route>
         </Routes>
       </AnimatePresence>

@@ -2,8 +2,12 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import Reveal from '../animation/Reveal'
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const CardsSection = ({titre="titre", desc="description" , cards=[]}) => {
+
+  const { t } = useTranslation(); // Utilisation du hook i18next
+  
   const gridCards = `grid-cols-1 md:grid-cols-${cards.length}`
   return (
     <div className="py-20">
@@ -35,7 +39,7 @@ const CardsSection = ({titre="titre", desc="description" , cards=[]}) => {
                    
                      
                        <Link to={card.cardsLink} className="flex items-center px-5 py-3 bg-primary text-white transition-all hover:text-white hover:bg-red-800 hover:gap-5 gap-2">
-                           {card.cardsLinkLabel || "En savoir plus"}
+                           {card.cardsLinkLabel || t('btn-contact')}
                            <svg className="w-4 h-4 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                           </Link>
                     </div>

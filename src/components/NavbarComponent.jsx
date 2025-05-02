@@ -127,6 +127,7 @@ const NavbarComponent = () => {
   const {pathname} = useLocation();
   const currScreenWidth = useWindowWidth(); 
   const isVehiculePath = pathname.startsWith("/vehicules");
+  const isLegalPath = pathname.startsWith("/legal");
   const [navLinkColor , setNavLinkColor] = useState(null);
   const [activeMenu, setActiveMenu] = useState(null);
 
@@ -135,12 +136,12 @@ const NavbarComponent = () => {
 
   // Initialisation propre (évite flash de style)
   const [barStyle, setBarStyle] = useState(
-    isVehiculePath || currScreenWidth < 768
+    isVehiculePath || isLegalPath|| currScreenWidth < 768
       ? "bg-primary text-white"
       : "bg-transparent text-white border-b-1"
   );
   const [navStyle, setNavStyle] = useState(
-    isVehiculePath || currScreenWidth < 768
+    isVehiculePath || isLegalPath || currScreenWidth < 768
       ? "bg-white shadow-md"
       : "bg-transparent text-white"
   );
@@ -189,7 +190,7 @@ useEffect(() => {
       const menuOpen = activeMenu !== null;
       const isMobile = currScreenWidth < 768;
   
-      if (isVehiculePath || isMobile) {
+      if (isVehiculePath || isLegalPath|| isMobile) {
         // toujours un style fixe sur mobile ou la page véhicules
         setBarStyle("bg-primary text-white");
         setNavStyle("bg-white shadow-md");
@@ -210,7 +211,7 @@ useEffect(() => {
     updateNavStyle(); // appeler directement au montage
     window.addEventListener("scroll", updateNavStyle);
     return () => window.removeEventListener("scroll", updateNavStyle);
-  }, [activeMenu, pathname, currScreenWidth, isVehiculePath]);
+  }, [activeMenu, pathname, currScreenWidth, isVehiculePath , isLegalPath]);
   
   
   return (

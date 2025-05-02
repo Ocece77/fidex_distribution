@@ -69,7 +69,7 @@ const VehiculesSection = ({ cat = "all", brand = "all" }) => {
 
       {/* Liste des véhicules */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredVehicules.map((vehicule) => (
+        {filteredVehicules && filteredVehicules.map((vehicule) => (
           <div key={vehicule.id} className="bg-white p-4 rounded shadow">
             <img src={vehicule.image} alt={vehicule.name} className="w-150 h-48 object-cover rounded" />
             <h3 className="text-lg font-bold mt-2">{vehicule.name}</h3>
@@ -85,6 +85,7 @@ const VehiculesSection = ({ cat = "all", brand = "all" }) => {
             </Link>
           </div>
         ))}
+        {!filteredVehicules && (<div>Aucun véhicules correspondant aux critères de recherches</div>)}
       </div>
     </div>
   );

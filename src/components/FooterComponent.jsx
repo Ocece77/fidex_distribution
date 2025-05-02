@@ -13,6 +13,7 @@ import {
 import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslation } from "react-i18next";
+import PropTypes from "prop-types";
 
 const information = {
   email: ["fidexdistribution@gmail.com", faEnvelope],
@@ -20,7 +21,7 @@ const information = {
   téléphone: ["+233 1 23 45 67", faPhone],
 };
 
-const FooterComponent = () => {
+const FooterComponent = ({ onCookieClick }) => {
   const { t } = useTranslation();
 
   const openLink = (key, value) => {
@@ -131,9 +132,34 @@ const FooterComponent = () => {
         </div>
 
         <FooterDivider />
+
+             {/* Ajout des mentions légales */}
+         <div className="flex gap-5 text-sm text-neutral-400 -mt-10">
+             <FooterLink href="/legal/privacy-policy" className="flex justify-center items-center">
+            {t("footer.privacy")}
+          </FooterLink>
+          
+          <FooterLink href="/legal/legal-mentions" className="flex justify-center items-center">
+            {t("footer.legal")}
+          </FooterLink>
+
+          <FooterLink href="/legal/terms-and-conditions" className="flex justify-center items-center">
+            {t("footer.terms")}
+          </FooterLink>
+
+          <button onClick={onCookieClick} className="hover:underline">
+               {t("footer.cookies")}
+            </button>
+        </div>
+
+
       </div>
     </Footer>
   );
 };
+
+FooterComponent.propTypes ={
+  onCookieClick : PropTypes.func
+}
 
 export default FooterComponent;
