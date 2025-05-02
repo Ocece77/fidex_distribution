@@ -9,8 +9,6 @@ import { MotionGlobalConfig } from "framer-motion";
 import AppRoutes from './AppRoutes';
 
 
-
-
 // Désactiver les animations sur mobile
 const disableAnimationsOnMobile = () => {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);

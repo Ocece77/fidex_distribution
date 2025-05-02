@@ -1,73 +1,92 @@
-import React from 'react'
-import ContactSection from '../../components/ContactSection'
-import Map from '../../components/Map'
-import HeaderComponent from '../../components/HeaderComponent'
-import EstimationEnvoi from '../../components/EstimationEnvoi'
-import StepCardsSection from '../../components/StepCardsSection'
-import ParallaxSection from '../../components/ParallaxSection'
-import { faBoxesPacking, faCalculator, faHouse } from '@fortawesome/free-solid-svg-icons'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-import photo1 from '../../assets/photos/livraison/livraison8.jpg'
-import photo2 from '../../assets/photos/livraison/livraison2.jpg'
+import photo1 from '../../assets/photos/livraison/livraison8.jpg';
+import photo2 from '../../assets/photos/livraison/livraison2.jpg';
 
-const stepList =  [
-  {
-    id: 1,
-    cardsTitre: 'Envoyer un colis',
-    cardsDesc: 'Simplifiez l’expédition de vos colis en les déposant dans notre agence. ',
-    cardsLogo:faCalculator,
-    cardsLink: '/contacts',
-    cardsLinkLabel:"Acheter"
-  },
-  {
-    id: 2,
-    cardsTitre: 'Estimez votre envoie',
-    cardsDesc: 'Obtenez une estimation rapide et gratuite des frais d’expédition',
-    cardsLogo:faBoxesPacking,
-    cardsLink: '/contacts',
-    cardsLinkLabel:"Acheter"
-  },
-  {
-    id: 3,
-    cardsTitre: 'Se rendre en agence',
-    cardsDesc: "Déposer votre colis en agence. Nous nous chargeons de nous occuper du processus d’envoie",
-    cardsLogo:faHouse,
-    cardsLink: '/contacts',
-    cardsLinkLabel:"Acheter"
-  },
+import ContactSection from '../../components/ContactSection';
+import Map from '../../components/Map';
+import HeaderComponent from '../../components/HeaderComponent';
+import EstimationEnvoi from '../../components/EstimationEnvoi'; 
+import StepCardsSection from '../../components/StepCardsSection';
+import ParallaxSection from '../../components/ParallaxSection';
 
-]
-const LivraisonEstimation =() => {
+import { faBoxesPacking, faCalculator, faHouse } from '@fortawesome/free-solid-svg-icons';
+
+const LivraisonEstimation = () => {
+  const { t } = useTranslation();
+
+  const step1 = t('delivery.deliveryEstimation.stepsList.0', { returnObjects: true });
+  const step2 = t('delivery.deliveryEstimation.stepsList.1', { returnObjects: true });
+  const step3 = t('delivery.deliveryEstimation.stepsList.2', { returnObjects: true });
+
+  const stepList = [
+    {
+      id: step1.id,
+      cardsTitre: step1.title,
+      cardsDesc: step1.description,
+      cardsLogo: faCalculator,
+      cardsLink: step1.link,
+      cardsLinkLabel: step1.linkLabel
+    },
+    {
+      id: step2.id,
+      cardsTitre: step2.title,
+      cardsDesc: step2.description,
+      cardsLogo: faBoxesPacking,
+      cardsLink: step2.link,
+      cardsLinkLabel: step2.linkLabel
+    },
+    {
+      id: step3.id,
+      cardsTitre: step3.title,
+      cardsDesc: step3.description,
+      cardsLogo: faHouse,
+      cardsLink: step3.link,
+      cardsLinkLabel: step3.linkLabel
+    }
+  ];
+
+  const headerBtns = {
+    [t('delivery.deliveryEstimation.header.buttons.track')]: "/livraison/suivi", 
+    [t('delivery.deliveryEstimation.header.buttons.dropOff')]: "/contacts"
+  };
+
+  const parallaxBtn = {
+    [t('delivery.deliveryEstimation.parallax.button')]: "/livraison/estimation"
+  };
+
   return (
-    <section className='grid grid-cols-1 gap-20'> 
-       <HeaderComponent
-          titre={"Estimation de l'envoie"} 
-          backgroundImage={photo1} 
-          desc={"Simplifiez vos achats et vos livraisons avec nos solutions sur mesure"} 
-          btns={{"Suivre un colis":"livraison/suivi" , "Déposer votre colis en agence":"/contacts"}}
-        />
-      <EstimationEnvoi/>
+    <section className='grid grid-cols-1 gap-20'>
+      <HeaderComponent
+        titre={t('delivery.deliveryEstimation.header.title')}
+        backgroundImage={photo1}
+        desc={t('delivery.deliveryEstimation.header.description')}
+        btns={headerBtns}
+      />
+
+      <div id="estimation-form" className='bg-white'>
+        <EstimationEnvoi />
+      </div>
 
       <StepCardsSection
-              titre="Faites vous livrer dans notre agence"
-              desc="Profitez de la commodité de la livraison en agence pour récupérer vos colis rapidement et facilement, directement à l'endroit qui vous convient."
-              cards={stepList}
-              dark={true}
-         />
-       
+        titre={t('delivery.deliveryEstimation.stepsSection.title')}
+        desc={t('delivery.deliveryEstimation.stepsSection.description')}
+        cards={stepList}
+        dark={true}
+      />
+
       <ParallaxSection
-            titre="Estimez le coût d’envoie de votre colis"
-            desc="Estimez facilement le coût d'envoi de votre colis en renseignant simplement ses dimensions, son poids et les destinations d'expédition et de livraison"
-            btn={{"Estimer votre envoi":"/livraison/estimation"}}
-            img={photo2}
-            />
-      
+        titre={t('delivery.deliveryEstimation.parallax.title')}
+        desc={t('delivery.deliveryEstimation.parallax.description')}
+        btn={parallaxBtn}
+        img={photo2}
+      />
 
-      
-      <Map/>
-      <ContactSection/>
+      <Map />
+      <ContactSection />
     </section>
-  )
-}
+  );
+};
 
-export default LivraisonEstimation
+export default LivraisonEstimation;

@@ -1,14 +1,20 @@
 import React from 'react'
 import photo1 from '../assets/photos/home/about4.jpg'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
-const btns= {
-     "Nous contacter":"/contacts" ,
-     "Retour à l'accueil":"/"
-    }
+
     
 
 const ErrorPage = () => {
+
+   const { t } = useTranslation(); 
+   
+  const btns= {
+     [t('btn-contact')]: "/contacts" ,
+     "Retour à l'accueil":"/"
+    }
+
   return (
         <section className="h-fit">
           <div   className="bg-transparent relative h-screen ">

@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
 import ChatWidget from "../components/ChatWidget";
+import CookiePopup from "../components/legal/CookiePopup";
 
 const MainLayout = () => {
   return (
@@ -10,8 +11,8 @@ const MainLayout = () => {
       <main >
         <Outlet /> {/* Les pages s’affichent ici */}
         <ChatWidget/>
+        <CookiePopup />
       </main>
-      
       <FooterComponent />
     </>
   );

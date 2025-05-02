@@ -1,92 +1,99 @@
-import React from 'react'
-import ContactSection from '../../components/ContactSection'
-import Map from '../../components/Map'
-import HeaderComponent from '../../components/HeaderComponent'
-import StepCardsSection from '../../components/StepCardsSection'
-import { faPlane, faShip, faTruckFast } from '@fortawesome/free-solid-svg-icons'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { faPlane, faShip, faTruckFast } from '@fortawesome/free-solid-svg-icons';
 
-import expedition1 from "../../assets/photos/expedition/expedition1.jpeg"
-import expedition2 from "../../assets/photos/expedition/expedition2.jpg"
+import HeaderComponent from '../../components/HeaderComponent';
+import StepCardsSection from '../../components/StepCardsSection';
+import ParallaxSection from '../../components/ParallaxSection';
+import InfoSection from '../../components/InfoSection';
+import ContactSection from '../../components/ContactSection';
+import Map from '../../components/Map';
 
-import garantie from "../../assets/photos/expedition/garantie3.jpg"
-
-import ParallaxSection from '../../components/ParallaxSection'
-import InfoSection from '../../components/InfoSection'
-
-const stepList =  [
-  {
-    id: 1,
-    cardsTitre: 'Fret Express',
-    cardsDesc: ' Livraison rapide de courriers et colis, à déposer avant la veille du départ',
-    cardsLogo:faTruckFast,
-    cardsLink: '/contacts',
-    cardsLinkLabel:"Acheter"
-  },
-  {
-    id: 2,
-    cardsTitre: 'Fret Aérien',
-    cardsDesc: 'Transport international offrant un excellent rapport poids/prix/temps.',
-    cardsLogo:faPlane,
-    cardsLink: '/contacts',
-    cardsLinkLabel:"Acheter"
-  },
-  {
-    id: 3,
-    cardsTitre: 'Fret Aérien',
-    cardsDesc: "Solution économique pour le transport",
-    cardsLogo:faShip,
-    cardsLink: '/contacts',
-    cardsLinkLabel:"Acheter"
-  },
-  {
-    id: 4,
-    cardsTitre: 'Sous Douane',
-    cardsDesc: " Gestion des formalités douanières et livraison à la ville de destination.",
-    cardsLogo:faTruckFast,
-    cardsLink: '/contacts',
-    cardsLinkLabel:"Acheter"
-  },
-]
+import expedition1 from "../../assets/photos/expedition/expedition1.jpeg";
+import expedition2 from "../../assets/photos/expedition/expedition2.jpg";
+import garantie from "../../assets/photos/expedition/garantie3.jpg";
 
 const Expedition = () => {
+  const { t } = useTranslation();
+
+  const stepList = [
+    {
+      id: 1,
+      cardsTitre: t('shipping.expedition.stepCards.0.title'),
+      cardsDesc: t('shipping.expedition.stepCards.0.description'),
+      cardsLogo: faTruckFast,
+      cardsLink: '/contacts',
+      cardsLinkLabel: t('shipping.expedition.stepCards.0.linkLabel'),
+    },
+    {
+      id: 2,
+      cardsTitre: t('shipping.expedition.stepCards.1.title'),
+      cardsDesc: t('shipping.expedition.stepCards.1.description'),
+      cardsLogo: faPlane,
+      cardsLink: '/contacts',
+      cardsLinkLabel: t('shipping.expedition.stepCards.1.linkLabel'),
+    },
+    {
+      id: 3,
+      cardsTitre: t('shipping.expedition.stepCards.2.title'),
+      cardsDesc: t('shipping.expedition.stepCards.2.description'),
+      cardsLogo: faShip,
+      cardsLink: '/contacts',
+      cardsLinkLabel: t('shipping.expedition.stepCards.2.linkLabel'),
+    },
+    {
+      id: 4,
+      cardsTitre: t('shipping.expedition.stepCards.3.title'),
+      cardsDesc: t('shipping.expedition.stepCards.3.description'),
+      cardsLogo: faTruckFast,
+      cardsLink: '/contacts',
+      cardsLinkLabel: t('shipping.expedition.stepCards.3.linkLabel'),
+    }
+  ];
+
   return (
     <section className='grid grid-cols-1 gap-40'>
-           <HeaderComponent
-                titre={"Expédition"} 
-                backgroundImage={expedition2} 
-                desc={"Faites confiance à notre service pour des envois internationaux sans souci."} 
-                btns={{"Nous contacter":"/contacts","Nos garanties":"/expedition/garantie"}}
-                    />
-                <StepCardsSection
-                  titre="Expédiez à l'international en toute tranquillité"
-                  desc="Choisissez parmi nos multiples options d’envoi, conçues pour allier efficacité et rapidité. "
-                  cards={stepList}
-                />
-                                
-              <InfoSection
-                img={garantie}
-                titre={"Nos garanties pour chaque envoi"}
-                desc={
-                  "Votre sérénité est notre priorité. À chaque étape de l’expédition, nous nous engageons à garantir la sécurité de vos biens, leur traçabilité en temps réel, et leur livraison dans les délais. Faites confiance à un service qui place la fiabilité au cœur de ses engagements."
-                }
-                btn={{
-                  btnTitre: "Découvrir nos engagements",
-                  btnLink: "/garanties"
-                }}
-                darkBg={true}
-              />
-              <ParallaxSection
-              titre="Envoyez vos colis à l'international en toute sérénité"
-              desc="Nous garantissons une livraison rapide et sécurisée à l'international pour préserver l'intégrité de vos biens."
-              img={expedition1} 
-              btn={{"btnTitre":"Nos garanties","btnLink":"/expedition/garantie"}}
-              />
+      <HeaderComponent
+        titre={t('shipping.expedition.title')}
+        backgroundImage={expedition2}
+        desc={t('shipping.expedition.description')}
+        btns={{
+          [t('shipping.expedition.buttons.contactUs')]: "/contacts",
+          [t('shipping.expedition.buttons.guarantees')]: "/expedition/garantie"
+        }}
+      />
 
+      <StepCardsSection
+        titre={t('shipping.expedition.stepSection.title')}
+        desc={t('shipping.expedition.stepSection.description')}
+        cards={stepList}
+      />
 
-        <Map/>
-        <ContactSection/>
+      <InfoSection
+        img={garantie}
+        titre={t('shipping.expedition.infoSection.title')}
+        desc={t('shipping.expedition.infoSection.description')}
+        btn={{
+          btnTitre: t('shipping.expedition.infoSection.buttonLabel'),
+          btnLink: "/garanties"
+        }}
+        darkBg={true}
+      />
+
+      <ParallaxSection
+        titre={t('shipping.expedition.parallaxSection.title')}
+        desc={t('shipping.expedition.parallaxSection.description')}
+        img={expedition1}
+        btn={{
+          btnTitre: t('shipping.expedition.parallaxSection.buttonLabel'),
+          btnLink: "/expedition/garantie"
+        }}
+      />
+
+      <Map />
+      <ContactSection />
     </section>
-  )
-}
+  );
+};
 
-export default Expedition
+export default Expedition;

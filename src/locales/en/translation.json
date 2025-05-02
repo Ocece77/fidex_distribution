@@ -1,0 +1,651 @@
+{
+  "menu": {
+    "home": "Home",
+    "about": {
+      "title": "About",
+      "description": "Discover our story, values, and the team building Fidex every day.",
+      "links": {
+        "history": "Our Story",
+        "contact": "Contact Us"
+      }
+    },
+    "vehicles": {
+      "title": "Vehicles",
+      "description": "Browse our range of durable vehicles for industry and shipping.",
+      "links": {
+        "all": "All Vehicles",
+        "pickup": "Pick-up",
+        "suv": "SUV & Mini Van",
+        "4x4": "4x4"
+      }
+    },
+    "delivery": {
+      "title": "Deliveries",
+      "description": "Track your packages in real time or estimate your next delivery cost.",
+      "links": {
+        "service": "Explore Our Service",
+        "tracking": "Tracking",
+        "estimate": "Cost Estimate"
+      }
+    },
+    "shipping": {
+      "title": "Shipping",
+      "description": "Explore our shipping solutions, warranties, and covered countries.",
+      "links": {
+        "services": "Explore Our Services",
+        "warranty": "Warranty"
+      }
+    },
+    "mining": {
+      "title": "Mining",
+      "description": "Buy concessions, discover our commitments, and the minerals available.",
+      "links": {
+        "buy": "Buy Concessions",
+        "commitments": "Our Commitments",
+        "minerals": "Sold Minerals"
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "phone": "Speak to an Expert",
+      "phone_number": "+233 1 23 45 67"
+    }
+  },
+  "chatbot": {
+    "header_title": "Fidex Advisor",
+    "welcome_message": "Welcome, what topic would you like more information on?",
+    "option_car": "Car",
+    "option_mining": "Mining",
+    "option_delivery": "Delivery",
+    "option_shipping": "Shipping",
+    "car_intro": "We offer a wide range of vehicles adapted to all your needs. 🚗",
+    "mining_intro": "We extract various minerals while respecting strict environmental standards. ⛏️",
+    "delivery_intro": "Discover our delivery services for parcels, documents, and more. 📦",
+    "shipping_intro": "We offer shipping solutions tailored to your needs. 🛳️✈️",
+    "prompt_again": "Would you like to explore another topic?",
+    "car_question": "What type of vehicle are you looking for?",
+    "car_option_suv": "SUV",
+    "car_option_4x4": "4x4",
+    "car_option_minibus": "Mini bus",
+    "car_option_pickup": "Pickup",
+    "car_brands_message": "Here are some of the brands we offer. Click on one to learn more:",
+    "back_to_main_menu": "Back to main menu",
+    "mining_question": "What type of mineral resource interests you?",
+    "mining_option_coltan": "coltan",
+    "mining_option_cobalt": "cobalt",
+    "mining_option_lithium": "lithium",
+    "mining_option_casserite": "casserite",
+    "mining_link_message": "You can find all the details on our mining operations page:",
+    "mining_link_text": "👉 View the mining page",
+    "delivery_question": "What type of delivery would you like to make?",
+    "delivery_option_parcel": "Parcel",
+    "delivery_option_document": "Document",
+    "delivery_option_food": "Food",
+    "delivery_link_message": "For more information about our delivery services:",
+    "delivery_link_text": "👉 View the delivery page",
+    "shipping_question": "What type of shipping are you looking for?",
+    "shipping_option_sea": "Sea Freight",
+    "shipping_option_air": "Air Freight",
+    "shipping_option_express": "Express Freight",
+    "shipping_option_customs": "Customs Cleared",
+    "shipping_link_message": "To learn more about our shipping methods:",
+    "shipping_link_text": "👉 View the shipping page",
+    "unknown_input": "Sorry, I didn't understand your message 😢. Please choose one of the options below."
+  },
+  "btn": "see more",
+  "btn-contact": "Contact us",
+  "homepage": {
+    "heroSection": {
+      "title": "Your partner for success with excellence",
+      "description": "From resource extraction to premium mobility, through efficient delivery solutions, we connect your needs to excellence",
+      "cta1": "Contact us",
+      "cta2": "Learn more"
+    },
+    "infoSection": {
+      "title": "Supporting 4000+ clients across 22 countries",
+      "description": "We provide fast and efficient solutions in three areas: new vehicle sales, parcel management through our distribution centers, and support for the purchase of mining concessions. Our mission: simplify your projects and optimize your operations.",
+      "btnTitle": "Learn more"
+    },
+    "cardsSection1": {
+      "title": "Buy, invest, or have delivered with confidence",
+      "description": "Whether for purchasing a vehicle, a mining concession, or receiving parcels, we are here to guide you every step of the way.",
+      "cards": [
+        {
+          "title": "Vehicles",
+          "desc": "Explore our vehicle range tailored to your needs",
+          "link": "/vehicules"
+        },
+        {
+          "title": "Delivery",
+          "desc": "Track your parcels, manage your deliveries",
+          "link": "/livraison"
+        },
+        {
+          "title": "Expedition",
+          "desc": "We handle your international shipments",
+          "link": "/expedition"
+        },
+        {
+          "title": "Mining Concessions",
+          "desc": "Support for purchasing mining concessions",
+          "link": "/exploitation_miniere"
+        }
+      ]
+    },
+    "quoteSection": {
+      "sectionText1": "Innovation is not just a new idea, but a force that transforms challenges into opportunities. It's the art of rethinking the present to create a better, more efficient, and sustainable future.",
+      "sectionText2": "Discover our vision"
+    },
+    "carousel": {
+      "title": "Explore our range of new vehicles",
+      "description": "Discover a diverse selection of vehicles combining performance, comfort, and reliability, tailored to your needs and expectations."
+    },
+    "infoSectionExploitation": {
+      "title": "Buy a mining concession",
+      "description": "We provide fast and efficient solutions in three areas: new vehicle sales, parcel management through our distribution centers, and support for the purchase of mining concessions. Our mission: simplify your projects and optimize your operations.",
+      "btnTitle": "Buy a Concession"
+    },
+    "cardsSection2": {
+      "title": "Dive into our vision",
+      "description": "Dive into our vision, where innovation, commitment, and sustainability shape every aspect of our business.",
+      "cards": [
+        {
+          "title": "Our Values",
+          "desc": "Discover our core values",
+          "link": "/about"
+        },
+        {
+          "title": "Our Expertise",
+          "desc": "Learn more about our expertise",
+          "link": "/about"
+        },
+        {
+          "title": "Our Vision",
+          "desc": "Explore our long-term vision",
+          "link": "/about"
+        }
+      ]
+    },
+    "stats": {
+      "countries": "Countries with our collaborators",
+      "clients": "Satisfied clients",
+      "projects": "Projects completed"
+    },
+    "sectionTexte1": "Innovation is not just a new idea, but a force that turns challenges into opportunities. It is the art of rethinking the present to create a better, more efficient, and sustainable future.",
+    "sectionTexte2": "Discover our vision",
+
+    "card1.title": "Vehicle Sales",
+    "card1.desc": "Explore our selection of new quality vehicles",
+
+    "card2.title": "Package Delivery",
+    "card2.desc": "Enjoy our fast and reliable service for delivering and picking up your parcels",
+
+    "card3.title": "Shipments",
+    "card3.desc": "We believe in integrity, innovation, and respect—principles that guide every action we take.",
+
+    "card4.title": "Buy a Concession",
+    "card4.desc": "We find, negotiate, and manage the processes for you.",
+
+    "card5.title": "Our Commitment",
+    "card5.desc": "We are committed to providing quality, sustainable, and environmentally friendly solutions.",
+
+    "card6.title": "Our Story",
+    "card6.desc": "Guided by innovation, respect, and collaboration, we have built a committed company.",
+
+    "card7.title": "Our Values",
+    "card7.desc": "We believe in integrity, innovation, and respect—principles that guide every action we take."
+  },
+  "about": {
+    "header": {
+      "title": "About us",
+      "description": "We are a company dedicated to simplifying your logistics, automotive, and mining needs.",
+      "btn": "Contact us"
+    },
+    "whoSection": {
+      "title": "Who are we?",
+      "paragraph1": "We are a key player in the resources sector, operating across multiple regions and distributing products worldwide.",
+      "paragraph2": "Our strategy is based on key trends shaping the future. We supply essential minerals to industry, such as lithium and coltan.",
+      "paragraph3": "A resource portfolio designed to meet today’s needs and tomorrow’s challenges.",
+      "btn": "Contact us",
+      "stat1": {
+        "title": "22+",
+        "desc": "Countries with our collaborators worldwide"
+      },
+      "stat2": {
+        "title": "4000+",
+        "desc": "Client satisfaction is at the heart of our priorities."
+      }
+    },
+    "strategySection": {
+      "title": "Our strategy",
+      "description": "We responsibly manage a diversified and resilient portfolio of assets in strategic and promising sectors. We create value by excelling in operations, discovering and developing new resources, acquiring the right assets, and optimizing our investments. Through our unique approach to social value creation, we are a trusted partner delivering benefits to all stakeholders.",
+      "btn": "Contact us"
+    },
+    "valuesSection": {
+      "title": "Our values",
+      "description": "Doing what is right:\nOur commitment to a sustainable future begins with safety, integrity, and building trust with all our partners.\nSeeking better ways:\nActive listening and innovation help us tackle challenges and constantly move forward.\nMaking an impact:\nEvery day, we take responsibility for our actions, value creation, and the positive impact we can generate.",
+      "btn": "Contact us"
+    },
+    "quoteSection": {
+      "text": "At Fidex, we simplify logistics, facilitate the buying and selling of vehicles, and provide essential resources. Our services meet daily needs while supporting economic development and promoting sustainable solutions for the future."
+    },
+    "officeSection": {
+      "title": "We welcome you to our offices",
+      "description": "At Fidex Distribution, we pride ourselves on offering our employees a modern, functional, and pleasant work environment. Located in the heart of Kinshasa, our offices are designed to foster collaboration, focus, and daily well-being."
+    }
+  },
+  "vehicules": {
+    "parallaxSection": {
+      "titre": "Buy your vehicle with peace of mind",
+      "desc": "Looking for a new car? Our experts guide you to choose the model that suits your needs."
+    },
+    "header": {
+      "types": {
+        "suv": "SUV",
+        "fourByFour": "4x4",
+        "pickup": "Pick-up",
+        "minibusVan": "Minibus & van"
+      },
+      "alt": {
+        "brandLogo": "Brand logo"
+      },
+      "hero": {
+        "title": "Discover our new vehicle offers,",
+        "subtitle": "available near you",
+        "description": "Compare several offers to easily find your ideal vehicle, then make an appointment with our experts to finalize your choice."
+      }
+    },
+    "details": {
+      "backToSelection": "Back to selection",
+      "newVehicle": "New vehicle",
+      "ref": "REF",
+      "availableAtAgency": "AVAILABLE AT AGENCY",
+      "priceT1": "price T1",
+      "excludingVAT": "(Excluding VAT, Excluding tax for Export)",
+      "contactUsForInfo": "Contact us for information, advice or a personalized quote for the",
+      "contactUs": "Contact us",
+      "seeFeatures": "See features",
+      "featuresOf": "Features of the",
+      "discoverThe": "Discover the",
+      "robustReliableElegant": ": robust, reliable and elegant. Designed for adventure enthusiasts, this",
+      "combinesPowerAndComfort": "combines power and comfort to accompany you everywhere.",
+      "keyFeaturesOf": "Key features of the",
+      "engine": "Engine",
+      "power": "Power",
+      "numberOfSeats": "Number of seats",
+      "transmission": "Transmission",
+      "traction": "Traction",
+      "condition": "Condition",
+      "new": "New",
+      "driving": "Driving",
+      "rhdRightHandDrive": "RHD (right-hand drive)",
+      "brand": "Brand",
+      "model": "Model",
+      "version": "Version",
+      "year": "Year",
+      "na": "N/A",
+      "seats": "Seats",
+      "doors": "Doors",
+      "fuel": "Fuel",
+      "cylinders": "Cylinders",
+      "displacement": "Displacement",
+      "chassisSuspension": "Chassis & suspensions",
+      "gearbox": "Gearbox",
+      "wheelbase": "Wheelbase",
+      "meters": "m",
+      "noVehicleDetailsFound": "No vehicle details found."
+    },
+    "vehiculesSection": {
+      "filters": {
+        "all": "All",
+        "suv": "SUV",
+        "4x4": "4x4",
+        "pickup": "Pickup",
+        "minibus": "Mini Bus"
+      },
+      "title": "All vehicles from the brand",
+      "buttonText": "See details"
+    }
+  },
+  "delivery": {
+    "header": {
+      "title": "Delivery throughout the DRC",
+      "description": "Simplify your purchases and deliveries with our tailored solutions",
+      "buttons": {
+        "estimate": "Estimate your shipment",
+        "dropOff": "Drop off your package at an agency"
+      }
+    },
+    "stepsSection": {
+      "title": "Get delivered to an agency and throughout the DRC",
+      "description": "Enjoy the convenience of agency delivery to pick up your packages quickly and easily, directly at the location that suits you."
+    },
+    "stepsList": [
+      {
+        "id": 1,
+        "title": "1. Order on the site of your choice.",
+        "description": "Place an order for your product on the site of your choice.",
+        "linkLabel": "Shop",
+        "link": "/contacts"
+      },
+      {
+        "id": 2,
+        "title": "2. Provide our address.",
+        "description": "Indicate our agency address as the destination when placing your order.",
+        "linkLabel": "See our agencies",
+        "link": "/contacts"
+      },
+      {
+        "id": 3,
+        "title": "3. We receive it.",
+        "description": "We receive your package at the selected agency.",
+        "linkLabel": "Track my package",
+        "link": "/tracking"
+      },
+      {
+        "id": 4,
+        "title": "4. Pick up your package.",
+        "description": "You will be notified as soon as your package arrives and can easily pick it up at the chosen agency.",
+        "linkLabel": "Find an agency",
+        "link": "/contacts"
+      }
+    ],
+    "servicesSection": {
+      "title": "Our Services",
+      "payment": {
+        "title": "Payment Options",
+        "description": "We offer several secure payment options, including Visa, Mastercard, PayPal, as well as local solutions like Airtel Money, M-Pesa, and Orange Money, for a fast and flexible experience."
+      },
+      "security": {
+        "title": "Transaction Security",
+        "description": "All your transactions are protected by advanced encryption technologies, ensuring the security and confidentiality of your personal and financial data."
+      },
+      "goToAgencyButton": "Go to our agency"
+    },
+    "parallax": {
+      "title": "Estimate the cost of sending your package",
+      "description": "Easily estimate the shipping cost of your package by simply entering its dimensions, weight, and the shipping and delivery destinations",
+      "button": "Estimate your shipment"
+    },
+    "deliveryEstimation": {
+      "header": {
+        "title": "Shipment Estimation",
+        "description": "Simplify your purchases and deliveries with our tailored solutions",
+        "buttons": {
+          "track": "Track a package",
+          "dropOff": "Drop off your package at an agency"
+        }
+      },
+      "stepsSection": {
+        "title": "Get delivered to our agency",
+        "description": "Enjoy the convenience of agency delivery to pick up your packages quickly and easily, directly at the location that suits you."
+      },
+      "stepsList": [
+        {
+          "id": 1,
+          "title": "Send a package",
+          "description": "Simplify shipping your packages by dropping them off at our agency.",
+          "linkLabel": "See our agencies",
+          "link": "/contacts"
+        },
+        {
+          "id": 2,
+          "title": "Estimate your shipment",
+          "description": "Get a quick and free estimate of shipping costs.",
+          "linkLabel": "Estimate Now",
+          "link": "#estimation-form"
+        },
+        {
+          "id": 3,
+          "title": "Go to an agency",
+          "description": "Drop off your package at an agency. We take care of the shipping process.",
+          "linkLabel": "Find an agency",
+          "link": "/contacts"
+        }
+      ],
+      "parallax": {
+        "title": "Estimate the cost of sending your package",
+        "description": "Easily estimate the shipping cost of your package by simply entering its dimensions, weight, and the shipping and delivery destinations.",
+        "button": "Estimate your shipment"
+      }
+    },
+    "deliveryTracking": {
+      "header": {
+        "title": "Package Tracking",
+        "description": "Simplify your purchases and deliveries with our tailored solutions",
+        "buttons": {
+          "estimate": "Estimate your shipment",
+          "dropOff": "Drop off your package at an agency"
+        }
+      },
+      "stepsSection": {
+        "title": "How to track your package?",
+        "description": "Enter your tracking number above to see the current status of your shipment."
+      },
+      "stepsList": [
+        {
+          "id": 1,
+          "title": "Send a package",
+          "description": "Simplify shipping your packages by dropping them off at our agency.",
+          "linkLabel": "See our agencies",
+          "link": "/contacts"
+        },
+        {
+          "id": 2,
+          "title": "Estimate your shipment",
+          "description": "Get a quick and free estimate of shipping costs.",
+          "linkLabel": "Estimate Now",
+          "link": "/livraison/estimation"
+        },
+        {
+          "id": 3,
+          "title": "Go to an agency",
+          "description": "Drop off your package at an agency. We take care of the shipping process.",
+          "linkLabel": "Find an agency",
+          "link": "/contacts"
+        }
+      ],
+      "parallax": {
+        "title": "Estimate the cost of sending your package",
+        "description": "Easily estimate the shipping cost of your package by simply entering its dimensions, weight, and the shipping and delivery destinations.",
+        "button": "Estimate your shipment"
+      }
+    }
+  },
+  "shipping": {
+    "expedition": {
+      "title": "Shipping",
+      "description": "Trust our service for hassle-free international shipments.",
+      "buttons": {
+        "contactUs": "Contact Us",
+        "guarantees": "Our Guarantees"
+      },
+      "stepSection": {
+        "title": "Ship internationally with peace of mind",
+        "description": "Choose from our various shipping options, designed to combine efficiency and speed."
+      },
+      "stepCards": [
+        {
+          "title": "Express Freight",
+          "description": "Fast delivery of letters and packages, to be dropped off before the day of departure.",
+          "linkLabel": "Buy"
+        },
+        {
+          "title": "Air Freight",
+          "description": "International transport offering an excellent weight/price/time ratio.",
+          "linkLabel": "Buy"
+        },
+        {
+          "title": "Sea Freight",
+          "description": "Cost-effective transport solution",
+          "linkLabel": "Buy"
+        },
+        {
+          "title": "Customs Clearance",
+          "description": "Handling customs procedures and delivery to the destination city.",
+          "linkLabel": "Buy"
+        }
+      ],
+      "infoSection": {
+        "title": "Our guarantees for every shipment",
+        "description": "Your peace of mind is our priority. At every stage of the shipping process, we commit to ensuring the safety of your goods, their real-time tracking, and their delivery within the agreed timeframe. Trust a service that places reliability at the heart of its commitments.",
+        "buttonLabel": "Discover our commitments"
+      },
+      "parallaxSection": {
+        "title": "Send your packages internationally with confidence",
+        "description": "We guarantee fast and secure international delivery to preserve the integrity of your goods.",
+        "buttonLabel": "Our Guarantees"
+      }
+    },
+    "garantie": {
+      "title": "Our guarantees",
+      "description": "Because your goods deserve the best, we ensure they are handled with the utmost care throughout their shipping process.",
+      "cards": [
+        {
+          "title": "Optimal security",
+          "description": "Your packages are handled with care at every step to prevent damage.",
+          "linkLabel": "Learn more"
+        },
+        {
+          "title": "Real-time tracking",
+          "description": "Get complete tracking of your shipment until the final delivery.",
+          "linkLabel": "Track a package"
+        },
+        {
+          "title": "Guaranteed delivery",
+          "description": "We commit to delivering your goods within the agreed timeframe.",
+          "linkLabel": "See our commitments"
+        }
+      ],
+      "buttonLabels": {
+        "contactUs": "Contact us",
+        "shipGoods": "Ship your goods"
+      },
+      "stepSection": {
+        "title": "Ship internationally with peace of mind",
+        "description": "Choose from our various shipping options, designed to combine efficiency and speed."
+      }
+    }
+  },
+  "mining": {
+    "engagements": {
+      "title": "Our Commitments",
+      "description": "We make it easier for you to purchase mining concessions. Exploit natural resources with a trusted partner.",
+      "section3Text": "Discover our main minerals",
+      "section4Text": "We integrate sustainable practices into every aspect of our business, reducing emissions and adhering to strict regulations in the oil industry. Our goal is to contribute to a responsible energy transition.",
+      "section5Text": "We are committed to respecting miners' rights by ensuring safe, ethical, and respectful working conditions. We promote a secure working environment, compliant with international standards, and support local communities through sustainable development initiatives.",
+      "quote1Title": "Balancing performance with environmental responsibility",
+      "quote2Title": "Respect for Miners",
+      "parallaxTitle": "The future of energy relies on reliable and sustainable oil solutions",
+      "parallaxDescription": "The future of energy relies on reliable and sustainable oil solutions",
+      "buttonText": "Start your project",
+      "cards": {
+        "coltan": "Coltan",
+        "cobalt": "Cobalt",
+        "lithium": "Lithium",
+        "casserite": "Cassiterite"
+      }
+    },
+    "exploitationMiniere": {
+      "title": "Mining Operations",
+      "description": "We make it easier for you to purchase mining concessions. Exploit natural resources with a trusted partner.",
+      "section1Text": "Invest, buy, or operate your mining and oil resources with confidence.",
+      "section2Text": "Our mining expertise relies on the use of the latest technologies to optimize extraction and transport of resources. We are committed to providing efficient, safe, and sustainable solutions, complying with the strictest environmental and safety standards.",
+      "section3Text": "Discover our main minerals",
+      "section4Text": "We integrate sustainable practices into every aspect of our business, reducing emissions and adhering to strict regulations in the oil industry. Our goal is to contribute to a responsible energy transition.",
+      "section5Text": "We are committed to respecting miners' rights by ensuring safe, ethical, and respectful working conditions. We promote a secure working environment, compliant with international standards, and support local communities through sustainable development initiatives.",
+      "cards": {
+        "oilServices": "Our Oil Services",
+        "miningConcessionHelp": "Assistance with Mining Concessions",
+        "mineralSale": "Mineral Sales",
+        "coltan": "Coltan",
+        "cobalt": "Cobalt",
+        "lithium": "Lithium",
+        "cassiterite": "Cassiterite"
+      },
+      "buttonLabel": "Buy",
+      "parallaxTitle": "The Energy of Tomorrow, Sustainable and Reliable",
+      "parallaxDesc": "The future of energy combines sustainable oil and renewable energy, with a gradual transition towards cleaner solutions.",
+      "quote1Title": "Balancing performance with environmental responsibility",
+      "quote2Title": "Respect for Miners"
+    },
+    "mineraisVendus": {
+      "title": "Sold Minerals",
+      "description": "We make it easy for you to purchase mining concessions. Exploit natural resources with a trusted partner.",
+      "sectionText1": "Discover our main minerals",
+      "parallaxTitle": "The future of energy lies in reliable and sustainable oil solutions",
+      "parallaxDesc": "The future of energy combines sustainable oil and renewable energy solutions.",
+      "buttonLabel": "Buy",
+      "cards": {
+        "coltan": "Coltan",
+        "cobalt": "Cobalt",
+        "lithium": "Lithium",
+        "cassiterite": "Cassiterite"
+      }
+    }
+  },
+  "contactPage": {
+    "title": "Contact Us",
+    "description": "You can reach us by phone, email, or through our online contact form. Our team will be happy to get back to you as soon as possible.",
+    "callButton": "Or call us at +233 1 23 45 67",
+    "mapTitle": "Get in touch with us today!"
+  },
+  "contact": {
+    "title": "Contact us today!",
+    "description": "Feel free to reach out to us, our team is ready to help and support your projects.",
+    "name": "Last Name*",
+    "firstName": "First Name*",
+    "email": "Email*",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message",
+    "namePlaceholder": "Doe",
+    "firstNamePlaceholder": "John",
+    "emailPlaceholder": "john@example.com",
+    "phonePlaceholder": "+243 123 456 789",
+    "subjectPlaceholder": "Subject of your message",
+    "messagePlaceholder": "Your message here..."
+  },
+  "map": {
+    "title": "Pick up your package at our agency",
+    "description": "Come to our agency for personalized assistance and discover our services tailored to your needs.",
+    "information": {
+      "email": "Email address",
+      "adresse": "Address",
+      "téléphone": "Phone number"
+    },
+    "openingHours": {
+      "open": "Open from 8 AM to 6 PM Monday through Saturday",
+      "closed": "Closed on Sundays and public holidays"
+    }
+  },
+  "carousel": {
+    "motorisation": "Engine type",
+    "description": "starting from",
+    "cta": "Discover the vehicle",
+    "findAgency": "Find an agency"
+  },
+  "footer": {
+    "email": "Email",
+    "adresse": "Address",
+    "téléphone": "Phone",
+    "about": "About us",
+    "contact": "Contact us",
+    "new_vehicles": "New vehicles",
+    "all_vehicles": "All vehicles",
+    "minibus": "Mini vans & buses",
+    "mining": "Mining operations",
+    "oil": "Oil solutions",
+    "buy_concession": "Buy a mining concession",
+    "commitments": "Our commitments",
+    "minerals": "Available minerals",
+    "shipping": "shipping",
+    "delivery": "Delivery",
+    "estimate": "Estimate",
+    "track": "Track shipment",
+    "legal": "Legal notice",
+    "terms": "Terms & Conditions"
+  }
+  
+}

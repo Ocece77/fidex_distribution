@@ -2,16 +2,18 @@ import Reveal from "../animation/Reveal";
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { useInView } from "framer-motion";
-
-const stats = [
-  { id: 1, name: 'Pays avec nos collaborateurs', value: 22 },
-  { id: 2, name: 'Clients satisfaits', value: 4000 },
-  { id: 3, name: 'Projets réalisés', value: 120 },
-];
+import { useTranslation } from 'react-i18next';
 
 const Stats = () => {
   const statsContainerRef = useRef();
   const isInView = useInView(statsContainerRef, { once: true });
+  const { t } = useTranslation(); // Initialisation de i18next
+
+  const stats = [
+    { id: 1, name: t("homepage.stats.countries"), value: 22 },
+    { id: 2, name: t("homepage.stats.clients"), value: 4000 },
+    { id: 3, name: t("homepage.stats.projects"), value: 120 },
+  ];
 
   useEffect(() => {
     if (isInView) {
@@ -48,7 +50,7 @@ const Stats = () => {
                   </p>
                   <p className="text-4xl font-bold">+</p>
                 </div>
-                <p className="lg:text-lg/7 ">{stat.name}</p>    
+                <p className="lg:text-lg/7">{stat.name}</p>    
               </div>
             ))}
           </div>
