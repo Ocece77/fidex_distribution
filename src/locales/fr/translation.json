@@ -659,6 +659,8 @@
     "estimate": "Estimation",
     "track": "Suivre",
     "legal": "Mentions légales",
-    "terms": "Termes & Conditions"
+    "privacy": "Politique de Confidentialité",
+    "terms": "Termes & Conditions",
+    "cookies" : "utilisations des cookies"
   }
 }

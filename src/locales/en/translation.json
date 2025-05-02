@@ -645,7 +645,9 @@
     "estimate": "Estimate",
     "track": "Track shipment",
     "legal": "Legal notice",
-    "terms": "Terms & Conditions"
+    "privacy": "Privacy policy",
+    "terms": "Terms & Conditions",
+    "cookies" : "cookies"
   }
   
 }
