@@ -383,6 +383,25 @@
         "title": "Faites vous livrer dans notre agence",
         "description": "Profitez de la commodité de la livraison en agence pour récupérer vos colis rapidement et facilement, directement à l'endroit qui vous convient."
       },
+      "estimateShipping": {
+        "title": "Estimez votre colis",
+        "subtitle": "Remplissez les détails pour obtenir une estimation du prix d'envoi",
+        "weightPlaceholder": "Poids (g)",
+        "africa": "Afrique",
+        "europe": "Europe",
+        "america": "Amérique",
+        "asia": "Asie",
+        "oceania": "Océanie",
+        "estimateButton": "Estimer le prix",
+        "summaryTitle": "Estimation du colis",
+        "continent": "Continent",
+        "distance": "Distance estimée",
+        "weight": "Poids",
+        "volume": "Volume",
+        "distanceCost": "Coût distance",
+        "total": "Prix total estimé",
+        "fillAllFieldsError": "❌ Veuillez remplir tous les champs correctement."
+      },
       "stepsList": [
         {
           "id": 1,
@@ -420,6 +439,13 @@
           "estimate": "Estimez votre envoi",
           "dropOff": "Déposer votre colis en agence"
         }
+      },
+      "searchBar": {
+        "title": "Rechercher un colis",
+        "subtitle": "Entrer votre numéro de suivi afin de suivre votre colis",
+        "label": "Rechercher",
+        "placeholder": "Numéro de suivi",
+        "button": "Rechercher"
       },
       "stepsSection": {
         "title": "Comment suivre votre colis ?",

@@ -59,7 +59,7 @@ const Expedition = () => {
         desc={t('shipping.expedition.description')}
         btns={{
           [t('shipping.expedition.buttons.contactUs')]: "/contacts",
-          [t('shipping.expedition.buttons.guarantees')]: "/expedition/garantie"
+          [t('shipping.expedition.buttons.guarantees')]: "/expedition/garanties"
         }}
       />
 

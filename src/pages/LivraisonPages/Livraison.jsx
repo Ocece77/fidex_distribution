@@ -40,7 +40,7 @@ const Livraison = () => {
   }));
 
   const headerBtns = {
-    [t('delivery.header.buttons.estimate')]: "/estimationLivraison",
+    [t('delivery.header.buttons.estimate')]: "/livraison/estimation",
     [t('delivery.header.buttons.dropOff')]: "/contacts"
   };
 

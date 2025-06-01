@@ -384,6 +384,25 @@
         "title": "Get delivered to our agency",
         "description": "Enjoy the convenience of agency delivery to pick up your packages quickly and easily, directly at the location that suits you."
       },
+      "estimateShipping": {
+        "title": "Estimate your package",
+        "subtitle": "Fill in the details to get a shipping price estimate",
+        "weightPlaceholder": "Weight (g)",
+        "africa": "Africa",
+        "europe": "Europe",
+        "america": "America",
+        "asia": "Asia",
+        "oceania": "Oceania",
+        "estimateButton": "Estimate price",
+        "summaryTitle": "Package Estimate",
+        "continent": "Continent",
+        "distance": "Estimated distance",
+        "weight": "Weight",
+        "volume": "Volume",
+        "distanceCost": "Distance cost",
+        "total": "Estimated total price",
+        "fillAllFieldsError": "❌ Please fill in all fields correctly."
+      },
       "stepsList": [
         {
           "id": 1,
@@ -421,6 +440,13 @@
           "estimate": "Estimate your shipment",
           "dropOff": "Drop off your package at an agency"
         }
+      },
+      "searchBar": {
+        "title": "Track a Package",
+        "subtitle": "Enter your tracking number to follow your package",
+        "label": "Search",
+        "placeholder": "Tracking number",
+        "button": "Search"
       },
       "stepsSection": {
         "title": "How to track your package?",

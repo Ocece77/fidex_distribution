@@ -14,8 +14,8 @@ const QuoteSection = ({titre ,texte ="Exemple de contenu à mettre dans la secti
             <div className='grid lg:grid-cols-2 items-center justify-center mx-auto'>
               
                     {/*partie gauche - texte */}
-                    <div className={`flex col-span-1  md:h-[60vh] lg:h-[90%]  items-center ${reversed ? "order-2 lg:-ml-60 lg:px-30" : ""} `}>
-                        <div className="flex flex-col justify-center h-full lg:px-20 md:p-10 p-5 bg-white border border-gray-200 lg:rounded-lg shadow-sm relative lg:-mr-28 gap-5 ">
+                    <div className={`flex col-span-1  md:h-fit lg:h-[90%] items-center ${reversed ? "order-2 lg:-ml-60 lg:px-30" : ""} `}>
+                        <div className="flex flex-col justify-center h-full lg:p-20 md:p-10 p-5 bg-white border border-gray-200 lg:rounded-lg shadow-sm relative lg:-mr-28 gap-5 ">
                             <h1 className="lg:text-4xl text-3xl font-bold tracking-tight text-primary ">
                               {titre}
                             </h1>

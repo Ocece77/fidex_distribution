@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const CONTINENT_DISTANCES = {
   kinshasa: 0,
@@ -10,8 +11,10 @@ const CONTINENT_DISTANCES = {
 };
 
 const EstimateShipping = () => {
+  const { t } = useTranslation();
+
   const [weight, setWeight] = useState('');
-  const [continent, setContinent] = useState('kinshasa');
+  const [continent, setContinent] = useState(`Kinshasa (${t('delivery.deliveryEstimation.estimateShipping.africa')})`);
   const [dimensions, setDimensions] = useState({ length: '', width: '', height: '' });
   const [summaryData, setSummaryData] = useState(null);
 
@@ -25,37 +28,38 @@ const EstimateShipping = () => {
     const volume = (l * w * h);
 
     if (!weightInGrams || !l || !w || !h) {
-      setSummaryData({error: '❌ Veuillez remplir tous les champs correctement.'});
+      setSummaryData({ error: t('delivery.deliveryEstimation.estimateShipping.fillAllFieldsError') });
       return;
     }
 
     const distance = CONTINENT_DISTANCES[continent] || 1;
 
     const priceWeight = (weightInGrams / 100) * 1.5;
-    const priceVolume = (volume * 0.05) /1000;
+    const priceVolume = (volume * 0.05) / 1000;
     const priceDistance = distance * 0.05;
     const total = priceWeight + priceVolume + priceDistance;
 
-    setSummaryData(
-      {     continent,
-            distance,
-            weightInGrams,
-            priceWeight,
-            volume,
-            priceVolume,
-            priceDistance,
-            total,
-      }
-    );
-
-
+    setSummaryData({
+      continent,
+      distance,
+      weightInGrams,
+      priceWeight,
+      volume,
+      priceVolume,
+      priceDistance,
+      total,
+    });
   };
 
   return (
     <section className="py-20 max-w-4xl mx-auto">
-      <div className="text-center mb-8">
-        <h1 className="text-4xl md:text-6xl font-bold text-primary">Estimez votre colis</h1>
-        <p className="text-neutral-600 mt-2">Remplissez les détails pour obtenir une estimation du prix d'envoi</p>
+      <div className="text-center mb-8 px-5">
+        <h1 className="text-4xl md:text-6xl font-bold text-primary">
+          {t('delivery.deliveryEstimation.estimateShipping.title')}
+        </h1>
+        <p className="text-neutral-600 mt-2">
+          {t('delivery.deliveryEstimation.estimateShipping.subtitle')}
+        </p>
       </div>
 
       <form
@@ -67,7 +71,7 @@ const EstimateShipping = () => {
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
           className="w-full p-3 border-1 border-neutral-200 rounded-lg"
-          placeholder="Poids (g)"
+          placeholder={t('delivery.deliveryEstimation.estimateShipping.weightPlaceholder')}
           required
         />
 
@@ -78,11 +82,11 @@ const EstimateShipping = () => {
           required
         >
           <option value="kinshasa">Kinshasa</option>
-          <option value="afrique">Afrique</option>
-          <option value="europe">Europe</option>
-          <option value="amerique">Amérique</option>
-          <option value="asie">Asie</option>
-          <option value="oceanie">Océanie</option>
+          <option value="afrique">{t('delivery.deliveryEstimation.estimateShipping.africa')}</option>
+          <option value="europe">{t('delivery.deliveryEstimation.estimateShipping.europe')}</option>
+          <option value="amerique">{t('delivery.deliveryEstimation.estimateShipping.america')}</option>
+          <option value="asie">{t('delivery.deliveryEstimation.estimateShipping.asia')}</option>
+          <option value="oceanie">{t('delivery.deliveryEstimation.estimateShipping.oceania')}</option>
         </select>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -105,25 +109,48 @@ const EstimateShipping = () => {
           type="submit"
           className="w-full py-3 bg-primary text-white font-semibold rounded-lg hover:bg-red-800 transition-all"
         >
-          Estimer le prix
+          {t('delivery.deliveryEstimation.estimateShipping.estimateButton')}
         </button>
       </form>
 
       {summaryData && (
-        <div className="mt-6 p-4 bg-green-50 border border-green-300 rounded-lg text-green-800 space-y-2 text-center">
+        <div className="mt-6 p-4 bg-blue-50 border border-primary rounded-lg text-dark-primary space-y-2 text-center">
           {summaryData.error ? (
             <p className="text-red-600 font-semibold">{summaryData.error}</p>
           ) : (
-            <div className='flex flex-col gap-4'>
-              <p className="font-semibold text-2xl md:text-4xl"> Estimation du colis</p>
-                <div className='flex flex-col'>
-                  <p> Continent : <span className="font-medium">{summaryData.continent}</span></p>
-                  <p> Distance estimée : <span className="font-medium">{summaryData.distance} km</span></p>
-                  <p> Poids : <span className="font-medium">{summaryData.weightInGrams}g</span> [{summaryData.priceWeight.toFixed(2)}$ / g]</p>
-                  <p> Volume : <span className="font-medium">{summaryData.volume} cm³</span> ( {summaryData.priceVolume.toFixed(2)} $)</p>
-                  <p> Coût distance :  {summaryData.priceDistance.toFixed(2)} $</p>
-                </div>
-              <p className="text-2xl md:text-4xl font-bold">Prix total estimé : {summaryData.total.toFixed(2)} $</p>
+            <div className="flex flex-col gap-4">
+              <p className="font-semibold text-2xl md:text-4xl">
+                {t('delivery.deliveryEstimation.estimateShipping.summaryTitle')}
+              </p>
+              <div className="flex flex-col">
+                <p>
+                  {t('delivery.deliveryEstimation.estimateShipping.continent')} :{' '}
+                  <span className="font-medium">{summaryData.continent}</span>
+                </p>
+                <p>
+                  {t('delivery.deliveryEstimation.estimateShipping.distance')} :{' '}
+                  <span className="font-medium">{summaryData.distance} km</span>
+                </p>
+                <p>
+                  {t('delivery.deliveryEstimation.estimateShipping.weight')} :{' '}
+                  <span className="font-medium">
+                    {summaryData.weightInGrams}g
+                  </span>{' '}
+                  [{summaryData.priceWeight.toFixed(2)}$ / g]
+                </p>
+                <p>
+                  {t('delivery.deliveryEstimation.estimateShipping.volume')} :{' '}
+                  <span className="font-medium">{summaryData.volume} cm³</span>{' '}
+                  ({summaryData.priceVolume.toFixed(2)} $)
+                </p>
+                <p>
+                  {t('delivery.deliveryEstimation.estimateShipping.distanceCost')} :{' '}
+                  {summaryData.priceDistance.toFixed(2)} $
+                </p>
+              </div>
+              <p className="text-2xl md:text-4xl font-bold">
+                {t('delivery.deliveryEstimation.estimateShipping.total')} : {summaryData.total.toFixed(2)} $
+              </p>
             </div>
           )}
         </div>

@@ -47,7 +47,7 @@ const LivraisonSuivi = () => {
         backgroundImage={photo1}
         desc={t('delivery.deliveryTracking.header.description')}
         btns={{
-          [t('delivery.deliveryTracking.header.buttons.estimate')]: '/estimationLivraison',
+          [t('delivery.deliveryTracking.header.buttons.estimate')]: '/livraison/estimation',
           [t('delivery.deliveryTracking.header.buttons.dropOff')]: '/contacts',
         }}
       />

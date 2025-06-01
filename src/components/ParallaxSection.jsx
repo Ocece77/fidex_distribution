@@ -33,7 +33,7 @@ const ParallaxSection = ({titre , desc, btn={} , img}) => {
   return (
     <section
       ref={containerRef}
-      className="relative h-100 overflow-hidden flex items-center justify-center"
+      className="relative h-130 overflow-hidden flex items-center justify-center"
     >
      {/*Image d'arrière plan */}
       <div
@@ -46,7 +46,7 @@ const ParallaxSection = ({titre , desc, btn={} , img}) => {
 
      {/*contenue de gauche */}
       <div className="relative z-10 grid grid-cols-12 w-full h-full md:ml-10 md:py-15 p-5">
-        <div className="h-full lg:col-span-6 md:col-span-7 col-span-full bg-white rounded-lg shadow-[0_0px_10px_rgba(150,150,150,0.15)] ">
+        <div className="h-fit md:h-full lg:col-span-6 md:col-span-7 col-span-full bg-white rounded-lg shadow-[0_0px_10px_rgba(150,150,150,0.15)] ">
              <div className='grid grid-cols-1 flex-col w-full h-full rounded-lg overflow-hidden p-10 gap-3'>
 
                         <div className="grid grid-cols-1 gap-3">
