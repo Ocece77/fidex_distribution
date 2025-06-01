@@ -349,7 +349,7 @@ useEffect(() => {
           <>
             {/* Overlay */}
             <motion.div
-              className="fixed inset-0 bg-black bg-opacity-50 z-40"
+              className="fixed inset-0 bg-black bg-opacity-50 z-40 pointer-events-none"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -359,7 +359,7 @@ useEffect(() => {
             {/* Menu coulissant */}
             <motion.div
               id="mobileMenu"
-              className="fixed top-0 left-0 bottom-0 w-4/5 max-w-sm bg-white z-50 shadow-lg p-6 flex flex-col gap-5 overflow-y-auto"
+              className="fixed top-0 left-0 bottom-0 w-full max-w-sm bg-white pointer-events-auto z-50 shadow-lg p-6 flex flex-col gap-5 overflow-y-auto"
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}

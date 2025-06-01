@@ -22,22 +22,22 @@ const vehiculesToDisplay = [data[0] , data[5] , data[1]]; // vehicules à affich
 //logo cloud
 const logoCloud = () =>{
    return (
-    <div className="py-5 mx-auto ">
-      <div className="flex mx-auto w-full px-6 lg:px-8 justify-center">
-        <div className="flex flex-wrap max-w-4xl justify-center">
+
+      <div className=" flex mx-auto w-full  py-5 px-6 lg:px-8 justify-center">
+        <div className="grid grid-cols-3 max-w-4xl justify-center items-center gap-5">
                        {logoMarques.map((logo , i)=>{
                                           return (
-                                            <Link key={i}to={logo.liendulogo}>
+                                            <Link key={i}to={logo.liendulogo} className='flex-1 flex justify-center'>
                                               <img  src={logo.logo} alt="voiture" 
                                                     height={48}
-                                                    className="col-span-2 max-h-12 object-contain lg:col-span-1 cursor-pointer  md:w-[158px] w-1/3"/>
+                                                    className="col-span-2 max-h-12 object-contain lg:col-span-1 cursor-pointer  md:w-[158px] w-fit"/>
                                               </Link>
                                           )
                                       })}
     
         </div>
       </div>
-  </div>
+
    )
 }
 

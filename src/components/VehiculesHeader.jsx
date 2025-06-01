@@ -68,7 +68,7 @@ const HeroSection = () => {
   return (
     <section className='relative h-100 overflow-hidden flex items-center justify-center '>
     <div
-    className="absolute top-0 inset-x-0 w-full h-full bg-cover bg-center z-0 brightness-70"
+    className="absolute top-0 inset-x-0 w-screen h-full bg-cover bg-center z-0 brightness-70"
     style={{
          backgroundImage: `url(${vehicule})`
     }}
