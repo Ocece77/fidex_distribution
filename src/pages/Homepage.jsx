@@ -41,6 +41,7 @@ const Homepage = () => {
       cardsDesc: t("homepage.card1.desc"),
       cardsImg: vehicule1,
       cardsLink: "/vehicules",
+      cardsLinkLabel: t('homepage.cta')
     },
     {
       id: 2,
@@ -49,6 +50,8 @@ const Homepage = () => {
       cardsDesc: t("homepage.card2.desc"),
       cardsImg: livraison1,
       cardsLink: "/livraison",
+      cardsLinkLabel: t('homepage.cta')
+
     },
     {
       id: 3,
@@ -57,6 +60,8 @@ const Homepage = () => {
       cardsDesc: t("homepage.card3.desc"),
       cardsImg: expedition1,
       cardsLink: "/expedition",
+      cardsLinkLabel:t('homepage.cta')
+
     },
     {
       id: 4,
@@ -65,6 +70,8 @@ const Homepage = () => {
       cardsDesc: t("homepage.card4.desc"),
       cardsImg: exploitation1,
       cardsLink: "/exploitation_miniere",
+      cardsLinkLabel: t('homepage.cta')
+
     }
   ];
 

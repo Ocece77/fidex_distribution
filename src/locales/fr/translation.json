@@ -194,7 +194,9 @@
     "card6.desc": "Guidés par l'innovation, le respect et la collaboration, nous avons construit une entreprise engagée.",
 
     "card7.title": "Nos Valeurs",
-    "card7.desc": "Nous croyons en l'intégrité, l'innovation et le respect, des principes qui guident chaque action que nous entreprenons."
+    "card7.desc": "Nous croyons en l'intégrité, l'innovation et le respect, des principes qui guident chaque action que nous entreprenons.",
+    "cta" : "Découvrir nos offres"
+
   },
   "about": {
     "header": {

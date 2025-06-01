@@ -132,7 +132,7 @@
           "link": "/exploitation_miniere"
         }
       ]
-    },
+        },
     "quoteSection": {
       "sectionText1": "Innovation is not just a new idea, but a force that transforms challenges into opportunities. It's the art of rethinking the present to create a better, more efficient, and sustainable future.",
       "sectionText2": "Discover our vision"
@@ -194,7 +194,8 @@
     "card6.desc": "Guided by innovation, respect, and collaboration, we have built a committed company.",
 
     "card7.title": "Our Values",
-    "card7.desc": "We believe in integrity, innovation, and respect—principles that guide every action we take."
+    "card7.desc": "We believe in integrity, innovation, and respect—principles that guide every action we take.",
+    "cta" : "Discover our offers"
   },
   "about": {
     "header": {

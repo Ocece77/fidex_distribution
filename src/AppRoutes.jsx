@@ -3,9 +3,9 @@ import { lazy, Suspense, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import { AnimatePresence, motion } from "framer-motion";
 import MainLayout from "./Layout/MainLayout";
-import PrivacyPolicy from "./components/legal/PrivacyPolicy";
-import LegalMentions from "./components/legal/LegalMentions";
-import TermsAndConditions from "./components/legal/TermsAndConditions";
+import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
+import LegalMentions from "./pages/legal/LegalMentions";
+import TermsAndConditions from "./pages/legal/TermsAndConditions";
 
 // Lazy loading pages
 const Homepage = lazy(() => import("./pages/Homepage"));
