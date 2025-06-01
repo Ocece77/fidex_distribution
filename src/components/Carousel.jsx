@@ -30,7 +30,7 @@ const logoCloud = () =>{
                                             <Link key={i}to={logo.liendulogo}>
                                               <img  src={logo.logo} alt="voiture" 
                                                     height={48}
-                className="col-span-2 max-h-12 object-contain lg:col-span-1 cursor-pointer  md:w-[158px] w-1/3"/>
+                                                    className="col-span-2 max-h-12 object-contain lg:col-span-1 cursor-pointer  md:w-[158px] w-1/3"/>
                                               </Link>
                                           )
                                       })}
@@ -131,8 +131,8 @@ const Carousel = ({titre , desc , items=[] , showLogoCloud=true , showVehicules=
     <div className="slider-container w-screen flex flex-col justify-center md:px-10 relative gap-5 ">
   
           {/*Titre*/}
-          <div className="flex flex-col w-full text-center justify-center items-center ">  
-            <h1 className="lg:text-6xl text-3xl font-bold text-primary max-w-2xl">{titre}</h1>
+          <div className="flex flex-col w-full text-center justify-center items-center px-5">  
+            <h1 className="lg:text-6xl md:text-4xl text-3xl font-bold text-primary max-w-2xl">{titre}</h1>
             <p className="text-base font-light max-w-2xl">{desc}</p>
           </div>
      

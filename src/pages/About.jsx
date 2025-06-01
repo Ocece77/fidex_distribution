@@ -117,19 +117,19 @@ const About = () => {
       />
 
       <Reveal>
-        <section className='flex justify-center'>
+        <section className='flex justify-center '>
           <div className="grid grid-cols-1 gap-10 md:px-15 max-w-7xl">
             <div className="flex flex-col gap-5 text-center md:px-5 items-center">
               <h1 className="lg:text-6xl text-4xl font-bold text-primary">{t("about.officeSection.title")}</h1>
               <p className="font-light max-w-6xl">{t("about.officeSection.description")}</p>
             </div>
 
-            <div className='grid md:grid-cols-2 gap-4'>
+            <div className='grid md:grid-cols-2 gap-4 px-5'>
               <img className="h-auto max-w-full rounded-lg object-fill" src={local1} alt="image" />
               <img className="h-auto max-w-full rounded-lg" src={local2} alt="image" />
             </div>
 
-            <div className='grid md:grid-cols-3 gap-4'>
+            <div className='grid md:grid-cols-3 gap-4 px-5'>
               <img className="h-auto max-w-full rounded-lg" src={local3} alt="image" />
               <img className="h-auto max-w-full rounded-lg" src={local4} alt="image" />
               <img className="h-auto max-w-full rounded-lg" src={local5} alt="image" />

@@ -11,7 +11,7 @@ const ErrorPage = () => {
    const { t } = useTranslation(); 
    
   const btns= {
-     [t('btn-contact')]: "/contacts" ,
+     [t('menu.btn-contact')]: "/contacts" ,
      "Retour à l'accueil":"/"
     }
 

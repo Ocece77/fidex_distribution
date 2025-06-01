@@ -65,7 +65,7 @@ const FooterComponent = ({ onCookieClick }) => {
             <img src={logo} alt="Fidex Distribution Logo" className="w-50" />
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 flex-col gap-5 w-screen px-10">
+          <div className="grid grid-cols-2 lg:grid-cols-5 flex-col gap-5 w-screen px-10">
             <div>
               <FooterTitle title="Fidex" className="text-white" />
               <FooterLinkGroup col>
@@ -134,7 +134,7 @@ const FooterComponent = ({ onCookieClick }) => {
         <FooterDivider />
 
              {/* Ajout des mentions légales */}
-         <div className="flex gap-5 text-sm text-neutral-400 -mt-10">
+         <div className="flex flex-wrap gap-5 text-sm text-neutral-400 -mt-10">
              <FooterLink href="/legal/privacy-policy" className="flex justify-center items-center">
             {t("footer.privacy")}
           </FooterLink>

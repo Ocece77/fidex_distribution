@@ -25,7 +25,7 @@ const InfoSection = ({img , subtitre , titre , desc , btn , reversed=false , dar
               }
             
               {/*titre*/}
-              <h1 className={`lg:text-7xl text-5xl md:text-start text-center font-extrabold ${darkBg ?  "text-white" : "text-primary" }  `}>
+              <h1 className={`lg:text-6xl md:text-4xl text-3xl md:text-start text-center font-extrabold ${darkBg ?  "text-white" : "text-primary" }  `}>
                 {titre}
               </h1>
 

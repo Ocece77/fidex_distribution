@@ -236,9 +236,9 @@ useEffect(() => {
         </div>
 
         <div className="flex gap-5  items-center justify-center">
-
+           <Link  className="font-light text-[10px] md:text-sm ">{t('menu.about.links.contact')}</Link>
           <Dropdown
-            dismissOnClick={false}
+            dismissOnClick={true}
             renderTrigger={() => (
               <span className="font-light text-[10px] md:text-sm capitalize flex gap-2 items-center">
                     {

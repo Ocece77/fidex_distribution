@@ -44,6 +44,7 @@ const Hero = () => {
   return (
     <section ref={containerRef} className="flex items-center justify-center bg-transparent relative h-screen w-screen mb-10">
     <div className="flex flex-col md:grid max-w-full xl:grid-cols-2 md:grid-cols-3 pt-10">
+
       {/* Partie Gauche/Bas(mobile) : Texte - description - boutons CTA */}
       <div className="md:h-screen flex flex-col xl:col-span-1 md:col-span-2 items-center justify-center md:order-1 order-2 md:px-10">
         <div className="md:max-w-2xl">
@@ -77,8 +78,8 @@ const Hero = () => {
       </div>
 
       {/* Partie Droite/Haut(mobile) : Logo */}
-      <div className="flex flex-col col-span-1 h-full items-center justify-center md:order-2 order-1">
-        <img src={logo} alt="logo fidex" className="object-cover xl:h-2/5 md:max-w-full max-w-1/2 md:p-5 xl:p-0" />
+      <div className="flex flex-col col-span-1 h-full items-center justify-center md:order-2 order-1 md:h-screen">
+        <img src={logo} alt="logo fidex" className="object-cover xl:h-2/6 md:max-w-full max-w-1/2 md:p-5 xl:p-0" />
       </div>
     </div>
 

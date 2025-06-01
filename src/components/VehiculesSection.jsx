@@ -34,6 +34,10 @@ const VehiculesSection = ({ cat = "all", brand = "all" }) => {
         </div>
       )}
       {/* Filtres */}
+ { filterBrand != "all"   &&  <div className='w-full flex justify-center'>
+<button onClick={()=>{setFilterBrand("all"); setFilterType("all")}} className='hover:underline capitalize'>{t('vehicules.vehiculesSection.filters.reset')}</button>
+      </div>}
+
       <div className="flex flex-wrap gap-4 justify-center bg-white p-4 rounded shadow">
         <FilterButton
           label={t('vehicules.vehiculesSection.filters.all')}
@@ -85,7 +89,9 @@ const VehiculesSection = ({ cat = "all", brand = "all" }) => {
             </Link>
           </div>
         ))}
-        {!filteredVehicules && (<div>Aucun véhicules correspondant aux critères de recherches</div>)}
+        {!filteredVehicules && (<div> 
+           <p className='text-md'> {t('vehicules.vehiculesSection.filters.not-found')}</p>
+          </div>)}
       </div>
     </div>
   );

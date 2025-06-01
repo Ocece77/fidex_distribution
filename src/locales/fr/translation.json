@@ -7,7 +7,7 @@
       "description": "Découvrez notre histoire, nos valeurs et l’équipe qui bâtit Fidex chaque jour.",
       "links": {
         "history": "Notre Histoire",
-        "contact": "Nous rencontrer"
+        "contact": "Nous contacter"
       }
     },
     "vehicles": {
@@ -302,7 +302,9 @@
         "suv": "SUV",
         "4x4": "4x4",
         "pickup": "Pickup",
-        "minibus": "Mini Bus"
+        "minibus": "Mini Bus",
+        "reset" : "Réinitialiser le filtrage",
+        "not-found": " Aucun véhicules correspondant aux critères de recherches"
       },
       "title": "Tous les véhicules de la marque",
       "buttonText": "Voir les détails"

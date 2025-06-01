@@ -1,6 +1,7 @@
 {
   "menu": {
     "home": "Home",
+    "btn-contact": "Contact us",
     "about": {
       "title": "About",
       "description": "Discover our story, values, and the team building Fidex every day.",
@@ -301,11 +302,14 @@
         "suv": "SUV",
         "4x4": "4x4",
         "pickup": "Pickup",
-        "minibus": "Mini Bus"
+        "minibus": "Mini Bus",
+        "reset" : "reset filtering",
+        "not-found": "No vehicles matching search criteria"
       },
       "title": "All vehicles from the brand",
       "buttonText": "See details"
     }
+
   },
   "delivery": {
     "header": {
