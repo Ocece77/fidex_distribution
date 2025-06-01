@@ -47,11 +47,11 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="flex justify-center items-center p-10 bg-white">
+    <section className="flex justify-center items-center p-10">
       <div className="grid grid-cols-1 lg:grid-cols-2 max-w-7xl gap-5">
         {/* Partie gauche - photo */}
-        <div >
-          <img src={photo1} alt="photo des locaux" className="h-full object-contain" />
+        <div className="h-full overflow-hidden">
+          <img src={photo1} alt="photo des locaux" className="h-full w-full object-cover" />
         </div>
 
         {/* Partie droite - formulaire */}

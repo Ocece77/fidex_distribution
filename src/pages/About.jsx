@@ -114,6 +114,7 @@ const About = () => {
         texte={t("about.quoteSection.text")}
         img={about1}
         isQuote={false}
+        btn={{"label" : t("about.valuesSection.btn") ,"href" :  "/contacts" }}
       />
 
       <Reveal>

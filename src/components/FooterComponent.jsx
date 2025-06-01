@@ -14,6 +14,7 @@ import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const information = {
   email: ["fidexdistribution@gmail.com", faEnvelope],
@@ -69,8 +70,8 @@ const FooterComponent = ({ onCookieClick }) => {
             <div>
               <FooterTitle title="Fidex" className="text-white" />
               <FooterLinkGroup col>
-                <FooterLink href="/about">{t("footer.about")}</FooterLink>
-                <FooterLink href="/contacts">{t("footer.contact")}</FooterLink>
+                <Link className="hover:underline"  to="/about">{t("footer.about")}</Link>
+                <Link className="hover:underline"  to="/contacts">{t("footer.contact")}</Link>
               </FooterLinkGroup>
             </div>
             <div>
@@ -79,14 +80,14 @@ const FooterComponent = ({ onCookieClick }) => {
                 className="text-white"
               />
               <FooterLinkGroup col>
-                <FooterLink href="/vehicules/type/all">
+                <Link className="hover:underline"  to="/vehicules/type/all">
                   {t("footer.all_vehicles")}
-                </FooterLink>
-                <FooterLink href="/vehicules/type/suv">SUV & 4X4</FooterLink>
-                <FooterLink href="/vehicules/type/minibus">
+                </Link>
+                <Link className="hover:underline"  to="/vehicules/type/suv">SUV & 4X4</Link>
+                <Link className="hover:underline"  to="/vehicules/type/minibus">
                   {t("footer.minibus")}
-                </FooterLink>
-                <FooterLink href="/vehicules/type/pickup">Pick up</FooterLink>
+                </Link>
+                <Link className="hover:underline"  to="/vehicules/type/pickup">Pick up</Link>
               </FooterLinkGroup>
             </div>
 
@@ -96,12 +97,12 @@ const FooterComponent = ({ onCookieClick }) => {
                 className="text-white"
               />
               <FooterLinkGroup col>
-                <FooterLink href="/expedition">
+                <Link className="hover:underline"  to="/expedition">
                   {t("menu.shipping.links.services")}
-                </FooterLink>
-                <FooterLink href="/expedition/garanties">
+                </Link>
+                <Link className="hover:underline"  to="/expedition/garanties">
                   {t("menu.shipping.links.warranty")}
-                </FooterLink>
+                </Link>
               </FooterLinkGroup>
             </div>
 
@@ -111,21 +112,21 @@ const FooterComponent = ({ onCookieClick }) => {
                 className="text-white"
               />
               <FooterLinkGroup col>
-                <FooterLink href="/livraison/estimation">{t("footer.estimate")}</FooterLink>
-                <FooterLink href="/livraison/suivi">{t("footer.track")}</FooterLink>
+                <Link className="hover:underline"  to="/livraison/estimation">{t("footer.estimate")}</Link>
+                <Link className="hover:underline"  to="/livraison/suivi">{t("footer.track")}</Link>
               </FooterLinkGroup>
             </div>
 
             <div>
               <FooterTitle title={t("footer.mining")} className="text-white" />
               <FooterLinkGroup col>
-                <FooterLink href="/exploitation_miniere">{t("footer.buy_concession")}</FooterLink>
-                <FooterLink href="/exploitation_miniere/engagements">
+                <Link className="hover:underline"  to="/exploitation_miniere">{t("footer.buy_concession")}</Link>
+                <Link className="hover:underline"  to="/exploitation_miniere/engagements">
                   {t("footer.commitments")}
-                </FooterLink>
-                <FooterLink href="/exploitation_miniere/minerais">
+                </Link>
+                <Link className="hover:underline"  to="/exploitation_miniere/minerais">
                   {t("footer.minerals")}
-                </FooterLink>
+                </Link>
               </FooterLinkGroup>
             </div>
           </div>
@@ -135,17 +136,17 @@ const FooterComponent = ({ onCookieClick }) => {
 
              {/* Ajout des mentions légales */}
          <div className="flex flex-wrap gap-5 text-sm text-neutral-400 -mt-10">
-             <FooterLink href="/legal/privacy_policy" className="flex justify-center items-center">
+             <Link  to="/legal/privacy_policy" className="flex justify-center items-center hover:underline">
             {t("footer.privacy")}
-          </FooterLink>
+          </Link>
           
-          <FooterLink href="/legal/legal_mentions" className="flex justify-center items-center">
+          <Link  to="/legal/legal_mentions" className="flex justify-center items-center hover:underline">
             {t("footer.legal")}
-          </FooterLink>
+          </Link>
 
-          <FooterLink href="/legal/terms_and_conditions" className="flex justify-center items-center">
+          <Link  to="/legal/terms_and_conditions" className="flex justify-center items-center hover:underline">
             {t("footer.terms")}
-          </FooterLink>
+          </Link>
 
           <button onClick={onCookieClick} className="hover:underline capitalize">
                {t("footer.cookies")}

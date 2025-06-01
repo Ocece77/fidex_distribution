@@ -12,9 +12,9 @@ function VehiculeDetails() {
     <section>
       <VehiculesHeader/>
       <VehiculeDetailsSection id={id}/>
-      <div className="grid gap-10">
-             <Map/>
-     <ContactSection/>
+      <div className="grid md:gap-10 gap-20">
+      <Map />
+      <ContactSection/>
       </div>
  
     </section>

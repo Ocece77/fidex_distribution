@@ -64,7 +64,7 @@ const PrivacyPolicy = () => {
             <li>Limiter ou vous opposer au traitement de vos informations personnelles.</li>
           </ul>
           <p className="text-sm">
-            Pour exercer ces droits, vous pouvez nous contacter à l'adresse suivante : [email@domaine.com].
+            Pour exercer ces droits, vous pouvez nous contacter à l'adresse suivante : fidexdistribution@gmail.com.
           </p>
         </section>
   

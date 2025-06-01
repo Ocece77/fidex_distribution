@@ -87,7 +87,7 @@ const NavbarComponent = () => {
       description: t('menu.vehicles.description'),
       img: vehicule, // Remplace par ton image
       links: [
-        { label: t('menu.vehicles.links.all'), href: "vehicules/type/all" },
+        { label: t('menu.vehicles.links.all'), href: "/vehicules/type/all" },
         { label: t('menu.vehicles.links.pickup'), href: "/vehicules/type/pickup" },
         { label: t('menu.vehicles.links.suv'), href: "/vehicules/type/suv" },
         { label: t('menu.vehicles.links.4x4'), href: "/vehicules/type/4x4" },
@@ -236,7 +236,7 @@ useEffect(() => {
         </div>
 
         <div className="flex gap-5  items-center justify-center">
-           <Link  className="font-light text-[10px] md:text-sm ">{t('menu.about.links.contact')}</Link>
+           <Link to="/contacts" className="font-light text-[10px] md:text-sm hover:underline">{t('menu.about.links.contact')}</Link>
           <Dropdown
             dismissOnClick={true}
             renderTrigger={() => (

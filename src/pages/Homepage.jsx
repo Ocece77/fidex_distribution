@@ -40,7 +40,7 @@ const Homepage = () => {
       cardsLogo: faCar,
       cardsDesc: t("homepage.card1.desc"),
       cardsImg: vehicule1,
-      cardsLink: "/vehicules",
+      cardsLink: "/vehicules/type/all",
       cardsLinkLabel: t('homepage.cta')
     },
     {
@@ -103,7 +103,7 @@ const Homepage = () => {
   ];
 
   return (
-    <div className='flex flex-col gap-30 overflow-hidden'>
+    <div className='flex flex-col gap-5 md:gap-30 overflow-hidden'>
       <Hero/>
 
       <InfoSection 

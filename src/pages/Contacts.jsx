@@ -9,7 +9,7 @@ const Contacts = () => {
   const { t } = useTranslation();
 
   return (
-    <section className='grid grid-cols-1 gap-40'>
+    <section className='grid grid-cols-1 md:gap-40'>
       <HeaderComponent
         titre={t("contactPage.title")}
         backgroundImage={about1}
@@ -18,9 +18,11 @@ const Contacts = () => {
           [t("contactPage.callButton")]: "/contacts"
         }}
       />
-
-      <ContactSection />
-      <Map titre={t("contactPage.mapTitle")} />
+          <div className='grid h-fit mb-50'>
+              <ContactSection />
+              <Map  />
+          </div>
+    
     </section>
   );
 }
