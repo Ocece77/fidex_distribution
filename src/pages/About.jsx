@@ -49,7 +49,7 @@ const About = () => {
   }, [isInView]);
 
   return (
-    <div className='grid grid-cols-1 gap-30'>
+    <div className='grid grid-cols-1 md:gap-30 gap-15'>
       <HeaderComponent
         titre={t("about.header.title")}
         backgroundImage={photo1}
@@ -58,7 +58,7 @@ const About = () => {
       />
 
       <Reveal>
-        <div ref={numberContainerRef} className='grid lg:grid-cols-2 h-full gap-10 max-w-7xl mx-auto lg:px-20 px-2 py-20 bg-white'>
+        <div ref={numberContainerRef} className='grid lg:grid-cols-2 h-full gap-10 max-w-7xl mx-auto lg:px-20 px-2  bg-white'>
           <div className="flex flex-col gap-5 justify-center items-center lg:text-start text-center mx-auto max-w-2xl">
             <h1 className="lg:text-7xl text-5xl font-bold text-primary">
               {t("about.whoSection.title")}

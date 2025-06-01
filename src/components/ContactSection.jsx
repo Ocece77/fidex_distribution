@@ -19,6 +19,11 @@ const ContactSection = () => {
     const message = event.target.message.value;
 
     // Assainir les données -> DOMPurify
+    const sanitizedName = DOMPurify.sanitize(name);
+    const sanitizedFirstName = DOMPurify.sanitize(firstName);
+    const sanitizedEmail = DOMPurify.sanitize(email);
+    const sanitizedPhone = DOMPurify.sanitize(phone);
+    const sanitizedSubject = DOMPurify.sanitize(subject);
     const sanitizedMessage = DOMPurify.sanitize(message);
 
     // données assainies pour le serveur
@@ -31,13 +36,14 @@ const ContactSection = () => {
 
     // eslint-disable-next-line no-unused-vars
     const formData = {
-      name,
-      firstName,
-      email,
-      phone,
-      subject,
+      name : sanitizedName,
+      firstName : sanitizedFirstName,
+      email :sanitizedEmail,
+      phone :sanitizedPhone,
+      subject : sanitizedSubject,
       message: sanitizedMessage,
     };
+    event.target.reset();
   };
 
   return (
