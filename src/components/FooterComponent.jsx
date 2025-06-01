@@ -111,15 +111,15 @@ const FooterComponent = ({ onCookieClick }) => {
                 className="text-white"
               />
               <FooterLinkGroup col>
-                <FooterLink href="#">{t("footer.estimate")}</FooterLink>
-                <FooterLink href="#">{t("footer.track")}</FooterLink>
+                <FooterLink href="/livraison/estimation">{t("footer.estimate")}</FooterLink>
+                <FooterLink href="/livraison/suivi">{t("footer.track")}</FooterLink>
               </FooterLinkGroup>
             </div>
 
             <div>
               <FooterTitle title={t("footer.mining")} className="text-white" />
               <FooterLinkGroup col>
-                <FooterLink href="#">{t("footer.buy_concession")}</FooterLink>
+                <FooterLink href="/exploitation_miniere">{t("footer.buy_concession")}</FooterLink>
                 <FooterLink href="/exploitation_miniere/engagements">
                   {t("footer.commitments")}
                 </FooterLink>
@@ -135,19 +135,19 @@ const FooterComponent = ({ onCookieClick }) => {
 
              {/* Ajout des mentions légales */}
          <div className="flex flex-wrap gap-5 text-sm text-neutral-400 -mt-10">
-             <FooterLink href="/legal/privacy-policy" className="flex justify-center items-center">
+             <FooterLink href="/legal/privacy_policy" className="flex justify-center items-center">
             {t("footer.privacy")}
           </FooterLink>
           
-          <FooterLink href="/legal/legal-mentions" className="flex justify-center items-center">
+          <FooterLink href="/legal/legal_mentions" className="flex justify-center items-center">
             {t("footer.legal")}
           </FooterLink>
 
-          <FooterLink href="/legal/terms-and-conditions" className="flex justify-center items-center">
+          <FooterLink href="/legal/terms_and_conditions" className="flex justify-center items-center">
             {t("footer.terms")}
           </FooterLink>
 
-          <button onClick={onCookieClick} className="hover:underline">
+          <button onClick={onCookieClick} className="hover:underline capitalize">
                {t("footer.cookies")}
             </button>
         </div>

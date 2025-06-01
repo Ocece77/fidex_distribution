@@ -370,7 +370,7 @@ useEffect(() => {
                 onClick={closeMobileMenu}
                 className="text-red-800 self-end font-bold"
               >
-                <FontAwesomeIcon icon={faXmark}/>
+                <FontAwesomeIcon icon={faXmark} size="2xl"/>
               </button>
 
               {/* Liens */}

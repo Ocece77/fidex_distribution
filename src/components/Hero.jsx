@@ -90,6 +90,8 @@ const Hero = () => {
         <source src={videoHero} type="video/mp4" />
         <img src={fallbackImg} title="Your browser does not support the <video> tag" />
       </video>
+      <img src={fallbackImg} title="Your browser does not support the <video> tag" />
+
     </div>
   </section>
   )

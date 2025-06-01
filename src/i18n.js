@@ -11,6 +11,10 @@ i18n
   .init({
     debug: true,
     fallbackLng: 'fr',
+    detection: {
+      order: ['querystring', 'localStorage', 'navigator', 'htmlTag'],
+      caches: ['localStorage'], // sauvegarde la langue dans localStorage
+    },
     interpolation: {
       escapeValue: false, 
     },

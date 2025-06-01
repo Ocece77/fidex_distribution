@@ -107,9 +107,9 @@ const AppRoutes = () => {
             />
             <Route path="*" element={<ErrorPage />} />
    
-            <Route path="legal/legal-mentions" element={<LegalMentions />} />
-            <Route path="legal/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="legal/terms-and-conditions" element={<TermsAndConditions />} />
+            <Route path="legal/legal_mentions" element={<LegalMentions />} />
+            <Route path="legal/privacy_policy" element={<PrivacyPolicy />} />
+            <Route path="legal/terms_and_conditions" element={<TermsAndConditions />} />
 
           </Route>
         </Routes>
