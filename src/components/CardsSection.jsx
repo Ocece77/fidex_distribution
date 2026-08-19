@@ -22,7 +22,7 @@ const CardsSection = ({titre="titre", desc="description" , cards=[]}) => {
 
         <Reveal>
           {/*carte */}
-          <div className={`mx-auto mt-5 grid grid-cols-1 gap-x-2 gap-y-10 sm:mt-16 lg:mx-0 lg:max-w-none ${gridCards} md:gap-4 md:p-1.5`}>
+          <div className={`mx-auto mt-5 grid md:grid-cols-4 grid-cols-2 gap-x-2 gap-y-10 sm:mt-16 lg:mx-0 lg:max-w-none ${gridCards} md:gap-4 md:p-1.5`}>
             {cards.map((card , i) => (
               <div key={i} className="rounded-lg shadow-[0_0px_10px_rgba(150,150,150,0.15)] h-full ">
                     <div className='grid grid-cols-1 flex-col gap-3 w-full h-full rounded-lg overflow-hidden'>
