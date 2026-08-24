@@ -1,5 +1,5 @@
 import './App.scss';
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import { useEffect } from "react";
 import Lenis from "lenis";
 import { ThemeConfig } from "flowbite-react";
