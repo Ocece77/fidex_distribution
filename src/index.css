@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 @import "tailwindcss";
-@plugin "flowbite-react/plugin/tailwindcss";
+@import "flowbite-react/plugin/tailwindcss";
 @source "../.flowbite-react/class-list.json";
 
 @theme {
@@ -22,9 +22,12 @@
     --color-info: #0099cc;
     --color-danger: #cc0000;
 
+    --font-weight-extrablack: 1000; 
+
 }
 
 
 body {
     font-family: var(--font-sans);
+    scroll-behavior: smooth;
 }

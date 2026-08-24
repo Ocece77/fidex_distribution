@@ -1,53 +1,47 @@
+import './App.scss';
+import { HashRouter as Router } from "react-router-dom";
+import { useEffect } from "react";
+import Lenis from "lenis";
+import { ThemeConfig } from "flowbite-react";
 
-import './App.css'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MainLayout from "./Layout/MainLayout";
+import { MotionGlobalConfig } from "framer-motion";
 
-// Pages principales
-import Homepage from "./pages/Homepage";
-import About from "./pages/About";
-import Contacts from "./pages/Contacts";
+import AppRoutes from './AppRoutes';
 
-// Livraison
-import Livraison from "./pages/LivraisonPages/Livraison";
-import LivraisonEstimation from "./pages/LivraisonPages/LivraisonEstimation";
-import LivraisonSuivie from "./pages/LivraisonPages/LivraisonSuivie";
 
-// Véhicules
-import Vehicules from "./pages/VehiculePages/Vehicules";
-import VehiculeDetails from "./pages/VehiculePages/VehiculeDetails";
-import { ThemeConfig } from 'flowbite-react';
-import ExploitationMiniere from './pages/ExploitationMiniere';
+// Désactiver les animations sur mobile
+const disableAnimationsOnMobile = () => {
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if (isMobile) {
+    MotionGlobalConfig.skipAnimations = true;
+  }
+};
 
-function App() {
+const App = () => {
+
+  useEffect(() => {
+    disableAnimationsOnMobile();
+
+    const lenis = new Lenis();
+    const raf = (time) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   return (
-    <>
+    <>          
       <ThemeConfig dark={false} />
-      <Router>
-      <Routes>
-        {/* Layout principal avec Header/Footer */}
-        <Route path="/" element={<MainLayout />}>
-          <Route index element={<Homepage />} />
-          <Route path="about" element={<About />} />
-          <Route path="contacts" element={<Contacts />} />
-
-          {/* Livraison */}
-          <Route path="livraison" element={<Livraison />} />
-          <Route path="estimation" element={<LivraisonEstimation />} />
-          <Route path="suivie" element={<LivraisonSuivie />} />
-
-          {/* Véhicules */}
-          <Route path="vehicules" element={<Vehicules />} />
-          <Route path="vehicules/:id" element={<VehiculeDetails />} />
-
-          {/* Véhicules */}
-          <Route path="exploitationMiniere" element={<ExploitationMiniere />} />
-        </Route>
-      </Routes>
-    </Router>
+        <Router >
+            <AppRoutes/>
+        </Router>
     </>
-  
   );
-}
+};
 
 export default App;

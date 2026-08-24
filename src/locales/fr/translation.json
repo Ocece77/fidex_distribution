@@ -1,0 +1,668 @@
+{
+  "menu": {
+    "home": "Accueil",
+    "btn-contact": "Nous contacter",
+    "about": {
+      "title": "à propos",
+      "description": "Découvrez notre histoire, nos valeurs et l’équipe qui bâtit Fidex chaque jour.",
+      "links": {
+        "history": "Notre Histoire",
+        "contact": "Nous rencontrer"
+      }
+    },
+    "vehicles": {
+      "title": "véhicules",
+      "description": "Parcourez notre gamme de véhicules robustes pour l’industrie et l’expédition.",
+      "links": {
+        "all": "Tous nos véhicules",
+        "pickup": "Pick-up",
+        "suv": "SUV & Mini Van",
+        "4x4": "4x4"
+      }
+    },
+    "delivery": {
+      "title": "livraisons",
+      "description": "Suivez vos colis en temps réel ou estimez le coût de votre prochaine livraison.",
+      "links": {
+        "service": "Découvrir notre service",
+        "tracking": "Suivi",
+        "estimate": "Estimation de coût"
+      }
+    },
+    "shipping": {
+      "title": "expéditions",
+      "description": "Explorez nos solutions d’expédition, garanties et pays couverts.",
+      "links": {
+        "services": "Découvrir nos services",
+        "warranty": "Garantie"
+      }
+    },
+    "mining": {
+      "title": "Exploitation Minière",
+      "description": "Achetez des concessions, découvrez nos engagements et les minerais disponibles.",
+      "links": {
+        "buy": "Achat de concessions",
+        "commitments": "Nos engagements",
+        "minerals": "Minerais vendus"
+      }
+    },
+    "contact": {
+      "title": "Nous contacter",
+      "phone": "Parler à un expert",
+      "phone_number": "+233 1 23 45 67"
+    }
+  },
+
+  "chatbot": {
+    "header_title": "Conseiller Fidex",
+    "welcome_message": "Bienvenue, sur quel sujet souhaitez-vous avoir plus de renseignements ?",
+    "option_car": "Voiture",
+    "option_mining": "Exploitation minière",
+    "option_delivery": "livraison",
+    "option_shipping": "expédition",
+    "car_intro": "Nous proposons une large gamme de véhicules adaptés à tous vos besoins. 🚗",
+    "mining_intro": "Nous extrayons divers minerais tout en respectant des normes environnementales strictes. ⛏️",
+    "delivery_intro": "Découvrez nos services de livraison pour colis, documents et plus encore. 📦",
+    "shipping_intro": "Nous offrons des solutions d'expédition adaptées à vos besoins. 🛳️✈️",
+    "prompt_again": "Souhaitez-vous explorer un autre sujet ?",
+    "car_question": "Quel type de véhicule recherchez-vous ?",
+    "car_option_suv": "SUV",
+    "car_option_4x4": "4x4",
+    "car_option_minibus": "Mini bus",
+    "car_option_pickup": "Pickup",
+    "car_brands_message": "Voici quelques-unes des marques que nous proposons. Cliquez sur une pour en savoir plus :",
+    "back_to_main_menu": "Retour au menu principal",
+    "mining_question": "Quel type de ressource minière vous intéresse ?",
+    "mining_option_coltan": "coltan",
+    "mining_option_cobalt": "cobalt",
+    "mining_option_lithium": "lithium",
+    "mining_option_casserite": "casserite",
+    "mining_link_message": "Vous pouvez consulter tous les détails sur notre page exploitation minière :",
+    "mining_link_text": "👉 Voir la page exploitation",
+    "delivery_question": "Quel type de livraison souhaitez-vous effectuer ?",
+    "delivery_option_parcel": "Colis",
+    "delivery_option_document": "Documents",
+    "delivery_option_food": "Aliments",
+    "delivery_link_message": "Pour plus d'informations sur nos services de livraison :",
+    "delivery_link_text": "👉 Voir la page livraison",
+    "shipping_question": "Quel type d'expédition cherchez-vous ?",
+    "shipping_option_sea": "Fret maritime",
+    "shipping_option_air": "Fret aérien",
+    "shipping_option_express": "Fret Express",
+    "shipping_option_customs": "Sous Douane",
+    "shipping_link_message": "Pour en savoir plus sur nos modes d'expédition :",
+    "shipping_link_text": "👉 Voir la page expédition",
+    "unknown_input": "Désolé, je n'ai pas compris votre message 😢. Veuillez choisir une des options ci-dessous."
+  },
+  "btn": "en savoir plus",
+  "btn-contact": "Nous contacter",
+
+  "homepage": {
+    "heroSection": {
+      "title": "Votre partenaire pour réussir avec excellence",
+      "description": "De l'extraction des ressources à la mobilité haut de gamme, en passant par des solutions de livraison efficaces, nous connectons vos besoins à l'excellence",
+      "cta1": "Nous contacter",
+      "cta2": "Nous découvrir"
+    },
+    "infoSection": {
+      "title": "Soutenant + de 4000 clients à travers 22 pays",
+      "description": "Nous offrons des solutions rapides et efficaces dans trois domaines : la vente de véhicules neufs, la gestion des colis via nos centres de distribution, et l’accompagnement pour l’achat de concessions minières. Notre mission : simplifier vos projets et optimiser vos opérations.",
+      "btnTitle": "En savoir plus"
+    },
+    "cardsSection1": {
+      "title": "Achetez, investissez, ou faites-vous livrer en toute confiance avec nous.",
+      "description": "Que ce soit pour l'achat d'une voiture, d'une concession minière ou la réception de colis, nous sommes là pour vous accompagner à chaque étape.",
+      "cards": [
+        {
+          "title": "Véhicules",
+          "desc": "Découvrez notre gamme de véhicules adaptés à vos besoins",
+          "link": "/vehicules"
+        },
+        {
+          "title": "Livraison",
+          "desc": "Suivi de vos colis, gestion de vos livraisons",
+          "link": "/livraison"
+        },
+        {
+          "title": "Expédition",
+          "desc": "Nous gérons vos expéditions internationales",
+          "link": "/expedition"
+        },
+        {
+          "title": "Exploitation Minière",
+          "desc": "Accompagnement pour l'achat de concessions minières",
+          "link": "/exploitation_miniere"
+        }
+      ]
+    },
+    "quoteSection": {
+      "sectionText1": "L'innovation n'est pas simplement une nouvelle idée, mais une force qui transforme les défis en opportunités. C'est l'art de repenser le présent pour créer un avenir meilleur, plus efficace et durable.",
+      "sectionText2": "Découvrir notre vision"
+    },
+    "carousel": {
+      "title": "Explorez notre gamme de véhicules neufs",
+      "description": "Découvrez une sélection variée de véhicules alliant performance, confort et fiabilité, adaptés à vos besoins et à vos attentes."
+    },
+    "infoSectionExploitation": {
+      "title": "Achetez une concession minière",
+      "description": "Nous offrons des solutions rapides et efficaces dans trois domaines : la vente de véhicules neufs, la gestion des colis via nos centres de distribution, et l’accompagnement pour l’achat de concessions minières. Notre mission : simplifier vos projets et optimiser vos opérations.",
+      "btnTitle": "Acheter une Concession"
+    },
+    "cardsSection2": {
+      "title": "Découvrez notre vision",
+      "description": "Plongez dans notre vision, où innovation, engagement et durabilité façonnent chaque aspect de nos activités.",
+      "cards": [
+        {
+          "title": "Nos Valeurs",
+          "desc": "Découvrez nos valeurs fondamentales",
+          "link": "/about"
+        },
+        {
+          "title": "Notre Expertise",
+          "desc": "Apprenez-en plus sur notre expertise",
+          "link": "/about"
+        },
+        {
+          "title": "Notre Vision",
+          "desc": "Explorez notre vision à long terme",
+          "link": "/about"
+        }
+      ]
+    },
+    "stats": {
+      "countries": "Pays avec nos collaborateurs",
+      "clients": "Clients satisfaits",
+      "projects": "Projets réalisés"
+    },
+    "sectionTexte1": "L'innovation n'est pas simplement une nouvelle idée, mais une force qui transforme les défis en opportunités. C'est l'art de repenser le présent pour créer un avenir meilleur, plus efficace et durable.",
+    "sectionTexte2": "Découvrir notre vision",
+
+    "card1.title": "Vente de véhicules",
+    "card1.desc": "Explorez notre sélection de véhicules neufs de qualité",
+
+    "card2.title": "Livraison de colis",
+    "card2.desc": "Profitez de notre service rapide et fiable pour la livraison et le retrait de vos colis",
+
+    "card3.title": "Expéditions",
+    "card3.desc": "Nous croyons en l'intégrité, l'innovation et le respect, des principes qui guident chaque action que nous entreprenons.",
+
+    "card4.title": "Acheter une Concession",
+    "card4.desc": "Nous trouvons, négocions et gérons les démarches pour vous.",
+
+    "card5.title": "Notre Engagement",
+    "card5.desc": "Nous nous engageons à offrir des solutions de qualité, durables et respectueuses de l’environnement.",
+
+    "card6.title": "Notre Histoire",
+    "card6.desc": "Guidés par l'innovation, le respect et la collaboration, nous avons construit une entreprise engagée.",
+
+    "card7.title": "Nos Valeurs",
+    "card7.desc": "Nous croyons en l'intégrité, l'innovation et le respect, des principes qui guident chaque action que nous entreprenons."
+  },
+  "about": {
+    "header": {
+      "title": "À propos de nous",
+      "description": "Nous sommes une entreprise dédiée à simplifier vos besoins en logistique, automobile et exploitation minière.",
+      "btn": "Nous contacter"
+    },
+    "whoSection": {
+      "title": "Qui sommes-nous ?",
+      "paragraph1": "Nous sommes un acteur majeur dans le secteur des ressources, avec des activités couvrant plusieurs régions et des produits distribués à l’échelle mondiale.",
+      "paragraph2": "Notre stratégie repose sur les tendances clés qui façonnent l’avenir. Nous fournissons les minerais essentiels à l’industrie , tels que le lithium et le coltan.",
+      "paragraph3": "Un portefeuille de ressources conçu pour répondre aux besoins d’aujourd’hui et aux défis de demain.",
+      "btn": "Nous contacter",
+      "stat1": {
+        "title": "22 +",
+        "desc": "Pays avec nos collaborateurs dans le monde"
+      },
+      "stat2": {
+        "title": "+ de 4000",
+        "desc": "La satisfaction de nos clients est au cœur de nos priorités."
+      }
+    },
+    "strategySection": {
+      "title": "Notre stratégie",
+      "description": "Nous gérons de manière responsable un portefeuille d’actifs diversifié et résilient, dans des secteurs stratégiques et prometteurs. Nous créons de la valeur en excellant dans nos opérations, en découvrant et développant de nouvelles ressources, en acquérant les bons actifs et en optimisant nos investissements. Grâce à notre approche unique de la création de valeur sociale, nous sommes un partenaire de confiance qui génère des bénéfices pour toutes les parties prenantes.",
+      "btn": "Nous contacter"
+    },
+    "valuesSection": {
+      "title": "Nos valeurs",
+      "description": "Faire ce qui est juste: \n Notre engagement envers un avenir durable commence par la sécurité, l’intégrité et la construction de relations de confiance avec tous nos partenaires.\nChercher de meilleures façons de faire:\nL’écoute active et l’esprit d’innovation nous permettent de relever les défis et de progresser constamment.\nAvoir un impact:\n Nous assumons chaque jour la responsabilité de nos actions, de la création de valeur et des impacts positifs que nous pouvons générer.",
+      "btn": "Nous contacter"
+    },
+    "quoteSection": {
+      "text": "Chez Fidex, nous simplifions la logistique, facilitons l’achat et la vente de véhicules, et fournissons des ressources essentielles. Nos services répondent aux besoins du quotidien tout en soutenant le développement économique et en favorisant des solutions durables pour l'avenir."
+    },
+    "officeSection": {
+      "title": "On vous reçois dans nos locaux",
+      "description": "Chez Fidex Distribution, nous mettons un point d'honneur à offrir à nos collaborateurs un environnement de travail moderne, fonctionnel et agréable. Installés au cœur de Kinshasa, nos locaux sont conçus pour favoriser la collaboration, la concentration et le bien-être au quotidien."
+    }
+  },
+  "vehicules": {
+    "parallaxSection": {
+      "titre": "Achetez votre véhicule en toute tranquillité",
+      "desc": "À la recherche d’une voiture neuve ? Nos experts vous guident pour choisir le modèle qui correspond à vos attentes."
+    },
+    "header": {
+      "types": {
+        "suv": "SUV",
+        "fourByFour": "4x4",
+        "pickup": "Pick Up",
+        "minibusVan": "Mini bus & van"
+      },
+      "alt": {
+        "brandLogo": "Logo marque"
+      },
+      "hero": {
+        "title": "Découvrez nos offres de véhicules neufs,",
+        "subtitle": "disponibles autour de vous",
+        "description": "Comparez plusieurs offres pour trouver facilement votre véhicule idéal, puis prenez rendez-vous avec nos experts pour finaliser votre choix."
+      }
+    },
+    "details": {
+      "backToSelection": "Retour à la sélection",
+      "newVehicle": "Véhicule neuf",
+      "ref": "RÉF",
+      "availableAtAgency": "DISPONIBLE EN AGENCE",
+      "priceT1": "prix T1",
+      "excludingVAT": "(Hors TVA, Hors taxe pour Export)",
+      "contactUsForInfo": "Contactez-nous pour obtenir des informations, des conseils ou un devis personnalisé pour le",
+      "contactUs": "Contactez-nous",
+      "seeFeatures": "Voir les caractéristiques",
+      "featuresOf": "Caractéristiques du",
+      "discoverThe": "Découvrez le",
+      "robustReliableElegant": ": robuste, fiable et élégant. Conçu pour les amateurs d'aventure, ce",
+      "combinesPowerAndComfort": "combine puissance et confort pour vous accompagner partout.",
+      "keyFeaturesOf": "Les points clés du",
+      "engine": "Moteur",
+      "power": "Puissance",
+      "numberOfSeats": "Nombre de places",
+      "transmission": "Transmission",
+      "traction": "Traction",
+      "condition": "État",
+      "new": "Neuf",
+      "driving": "Conduite",
+      "rhdRightHandDrive": "RHD (volant à droite)",
+      "brand": "Marque",
+      "model": "Modèle",
+      "version": "Version",
+      "year": "Année",
+      "na": "N/A",
+      "seats": "Places",
+      "doors": "Portes",
+      "fuel": "Carburant",
+      "cylinders": "Cylindres",
+      "displacement": "Cylindrée",
+      "chassisSuspension": "Châssis & suspensions",
+      "gearbox": "Boîte de vitesses",
+      "wheelbase": "Empattement",
+      "meters": "m",
+      "noVehicleDetailsFound": "Aucun détail de véhicule trouvé."
+    },
+    "vehiculesSection": {
+      "filters": {
+        "all": "Tous",
+        "suv": "SUV",
+        "4x4": "4x4",
+        "pickup": "Pickup",
+        "minibus": "Mini Bus"
+      },
+      "title": "Tous les véhicules de la marque",
+      "buttonText": "Voir les détails"
+    }
+  },
+  "delivery": {
+    "header": {
+      "title": "Livraison partout en RDC",
+      "description": "Simplifiez vos achats et vos livraisons avec nos solutions sur mesure",
+      "buttons": {
+        "estimate": "Estimez votre envoi",
+        "dropOff": "Déposer votre colis en agence"
+      }
+    },
+    "stepsSection": {
+      "title": "Faites vous livrer en agence et partout en RDC",
+      "description": "Profitez de la commodité de la livraison en agence pour récupérer vos colis rapidement et facilement, directement à l'endroit qui vous convient."
+    },
+    "stepsList": [
+      {
+        "id": 1,
+        "title": "1. Commandez sur le site de votre choix.",
+        "description": "Passez commande de votre produit sur le site de votre choix.",
+        "linkLabel": "Acheter",
+        "link": "/contacts"
+      },
+      {
+        "id": 2,
+        "title": "2. Indiquez notre adresse.",
+        "description": "Indiquez l'adresse de notre agence comme destination lors de votre commande.",
+        "linkLabel": "Voir nos agences",
+        "link": "/contacts"
+      },
+      {
+        "id": 3,
+        "title": "3. Nous réceptionnons.",
+        "description": "Nous recevons votre colis à l'agence sélectionnée.",
+        "linkLabel": "Suivre mon colis",
+        "link": "/suivi"
+      },
+      {
+        "id": 4,
+        "title": "4. Récupérez votre colis.",
+        "description": "Vous serez notifié dès que votre colis arrive et pourrez le retirer facilement dans l'agence choisie.",
+        "linkLabel": "Trouver une agence",
+        "link": "/contacts"
+      }
+    ],
+    "servicesSection": {
+      "title": "Nos Services",
+      "payment": {
+        "title": "Options de paiement",
+        "description": "Nous proposons plusieurs options de paiement sécurisées, y compris Visa, Mastercard, PayPal, ainsi que des solutions locales comme Airtel Money, M-Pesa et Orange Money, pour une expérience rapide et flexible."
+      },
+      "security": {
+        "title": "Sécurisation des transactions",
+        "description": "Toutes vos transactions sont protégées par des technologies de cryptage avancées, garantissant ainsi la sécurité et la confidentialité de vos données personnelles et financières."
+      },
+      "goToAgencyButton": "Se rendre dans notre agence"
+    },
+    "parallax": {
+      "title": "Estimez le coût d’envoi de votre colis",
+      "description": "Estimez facilement le coût d'envoi de votre colis en renseignant simplement ses dimensions, son poids et les destinations d'expédition et de livraison",
+      "button": "Estimer votre envoi"
+    },
+    "deliveryEstimation": {
+      "header": {
+        "title": "Estimation de l'envoi",
+        "description": "Simplifiez vos achats et vos livraisons avec nos solutions sur mesure",
+        "buttons": {
+          "track": "Suivre un colis",
+          "dropOff": "Déposer votre colis en agence"
+        }
+      },
+      "stepsSection": {
+        "title": "Faites vous livrer dans notre agence",
+        "description": "Profitez de la commodité de la livraison en agence pour récupérer vos colis rapidement et facilement, directement à l'endroit qui vous convient."
+      },
+      "stepsList": [
+        {
+          "id": 1,
+          "title": "Envoyer un colis",
+          "description": "Simplifiez l’expédition de vos colis en les déposant dans notre agence.",
+          "linkLabel": "Voir nos agences",
+          "link": "/contacts"
+        },
+        {
+          "id": 2,
+          "title": "Estimez votre envoi",
+          "description": "Obtenez une estimation rapide et gratuite des frais d’expédition",
+          "linkLabel": "Estimer maintenant",
+          "link": "#estimation-form"
+        },
+        {
+          "id": 3,
+          "title": "Se rendre en agence",
+          "description": "Déposez votre colis en agence. Nous nous chargeons du processus d’envoi.",
+          "linkLabel": "Trouver une agence",
+          "link": "/contacts"
+        }
+      ],
+      "parallax": {
+        "title": "Estimez le coût d’envoi de votre colis",
+        "description": "Estimez facilement le coût d'envoi de votre colis en renseignant simplement ses dimensions, son poids et les destinations d'expédition et de livraison",
+        "button": "Estimer votre envoi"
+      }
+    },
+    "deliveryTracking": {
+      "header": {
+        "title": "Suivi de colis",
+        "description": "Simplifiez vos achats et vos livraisons avec nos solutions sur mesure",
+        "buttons": {
+          "estimate": "Estimez votre envoi",
+          "dropOff": "Déposer votre colis en agence"
+        }
+      },
+      "stepsSection": {
+        "title": "Comment suivre votre colis ?",
+        "description": "Entrez votre numéro de suivi ci-dessus pour voir le statut actuel de votre expédition."
+      },
+      "stepsList": [
+        {
+          "id": 1,
+          "title": "Envoyer un colis",
+          "description": "Simplifiez l’expédition de vos colis en les déposant dans notre agence.",
+          "linkLabel": "Voir nos agences",
+          "link": "/contacts"
+        },
+        {
+          "id": 2,
+          "title": "Estimez votre envoi",
+          "description": "Obtenez une estimation rapide et gratuite des frais d’expédition.",
+          "linkLabel": "Estimer maintenant",
+          "link": "/livraison/estimation"
+        },
+        {
+          "id": 3,
+          "title": "Se rendre en agence",
+          "description": "Déposez votre colis en agence. Nous nous chargeons du processus d’envoi.",
+          "linkLabel": "Trouver une agence",
+          "link": "/contacts"
+        }
+      ],
+      "parallax": {
+        "title": "Estimez le coût d’envoi de votre colis",
+        "description": "Estimez facilement le coût d'envoi de votre colis en renseignant simplement ses dimensions, son poids et les destinations d'expédition et de livraison.",
+        "button": "Estimer votre envoi"
+      }
+    }
+  },
+
+  "shipping": {
+    "expedition": {
+      "title": "Expédition",
+      "description": "Faites confiance à notre service pour des envois internationaux sans souci.",
+      "buttons": {
+        "contactUs": "Nous contacter",
+        "guarantees": "Nos garanties"
+      },
+      "stepSection": {
+        "title": "Expédiez à l'international en toute tranquillité",
+        "description": "Choisissez parmi nos multiples options d’envoi, conçues pour allier efficacité et rapidité."
+      },
+      "stepCards": [
+        {
+          "title": "Fret Express",
+          "description": "Livraison rapide de courriers et colis, à déposer avant la veille du départ",
+          "linkLabel": "Acheter"
+        },
+        {
+          "title": "Fret Aérien",
+          "description": "Transport international offrant un excellent rapport poids/prix/temps.",
+          "linkLabel": "Acheter"
+        },
+        {
+          "title": "Fret Maritime",
+          "description": "Solution économique pour le transport",
+          "linkLabel": "Acheter"
+        },
+        {
+          "title": "Sous Douane",
+          "description": "Gestion des formalités douanières et livraison à la ville de destination.",
+          "linkLabel": "Acheter"
+        }
+      ],
+      "infoSection": {
+        "title": "Nos garanties pour chaque envoi",
+        "description": "Votre sérénité est notre priorité. À chaque étape de l’expédition, nous nous engageons à garantir la sécurité de vos biens, leur traçabilité en temps réel, et leur livraison dans les délais. Faites confiance à un service qui place la fiabilité au cœur de ses engagements.",
+        "buttonLabel": "Découvrir nos engagements"
+      },
+      "parallaxSection": {
+        "title": "Envoyez vos colis à l'international en toute sérénité",
+        "description": "Nous garantissons une livraison rapide et sécurisée à l'international pour préserver l'intégrité de vos biens.",
+        "buttonLabel": "Nos garanties"
+      }
+    },
+    "garantie": {
+      "title": "Nos garanties",
+      "description": "Parce que vos biens méritent le meilleur, nous en assurons le traitement avec le plus grand soin tout au long de leur envoi.",
+      "cards": [
+        {
+          "title": "Sécurité optimale",
+          "description": "Vos colis sont manipulés avec soin à chaque étape pour éviter tout dommage.",
+          "linkLabel": "En savoir plus"
+        },
+        {
+          "title": "Suivi en temps réel",
+          "description": "Bénéficiez d’un suivi complet de votre envoi jusqu’à la livraison finale.",
+          "linkLabel": "Suivre un colis"
+        },
+        {
+          "title": "Livraison garantie",
+          "description": "Nous nous engageons à livrer vos biens dans les délais convenus.",
+          "linkLabel": "Voir nos engagements"
+        }
+      ],
+      "buttonLabels": {
+        "contactUs": "Nous contacter",
+        "shipGoods": "Expédier vos biens"
+      },
+      "stepSection": {
+        "title": "Expédiez à l'international en toute tranquillité",
+        "description": "Choisissez parmi nos multiples options d’envoi, conçues pour allier efficacité et rapidité."
+      },
+      "parallaxSection": {
+        "title": "Expédiez vos biens à l'international",
+        "description": "Afin de garantir un service de qualité, nous veillons au bon traitement de vos biens tout au long de l’expédition.",
+        "buttonLabel": "En savoir plus"
+      },
+      "infoSection": {
+        "title": "Expédiez en toute confiance, où que vous soyez",
+        "description": "Que ce soit pour un envoi urgent ou un transport planifié, nous mettons à votre disposition des moyens sûrs, rapides et adaptés à vos besoins. Nos solutions d’expédition s’adaptent à votre rythme, pour que vos colis arrivent à destination sans stress.",
+        "buttonLabel": "Commencer une expédition"
+      }
+    }
+  },
+
+  "mining": {
+    "engagements": {
+      "title": "Nos Engagements",
+      "description": "Nous vous facilitons l’achat de concession minière. Exploitez les ressources naturelles avec un partenaire de confiance",
+      "section3Text": "Découvrez nos principaux minerais",
+      "section4Text": "Nous intégrons des pratiques durables dans chaque aspect de notre activité, en réduisant les émissions et en respectant les réglementations strictes du secteur pétrolier. Notre objectif est de contribuer à une transition énergétique responsable.",
+      "section5Text": "Nous nous engageons à respecter les droits des mineurs en garantissant des conditions de travail sûres, éthiques et respectueuses. Nous favorisons un environnement de travail sécurisé, conforme aux normes internationales, et soutenons les communautés locales à travers des initiatives de développement durable.",
+      "quote1Title": "Allier performance et responsabilité environnementale",
+      "quote2Title": "Respect des Mineurs",
+      "parallaxTitle": "L'avenir de l'énergie passe par des solutions pétrolières fiables et durables",
+      "parallaxDescription": "L'avenir de l'énergie passe par des solutions pétrolières fiables et durables",
+      "buttonText": "Commencez votre projet",
+      "cards": {
+        "coltan": "Coltan",
+        "cobalt": "Cobalt",
+        "lithium": "Lithium",
+        "casserite": "Casserite"
+      }
+    },
+    "exploitationMiniere": {
+      "title": "Exploitation Minière",
+      "description": "Nous vous facilitons l’achat de concession minière. Exploitez les ressources naturelles avec un partenaire de confiance",
+      "section1Text": "Investissez, achetez, ou exploitez vos ressources minières et pétrolières en toute confiance avec nous.",
+      "section2Text": "Notre expertise en exploitation minière repose sur l’utilisation des dernières technologies pour optimiser l'extraction et le transport des ressources. Nous nous engageons à offrir des solutions efficaces, sûres et durables, en respectant les normes environnementales et de sécurité les plus strictes.",
+      "section3Text": "Découvrez nos principaux minerais",
+      "section4Text": "Nous intégrons des pratiques durables dans chaque aspect de notre activité, en réduisant les émissions et en respectant les réglementations strictes du secteur pétrolier. Notre objectif est de contribuer à une transition énergétique responsable.",
+      "section5Text": "Nous nous engageons à respecter les droits des mineurs en garantissant des conditions de travail sûres, éthiques et respectueuses. Nous favorisons un environnement de travail sécurisé, conforme aux normes internationales, et soutenons les communautés locales à travers des initiatives de développement durable.",
+      "cards": {
+        "oilServices": "Nos services pétroliers",
+        "miningConcessionHelp": "Aide à l’achat de concession minière",
+        "mineralSale": "Vente de minerais",
+        "coltan": "Coltan",
+        "cobalt": "Cobalt",
+        "lithium": "Lithium",
+        "cassiterite": "Casserite"
+      },
+      "buttonLabel": "Acheter",
+      "parallaxTitle": "L'énergie de demain, durable et fiable",
+      "parallaxDesc": "L'avenir de l'énergie combine pétrole durable et énergies renouvelables, avec une transition lente vers des solutions plus propres.",
+      "quote1Title": "Allier performance et responsabilité environnementale",
+      "quote2Title": "Respect des Mineurs"
+    },
+    "mineraisVendus": {
+      "title": "Minerais Vendus",
+      "description": "Nous vous facilitons l’achat de concession minière. Exploitez les ressources naturelles avec un partenaire de confiance",
+      "sectionText1": "Découvrez nos principaux minerais",
+      "parallaxTitle": "L'avenir de l'énergie passe par des solutions pétrolières fiables et durables",
+      "parallaxDesc": "L'avenir de l'énergie passe par des solutions pétrolières fiables et durables",
+      "buttonLabel": "Acheter",
+      "cards": {
+        "coltan": "Coltan",
+        "cobalt": "Cobalt",
+        "lithium": "Lithium",
+        "cassiterite": "Casserite"
+      }
+    }
+  },
+
+  "contact": {
+    "title": "Contactez-nous dès aujourd'hui !",
+    "description": "N’hésitez pas à nous contacter, notre équipe est prête à vous aider et à vous accompagner dans vos projets.",
+    "name": "Nom*",
+    "firstName": "Prénom*",
+    "email": "Email*",
+    "phone": "Téléphone",
+    "subject": "Sujet",
+    "message": "Message",
+    "send": "Envoyer le message",
+    "namePlaceholder": "Dupont",
+    "firstNamePlaceholder": "Jean",
+    "emailPlaceholder": "jean@exemple.com",
+    "phonePlaceholder": "+243 123 456 789",
+    "subjectPlaceholder": "Sujet de votre message",
+    "messagePlaceholder": "Votre message ici..."
+  },
+  "contactPage": {
+    "title": "Nous contacter",
+    "description": "Nous sommes à votre disposition par téléphone, email ou via notre formulaire de contact en ligne. Notre équipe se fera un plaisir de vous répondre dans les plus brefs délais.",
+    "callButton": "Ou nous appeler au +233 1 23 45 67",
+    "mapTitle": "Contactez-nous dès aujourd'hui !"
+  },
+  "map": {
+    "title": "Récupérez votre colis dans notre agence",
+    "description": "Rendez-vous dans notre agence pour bénéficier d’un accompagnement personnalisé et découvrir nos services adaptés à vos besoins.",
+    "information": {
+      "email": "Adresse email",
+      "adresse": "Addresse",
+      "téléphone": "N° de téléphone"
+    },
+    "openingHours": {
+      "open": "Ouvert de 8h à 18h du lundi au samedi",
+      "closed": "Fermée le dimanche et les jours fériés"
+    }
+  },
+  "carousel": {
+    "motorisation": "Motorisation",
+    "description": "à partir de.",
+    "cta": "Découvrir le véhicule",
+    "findAgency": "Trouver une agence"
+  },
+  "footer": {
+    "email": "email",
+    "adresse": "adresse",
+    "téléphone": "téléphone",
+    "about": "À propos",
+    "contact": "Contactez-nous",
+    "new_vehicles": "Véhicules neufs",
+    "all_vehicles": "Toutes nos véhicules",
+    "minibus": "Mini Van et bus",
+    "mining": "Exploitation Minière",
+    "oil": "Solutions pétrolières",
+    "buy_concession": "Achat concession minière",
+    "commitments": "Nos engagements",
+    "minerals": "Minerais vendus",
+    "shipping": "expéditions",
+    "delivery": "Livraison",
+    "estimate": "Estimation",
+    "track": "Suivre",
+    "legal": "Mentions légales",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Termes & Conditions",
+    "cookies" : "utilisations des cookies"
+  }
+}
