@@ -1,8 +1,8 @@
 import React from 'react';
 import ContactSection from '../../components/ContactSection';
 import Map from '../../components/Map';
-import VehiculesHeader from '../../components/vehiculesHeader';
-import VehiculesSection from '../../components/vehiculesSection';
+import VehiculesHeader from '../../components/VehiculesHeader';
+import VehiculesSection from '../../components/VehiculesSection';
 import { useParams } from 'react-router-dom';
 import ParallaxSection from '../../components/ParallaxSection';
 import vehicule1 from '../../assets/photos/vehicules/vehicule3.jpeg';
