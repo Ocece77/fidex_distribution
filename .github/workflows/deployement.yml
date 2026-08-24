@@ -26,6 +26,11 @@ jobs:
     steps:
       - name: Récupérer le projet
         uses: actions/checkout@v7
+        with:
+          lfs: true
+
+      - name: Télécharger les fichiers Git LFS
+        run: git lfs pull
 
       - name: Installer Node.js
         uses: actions/setup-node@v7
